@@ -1,0 +1,117 @@
+---
+title: Jak przyspieszyć stronę internetową?
+excerpt: Co zrobić, aby strona internetowa ładowała się szybciej, a tym samym miała niższy współczynnik odrzuceń? Poznaj kilka sposobów, jak to osiągnąć.
+category: Poradniki
+tags:
+  - szybkość strony internetowej
+  - optymalizacja
+  - multimedia
+  - hosting
+  - webp
+  - web vitals
+  - next.js
+date: 2022.07.12
+published: true
+featuredImage: /images/posts/jak-przyspieszyc-strone-internetowa/featured-image.jpg
+featuredImageAlt: prom kosmiczny leci w kosmos na tle zachodu słońca
+---
+
+## Dlaczego temat ten jest tak ważny?
+
+Nikt nie lubi długo czekać, aż strona się załaduje. Chcąc uniknąć niezadowolenia z tym związanego trzeba zadbać o szybkość ładowania naszej strony.
+
+Zgodnie z zaleceniami Google, aby zapewnić dobre wrażenia z użytkowania strony internetowej, należy skrócić czas jej ładowania do maksymalnie 2.5 sekund. Każda kolejna sekunda przekłada się zwiększony współczynnik odrzucenia (tzw. bounce rate) - to nic innego jak użytkownik, który zrezygnował z jakiegoś powodu z dalszego przeglądania naszej strony, bez jakiej podjęcia jakiejkolwiek akcji. Jak się okazuje najczęstszym powodem jest zbyt długi czas ładowania się strony.
+
+![wykres obrazujący zalażność między szybkością ładowania się strony, a współczynnikiem odrzucenia](/images/posts/jak-przyspieszyc-strone-internetowa/web-page-time-load-vs-bounce-rate.png)
+
+Powyżej znajduje się grafika ze strony [pingdom.com](https://www.pingdom.com/blog/page-load-time-really-affect-bounce-rate/).Obrazuje ona, jakie przełożenie ma czas ładowania strony na wspomniany współczynnik odrzucenia. Jak można zaobserwować, współczynnik odrzucenia drastycznie wzrasta w przypadku kiedy strona ładuje się powyżej 3 sekund.
+
+W dalszej części znajdziesz kilka praktycznych rad, jak można przyspieszyć swoją stronę internetową wprowadzając pewne optymalizacje.
+
+## Dobry hosting
+
+Warto zainwestować w dobry hosting, który nie tylko będzie spełniał nasze wymagania co do pojemności przestrzeni dyskowej na pliki, czy ceny, ale również cechuje się krótkim czasem odpowiedzi. Często dobrym pomysłem jest kupno hostingu, korzystającego ze serwerów znajdujących się jak najbliżej naszych odbiorców. Stawiajmy na hosting oferujący dobrą optymalizację pod strony zbudowane w technologi, w której wykonana jest nasza witryna — wordpress, next.js itd.
+
+## CDN — content delivery network
+
+W przypadku kiedy chcemy, aby nasza witryna internetowa równie szybko ładowała się dla użytkowników na całym świecie, dobrym rozwiązaniem jest zastosowanie CDN. CDN to akronim od angielskiego określenia 'sieć dostarczania treści'. Sieć ta dotyczy serwerów rozproszonych po całym świecie, a których zadaniem jest dostarczanie treści np. naszej strony do użytkowników.
+
+W świecie internetu fizyczne odległości również mają znaczenie. Dostarczenie obrazu wysłanego z serwera znajdującego się w USA do użytkownika znajdującego się w Holandii może zająć więcej czasu niż gdyby został wysłany z serwera znajdującego się np. w Niemczech. Aby zrozumieć, dlaczego tak się dzieje, należy zdać sobie sprawę, że w dużym uproszczeniu sieć Internet, to siec połączonych ze sobą komputerów, które komunikują się nawzajem ze sobą i przesyłają dane. Im bliżej siebie znajdują się komunikujące się ze sobą komputery, tym mniejsze występują przy tym opóźnienia w przesyle danych.
+
+![wizualizacja sieci cdn](/images/posts/jak-przyspieszyc-strone-internetowa/cdn-visualization.webp)
+
+Sieć CDN powiela dane naszej strony, które przesłaliśmy na główny serwer dostawcy hostingu. Następnie przesłane dane są przesyłane do serwerów znajdujących się najczęściej przy głównych węzłach sieci Internet na całym świecie. Takie działanie pozwala dostarczać pliki naszej strony do użytkownika z serwera znajdującego się najbliżej jego lokalizacji.
+
+## Ładowanie tylko potrzebnych zasobów
+
+Wiele stron opartych na WordPressie wykorzystuje najróżniejsze wtyczki. Za przykład niech posłuży [Contact Form 7](https://pl.wordpress.org/plugins/contact-form-7/), która pozwala tworzyć formularze kontaktowe. Wspomniana wtyczka dołącza do strony standardowe pliki CSS oraz JavaScript do obsługi formularzy. Domyślnie dołącza je również na stronach, które nie wykorzystują formularzy generowanych przez tę wtyczkę. Warto zatem, aby zasoby dołączane przez wspomnianą wtyczkę, czy inną były ładowane tylko na tych stronach, na których rzeczywiście są one potrzebne.
+
+Genialnym rozwiązaniem jest korzystanie ze stron internetowych, które są przygotowywane indywidualnie i nie korzystają z gotowych szablonów. Strony oparte na gotowych szablonach często spełniają swoją podstawową funkcję — z pozoru działają prawidłowo, lecz nie są zoptymalizowane pod kątem ograniczania ładowania nieużywanych zasobów.
+
+Dobrą praktyką jest to, aby podczas programowania strony internetowej dzielić kod na moduły. Dzielenie strony na moduły pozwala nie tylko na łatwiejsze zarządzanie całym projektem, ale w kontekście omawianego tematu pozwala na dołączanie dokładnie tego kodu do strony, który jest potrzebny.
+
+## Minifikacja kodu strony
+
+Pod tym być może nie często spotykanym słowem kryje się bardzo intuicyjna metoda optymalizacji strony internetowej. Minifikacja kodu strony to nic innego jak usunięcie zbędnych dla przeglądarki komentarzy, nadmiarowych lub niepotrzebnych tzw. znaków białych typu spacje, tabulacje, znaki nowej linii. Zabieg ten pozwala "odchudzić" pliki strony, a jak wiadomo mniej danych do przesłania to szybsza strona.
+
+Wiele narzędzi pomagających odchudzać nasze pliki strony, pozwala również na łączenie wielu plików o takim samym rozszerzeniu w jeden. To korzystny zabieg, który skraca czas ładowania strony przez zmniejszanie ilości zapytań, które musi wykonać przeglądarka, aby pobrać wszystkie potrzebne pliki. Mniej plików oznacza mniej zapytań do serwera dostarczającego pliki naszej strony, co w efekcie przekłada się na krótszy czas ładowania strony.
+
+## Optymalizacja multimediów
+
+Jednym z najprostszych zabiegów zmniejszających czas ładowania strony internetowej to ograniczenie rozmiarów najbardziej zasobożernych pików, a są to wszelakie multimedia.
+
+Pliki graficzne typu zdjęcia, ilustracje powinny być zapisane w nowoczesnych formatach pozwalających na zachowanie wysokiej jakości przy jednoczesnym ograniczaniu rozmiaru. Najlepszym obecnie formatem dla tego typu plików jest WEBP oraz AVIF. Największe zalety tych formatów to:
+
+- zachowanie wysokiej jakości,
+- zachowanie przeźroczystości (kanału alpha), jak w przypadku formatu PNG,
+- mniejszą wagę pliku niż w przypadku plików w formacie JPG.
+
+Najodpowiedniejszym formatem dla grafik stanowiących loga, ikony, ozdobniki to format SVG. Format ten pozwala na:
+
+- skalowanie grafik bez pogarszania jakości,
+- animowanie elementów grafiki za pomocą JavaScriptu,
+- stylowania poszczególnych elementów znajdujących się na obrazie za pomocą CSS.
+
+Waga plików graficznych w dużej mierze uzależniona jest od ich rozmiaru. Ważne jest, aby użytkownik nie otrzymał ani za dużego, ani za małego obrazu. Pomocne w tym okazują się znaczniki w html: `<source>`, `<picture>` pozwalające dodać odpowiednie wersje obrazu w zależności od rozmiaru okna przeglądarki użytkownika.
+
+```html
+<picture>
+  <source media="(max-width: 799px)" srcset="ewa-480w-bliski-portret.jpg" />
+  <source media="(min-width: 800px)" srcset="ewa-800w.jpg" />
+  <img src="ewa-800w.jpg" alt="Tomasz stojący trzymając swoją córkę Ewe" />
+</picture>
+```
+
+Znacznik `<img>` również pozwala na stworzenie responsywnych obrazów na stronach. Więcej informacji, jak i kiedy stosować takie rozwiązanie znajdziesz w [artykule MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
+
+Większość obecnych przeglądarek internetowych wspiera tzw. leniwe ładowanie obrazów. Polega to na tym, że przeglądarka pobiera obraz dopiero w momencie, kiedy znajduje się on w oknie przeglądarki internetowej. Aby mieć pewność, że funkcja ta będzie działać niezależnie od standardowego zachowania przeglądarki, zaleca się, aby obrazy, które nie są widoczne od razu po załadowaniu strony ([LCP](https://web.dev/lcp/)), posiadały atrybut `loading="lazy"`.
+
+## Odpowiednie ładowanie skyptów
+
+Aby nasza przeglądarka wyświetliła naszą stronę internetową, musi ona pobrać potrzebne pliki html, css, js, obrazy, a następnie wyrenderować ją w oknie przeglądarki.
+
+Poszczególne pliki strony pobierane są w określonej kolejności.Przeglądarka czyta kod strony od góry do dołu. Pierwszy pobierany jest plik html, w którego treści przeglądarka napotyka źródła do poszczególnych plików css, js czy obrazów. To właśnie kolejność, w której znajdują się osadzone źródła do plików w dokumencie html, decydują o kolejności ich pobierania.
+
+Kiedy nasza strona internetowa wykorzystuje pliki js, a żądanie ich pobrania w postaci znacznika `<script>` znajduje się części `<head>` pliku html strony, powoduje to zatrzymanie pobierania reszty treści strony do momentu pobrania całego pliku js i jego wykonania. Może to powodować zauważalne dla użytkownikó blokowanie wczytywania strony.
+
+Aby zapobiegać blokowaniu renderowania strony należy skrypty js umieszczać na końcu sekcji `<body>` w dokumencie html lub stosować atrybuty `async` lub `defer` w znaczniku `<script>`, które pozwalają zarządzać, jak ma zachować się przeglądarka napotykając taki strypt. W skrócie pozwalają ona na wymuszenie równoległego pobierania skryptu oraz reszty treści strony.
+
+Różnica między `async` i `defer` polega na tym, że skrypty z atrybutem `async` wykonywane są w kolejności, który pierwszy się załaduje, a w przypadku `defer` w kolejności, w której znajdowały się w kodzie.
+
+## Nadawanie odpowiedniego priorytetu zasobom
+
+Dzisiejsze przeglądarki dzięki rozbudowanej heurystyce potrafią ocenić, które zasoby strony powinny zostać pobrane w pierwszej kolejności. Mimo to mamy możliwość ułatwić to zadanie za pomocą dedykowanych znaczników `link`:
+
+- [`<link rel="preload">`](https://web.dev/preload-critical-assets/) — informuje, że dany zasób jest potrzebny w ramach bieżącej strony i powinien zostać pobrany, jak szybko to tylko możliwe,
+- [`<link rel="preconnect">`](https://web.dev/preconnect-and-dns-prefetch/) — informuję przeglądarkę, że strona internetowa będzie pobierać zasoby spoza obecnej domeny i chcemy, aby pobranie tego zasobu odbyło się możliwie jak najszybciej,
+- [`<link rel="prefetch">`](https://web.dev/link-prefetch/) — używany do wskazania, że dany zasób nie jest tak bardzo potrzebny, jak zasoby wskazane linkami wymienionymi powyżej, lecz chcemy, aby pobrać je możliwie jak najwcześniej.
+
+Obecnie (tj. drugi kwartał 2022) pojawił się nowy atrybut `fetchpriority`, który jest wspierany przez Google Chrome 101 i nowsze wersje. Atrybut ten pozwala na polepszenie czasu ładowania, krytycznych z punktu szybkości ładowania się strony, zasobów. Więcej informacji na jego temat można znaleźć [tu (web.dev)](https://web.dev/priority-hints/) i [tu (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/fetchPriority).
+
+## Stosowanie odpowiedniej technologii
+
+Czasem, kiedy strona z założenia nie jest często aktualizowana, dobrym rozwiązaniem może okazać się statyczna strona internetowa. Może to być po prostu strona napisana w html i wrzucona na serwer. Strony takie nie wymagają tego, aby pobierać dane z bazy danych, a następnie kompilować ich do plików html co zabiera cenny czas.
+
+Innym rozwiązaniem jest wykorzystanie generatorów statycznych stron internetowych. Jest to technologia, która pozwala na zarządzanie treścią strony jak w standardowym systemie CMS. Różnica polega jednak na tym, że wszelkie zapisane zmiany powodują wygenerowanie statycznych plików html, które następnie serwowane są odwiedzającym naszą stronę.
+
+Jest to rozwiązanie, które pozwala na wykorzystanie zalet statycznych stron internetowych oraz możliwości aktualizacji treści strony w przyjazny dla użytkownika sposób. Przykładam obecnie najpopularniejszego generatora statycznych stron internetowych to next.js czy Gatsby. Oby dwa wymienione generatory można połączyć z WordPressem jako system do zarządzania treścią lub z innym dedykowanym do tego typu zastosowań systemem np. GraphCSM.
