@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 export const Layout = ({ children }: { readonly children: ReactNode }) => (
   <>
     <Header />
-    <div className="pt-20 lg:pt-28">{children}</div>
+    {children}
     <Footer />
   </>
 );

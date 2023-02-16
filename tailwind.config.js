@@ -15,10 +15,35 @@ module.exports = {
       },
       colors: {
         primary: colors.green,
+        "light-green": "#f4f9f4",
       },
       fontFamily: {
         sans: ["var(--font-rubik)", ...defaultTheme.fontFamily.sans],
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: colors.green[500],
+              fontWeight: "400",
+              textDecoration: "none",
+              "&:hover": {
+                color: colors.green[500],
+                textDecoration: "underline",
+              },
+            },
+            strong: {
+              fontWeight: "500",
+            },
+            li: {
+              "&::marker": {
+                color: colors.green[500],
+                fontWeight: "500",
+              },
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],

@@ -15,9 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
           --font-rubik: ${rubik.style.fontFamily};
         }
       `}</style>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </>
   );
 }
