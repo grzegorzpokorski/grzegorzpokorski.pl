@@ -32,7 +32,7 @@ export const Header = ({
         <span className="uppercase font-bold text-green-500">{subtitle}</span>
       )}
       {titleAsH1 ? (
-        <h1 className="font-bold text-3xl md:text-3xl text-zinc-800">
+        <h1 className="font-bold text-3xl md:text-4xl text-zinc-800">
           {title}
         </h1>
       ) : (

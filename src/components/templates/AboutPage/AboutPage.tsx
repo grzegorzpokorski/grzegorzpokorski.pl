@@ -2,7 +2,7 @@ import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Banner } from "@/components/molecules/Banner/Banner";
 import { Hero } from "@/components/molecules/Hero/Hero";
-import HeroImage from "../../../../public/images/hero.webp";
+import HeroImage from "../../../../public/images/about.webp";
 import { Layout } from "../Layout/Layout";
 
 export const AboutPage = () => {
@@ -25,13 +25,13 @@ export const AboutPage = () => {
               <p>
                 W wolnej chwili staram się dzielić zdobytą wiedzą oraz
                 przemyśleniami na łamach artykułów na moim{" "}
-                <a href="/blog">blogu</a>, do którego odwiedzenia gorąco Cię
-                zachęcam 🙂
+                <Link href="/blog">blogu</Link>, do którego odwiedzenia gorąco
+                Cię zachęcam 🙂
               </p>
               <p>
                 Jeśli interesuje Cię współpraca lub po prostu chcesz porozmawiać
                 na różne tematy, nie tylko programistyczne, śmiało{" "}
-                <a href="/kontakt">kontaktuj się ze mną</a>!
+                <Link href="/kontakt">kontaktuj się ze mną</Link>!
               </p>
               <p>PS. Poniżej znajdziesz linki, gdzie możesz mnie znaleźć 👇</p>
             </>
