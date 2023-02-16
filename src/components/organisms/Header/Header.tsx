@@ -4,7 +4,7 @@ import { useStickyElement } from "@/hooks/useStickyElement";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { Logo } from "@/components/molecules/Logo/Logo";
 import { Hamburger } from "@/components/atoms/Hamburger/Hamburger";
-import { MainMenu } from "@/components/molecules/MainMenu/MainMenu";
+import { MainMenu } from "../MainMenu/MainMenu";
 
 type HeaderProps = {
   children?: ReactNode;

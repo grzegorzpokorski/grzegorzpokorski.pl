@@ -1,7 +1,7 @@
 import { Link } from "@/components/atoms/Link/Link";
 import { useRouter } from "next/router";
 import { menuItems } from "@/content/menu";
-import { SocialMenu } from "../SocialMenu/SocialMenu";
+import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
 
 type MainMenuProps = {
   isMobileMenuOpen: boolean;
