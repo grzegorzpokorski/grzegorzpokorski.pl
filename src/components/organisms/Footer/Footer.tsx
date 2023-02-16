@@ -21,9 +21,9 @@ export const Footer = memo(({ isHome }: FooterProps) => {
           Grzegorz Pokorski © {new Date().getFullYear()}. Doodles by
           doodleipsum.com. Created by Grzegorz Pokorski.
         </p>
-        <ul className="flex flex-row grow basis-0 gap-4 text-green md:justify-end md:order-3 text-lg">
+        <div className="flex flex-row grow basis-0 gap-4 text-green md:justify-end md:order-3 text-lg">
           <SocialMenu className="text-green-500 gap-5" />
-        </ul>
+        </div>
       </div>
     </footer>
   );
