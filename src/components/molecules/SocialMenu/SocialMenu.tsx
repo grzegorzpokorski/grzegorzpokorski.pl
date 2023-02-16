@@ -9,7 +9,7 @@ export const SocialMenu = ({ className }: { className?: string }) => (
         <Link href={href} className="hover:text-green-500 transition-colors">
           <>
             <span className="sr-only">{label}</span>
-            <Icon />
+            <Icon aria-hidden="true" />
           </>
         </Link>
       </li>
