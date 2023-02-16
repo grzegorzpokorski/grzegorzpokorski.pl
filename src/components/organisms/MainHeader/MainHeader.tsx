@@ -64,13 +64,11 @@ export const MainHeader = ({ children }: HeaderProps) => {
               onClick={handleMobileMenu}
               isMobileMenuOpen={isMobileMenuOpen}
             />
-            <div>
-              <MainMenu
-                closeMobileMenu={handleMobileMenu}
-                isMobileMenuOpen={isMobileMenuOpen}
-                isSticky={isSticky}
-              />
-            </div>
+            <MainMenu
+              closeMobileMenu={handleMobileMenu}
+              isMobileMenuOpen={isMobileMenuOpen}
+              isSticky={isSticky}
+            />
           </div>
         </section>
       </nav>
