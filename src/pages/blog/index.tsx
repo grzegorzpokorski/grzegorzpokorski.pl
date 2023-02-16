@@ -5,8 +5,30 @@ import { Banner } from "@/components/molecules/Banner/Banner";
 import { BlogHeader } from "@/components/molecules/BlogHeader/BlogHeader";
 import { Layout } from "@/components/templates/Layout/Layout";
 import { addressSeparator, siteName } from "@/content/seo";
+import { getAllPosts, getCategories } from "@/lib/posts";
+import { Post } from "@/types";
+import { GetStaticProps } from "next";
 
-const Blog = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await getAllPosts();
+  const categories = await getCategories();
+
+  return {
+    props: {
+      posts,
+      categories,
+    },
+  };
+};
+
+type BlogProps = {
+  posts: Post[];
+  categories: string[];
+};
+
+const Blog = ({ posts, categories }: BlogProps) => {
+  console.log(posts);
+  console.log(categories);
   return (
     <>
       <Seo
