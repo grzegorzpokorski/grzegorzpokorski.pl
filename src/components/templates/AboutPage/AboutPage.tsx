@@ -5,25 +5,42 @@ import { Hero } from "@/components/molecules/Hero/Hero";
 import HeroImage from "../../../../public/images/hero.webp";
 import { Layout } from "../Layout/Layout";
 
-export const Home = () => {
+export const AboutPage = () => {
   return (
     <Layout>
       <Main withMarginOnTop>
         <Hero
           title="Cześć, jestem Grzegorz!"
+          titleAsH1
           description={
-            <p>
-              Jestem Frontend Developerem z wyboru oraz pasji. Nieustannie
-              rozwijam umiejętności programistyczne, aby dostarczać nowoczesne
-              oraz wydajne strony internetowe. Zdobywaną wiedzą oraz
-              przemyśleniami staram się dzielić z innymi tutaj na moim{" "}
-              <Link href="/blog">blogu</Link>.
-            </p>
+            <>
+              <p>
+                Jak można się domyśleć jestem frontend developerem. Uwielbiam
+                tworzyć dobrze wyglądające oraz realizujące cele biznesowe
+                strony internetowe. Dobra strona to również ta strona, która
+                jest wydajna oraz dostępna. Dlatego nieustannie uczę sie
+                najnowszych technologi takich jak React, czy Next.js, które
+                pozwalają na osięgnięcie niesamowitych wyników.
+              </p>
+              <p>
+                W wolnej chwili staram się dzielić zdobytą wiedzą oraz
+                przemyśleniami na łamach artykułów na moim{" "}
+                <a href="/blog">blogu</a>, do którego odwiedzenia gorąco Cię
+                zachęcam 🙂
+              </p>
+              <p>
+                Jeśli interesuje Cię współpraca lub po prostu chcesz porozmawiać
+                na różne tematy, nie tylko programistyczne, śmiało{" "}
+                <a href="/kontakt">kontaktuj się ze mną</a>!
+              </p>
+              <p>PS. Poniżej znajdziesz linki, gdzie możesz mnie znaleźć 👇</p>
+            </>
           }
+          alignToLeftOnMobile
           links={
             <>
               <Link href="/oferta" buttonStyle="green">
-                Zobacz ofertę
+                Zobacz czym się zajmuje
               </Link>
               <Link href="/kontakt" buttonStyle="green-outline">
                 Skontaktuj się ze mną

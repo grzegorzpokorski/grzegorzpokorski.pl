@@ -14,6 +14,7 @@ type HeroProps = {
   withMarginOnTop?: boolean;
   imageFirst?: boolean;
   className?: string;
+  alignToLeftOnMobile?: boolean;
 };
 
 export const Hero = ({
@@ -25,6 +26,7 @@ export const Hero = ({
   withMarginOnTop,
   imageFirst,
   className,
+  alignToLeftOnMobile,
 }: HeroProps) => {
   return (
     <section
@@ -36,11 +38,20 @@ export const Hero = ({
       id="hero"
     >
       <div
-        className={`container mx-auto px-3 flex flex-col md:flex-row ${
-          imageFirst ? "flex-col-reverse md:flex-row-reverse" : ""
-        } items-center gap-3`}
+        className={twMerge(
+          "container mx-auto px-3 flex flex-col md:flex-row",
+          imageFirst && "flex-col-reverse md:flex-row-reverse",
+          "items-center gap-3",
+        )}
       >
-        <header className="md:w-1/2 flex flex-col gap-6 text-center md:text-left items-center md:items-start">
+        <header
+          className={twMerge(
+            "md:w-1/2 flex flex-col gap-6 md:text-left",
+            alignToLeftOnMobile
+              ? "text-left items-start"
+              : "text-center items-center md:items-start",
+          )}
+        >
           {titleAsH1 ? (
             <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
               {title}
@@ -52,7 +63,11 @@ export const Hero = ({
           )}
           <div className="prose max-w-none">{description && description}</div>
           {links && (
-            <div className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center md:justify-start items-center">
+            <div
+              className={twMerge(
+                "flex flex-col sm:flex-row flex-wrap gap-2 justify-center md:justify-start items-start",
+              )}
+            >
               {links}
             </div>
           )}

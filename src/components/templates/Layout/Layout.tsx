@@ -1,10 +1,10 @@
 import { Footer } from "@/components/organisms/Footer/Footer";
-import { Header } from "@/components/organisms/Header/Header";
+import { MainHeader } from "@/components/organisms/MainHeader/Header";
 import { ReactNode } from "react";
 
 export const Layout = ({ children }: { readonly children: ReactNode }) => (
   <>
-    <Header />
+    <MainHeader />
     {children}
     <Footer />
   </>

@@ -1,5 +1,5 @@
-import { About } from "@/components/templates/About/About";
+import { AboutPage } from "@/components/templates/AboutPage/AboutPage";
 
-export default function Index() {
-  return <About />;
+export default function About() {
+  return <AboutPage />;
 }

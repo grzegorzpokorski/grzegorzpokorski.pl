@@ -10,7 +10,7 @@ type HeaderProps = {
   children?: ReactNode;
 };
 
-export const Header = ({ children }: HeaderProps) => {
+export const MainHeader = ({ children }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const closeMobileMenu = () => {

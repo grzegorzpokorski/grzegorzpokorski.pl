@@ -4,7 +4,7 @@ import { Hero } from "@/components/molecules/Hero/Hero";
 import NotFoundImage from "../../../../public/images/404.webp";
 import { Layout } from "../Layout/Layout";
 
-export const NotFound = () => {
+export const NotFoundPage = () => {
   return (
     <Layout>
       <Main withMarginOnTop>

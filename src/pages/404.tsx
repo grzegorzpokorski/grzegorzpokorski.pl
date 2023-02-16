@@ -1,5 +1,5 @@
-import { NotFound } from "@/components/templates/NotFound/NotFound";
+import { NotFoundPage } from "@/components/templates/NotFoundPage/NotFoundPage";
 
-export default function Error() {
-  return <NotFound />;
+export default function NotFound() {
+  return <NotFoundPage />;
 }

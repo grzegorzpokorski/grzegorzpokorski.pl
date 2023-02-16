@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 type ButtonVariants = "green" | "green-outline" | "white" | "white-outline";
 
 const baseButtonStyles =
-  "inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed transition-colors rounded flex flex-row items-center justify-center gap-1.5";
+  "inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed rounded flex flex-row items-center justify-center gap-1.5";
 
 const buttonVariants = {
   white: twMerge(
