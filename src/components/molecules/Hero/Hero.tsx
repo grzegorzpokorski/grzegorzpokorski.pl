@@ -31,7 +31,7 @@ export const Hero = ({
   return (
     <section
       className={twMerge(
-        "py-12 md:py-12",
+        "py-12 md:py-28",
         withMarginOnTop ? "mt-20 lg:mt-28" : "",
         className,
       )}
@@ -65,7 +65,8 @@ export const Hero = ({
           {links && (
             <div
               className={twMerge(
-                "flex flex-col sm:flex-row flex-wrap gap-2 justify-center md:justify-start items-start",
+                "flex flex-col sm:flex-row flex-wrap gap-2 justify-center md:justify-start",
+                alignToLeftOnMobile ? "items-start" : "items-center",
               )}
             >
               {links}

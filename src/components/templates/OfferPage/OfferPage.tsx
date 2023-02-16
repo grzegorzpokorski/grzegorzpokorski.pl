@@ -4,6 +4,7 @@ import { Main } from "@/components/atoms/Main/Main";
 import { Banner } from "@/components/molecules/Banner/Banner";
 import { Section } from "@/components/molecules/Section/Section";
 import { Layout } from "../Layout/Layout";
+import { SectionsWithOffer } from "@/components/templates/Services/Services";
 
 export const OfferPage = () => {
   return (
@@ -27,6 +28,7 @@ export const OfferPage = () => {
             }
           />
         </Section>
+        <SectionsWithOffer />
         <Banner
           title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
           content="Chętnie pomogę zrealizować Twój projekt."
