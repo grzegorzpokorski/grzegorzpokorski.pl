@@ -1,5 +1,30 @@
-import { ReactNode, FC } from "react";
+import { ReactNode } from "react";
 import LinkNext from "next/link";
+import { twMerge } from "tailwind-merge";
+
+type ButtonVariants = "green" | "green-outline" | "white" | "white-outline";
+
+const baseButtonStyles =
+  "inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed transition-colors rounded flex flex-row items-center justify-center gap-1.5";
+
+const buttonVariants = {
+  white: twMerge(
+    baseButtonStyles,
+    "bg-white hover:bg-slate-100 text-gray-800 border-white",
+  ),
+  "white-outline": twMerge(
+    baseButtonStyles,
+    "bg-transparent hover:bg-white text-white hover:text-gray-800 border-white",
+  ),
+  green: twMerge(
+    baseButtonStyles,
+    "bg-green-500 hover:bg-green-600 text-white border-green-500",
+  ),
+  "green-outline": twMerge(
+    baseButtonStyles,
+    "bg-transparent hover:bg-green-500 text-green-500 hover:text-white border-green-500",
+  ),
+} as const;
 
 export type LinkProps = {
   href: string;
@@ -7,6 +32,7 @@ export type LinkProps = {
   className?: string;
   tabIndex?: number;
   onClick?: () => void;
+  buttonStyle?: ButtonVariants;
 };
 
 export const Link = (props: LinkProps) => {
@@ -18,7 +44,10 @@ export const Link = (props: LinkProps) => {
     <LinkNext
       href={props.href}
       onClick={props.onClick}
-      className={props.className}
+      className={twMerge(
+        props.buttonStyle && buttonVariants[props.buttonStyle],
+        props.className,
+      )}
       tabIndex={props.tabIndex}
     >
       {props.children}
