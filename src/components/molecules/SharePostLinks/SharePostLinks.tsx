@@ -2,12 +2,12 @@ import { Link } from "@/components/atoms/Link/Link";
 import { siteUrl } from "@/content/seo";
 import { FaTwitter, FaFacebook, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-type SharePostLinks = {
+type SharePostLinksProps = {
   slug: string;
   title: string;
 };
 
-export const SharePostLinks = ({ slug, title }: SharePostLinks) => {
+export const SharePostLinks = ({ slug, title }: SharePostLinksProps) => {
   const postUrl = `${siteUrl}/blog/${slug}`;
 
   return (
