@@ -1,12 +1,21 @@
+import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Seo } from "@/components/atoms/Seo/Seo";
+import { Banner } from "@/components/molecules/Banner/Banner";
 import { PostContent } from "@/components/molecules/PostContent/PostContent";
 import { PostHeader } from "@/components/organisms/PostHeader/PostHeader";
+import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
 import { addressSeparator, siteName } from "@/content/seo";
 import { Post } from "@/types";
 import { Layout } from "../Layout/Layout";
 
-export const SinglePost = ({ post }: { post: Post }) => (
+export const SinglePost = ({
+  post,
+  relatedPosts,
+}: {
+  post: Post;
+  relatedPosts: Post[];
+}) => (
   <>
     <Seo
       title={`${post.frontmatter.title} ${addressSeparator} ${siteName}`}
@@ -25,6 +34,26 @@ export const SinglePost = ({ post }: { post: Post }) => (
             title={post.frontmatter.title}
           />
         </article>
+        <PromoPosts
+          title="NMogą Cię zainteresować:"
+          subtitle="POSTY O PODOBNEJ TEMATYCE"
+          posts={relatedPosts}
+          link
+        />
+        <Banner
+          title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
+          content="Chętnie pomogę zrealizować Twój projekt."
+          buttons={
+            <>
+              <Link href="/kontakt" buttonStyle="white">
+                Skontaktuj się ze mną
+              </Link>
+              <Link href="/oferta" buttonStyle="white-outline">
+                Zobacz ofertę
+              </Link>
+            </>
+          }
+        />
       </Main>
     </Layout>
   </>

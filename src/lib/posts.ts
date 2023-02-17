@@ -120,3 +120,83 @@ export const getPostsByCategory = async (givenCategory: string) => {
       }) == givenCategory,
   );
 };
+
+export const getRelatedPostsByCategory = async (
+  currentPostSlug: string,
+  category: string,
+) => {
+  const publishedPosts = await getPublishedPosts();
+  const postsWithoutCurrent = publishedPosts.filter(
+    (post) => post.frontmatter.slug !== currentPostSlug,
+  );
+  const postsInGivenCategory = postsWithoutCurrent.filter(
+    (post) => post.frontmatter.category === category,
+  );
+
+  return postsInGivenCategory;
+};
+
+export const getRelatedPostsByTags = async (
+  currentPostSlug: string,
+  tags: string[],
+) => {
+  const publishedPosts = await getPublishedPosts();
+  const postsWithoutCurrent = publishedPosts.filter(
+    (post) => post.frontmatter.slug !== currentPostSlug,
+  );
+  const postsInGivenTags = postsWithoutCurrent.filter((post) =>
+    post.frontmatter.tags.some((tag) => tags.includes(tag)),
+  );
+
+  return postsInGivenTags;
+};
+
+export const getRelatedPosts = async (
+  currentPostSlug: string,
+  category: string,
+  tags: string[],
+  numberOfPostsToReturn = 3,
+) => {
+  const relatedByCategory = await getRelatedPostsByCategory(
+    currentPostSlug,
+    category,
+  );
+  const relatedByTags = await getRelatedPostsByTags(currentPostSlug, tags);
+
+  if (relatedByCategory.length >= numberOfPostsToReturn) {
+    return relatedByCategory.slice(0, numberOfPostsToReturn);
+  }
+
+  if (
+    relatedByCategory.length === 0 &&
+    relatedByTags.length >= numberOfPostsToReturn
+  ) {
+    return relatedByTags.slice(0, numberOfPostsToReturn);
+  }
+
+  const concatenated = relatedByCategory.concat(relatedByTags);
+  const withoutDuplicates = concatenated.filter(
+    (post, index) =>
+      !concatenated
+        .map((item) => item.frontmatter.slug)
+        .includes(post.frontmatter.slug, index + 1),
+  );
+
+  if (withoutDuplicates.length >= numberOfPostsToReturn) {
+    return withoutDuplicates;
+  }
+
+  const publishedPosts = (await getPublishedPosts()).filter(
+    (post) => post.frontmatter.slug !== currentPostSlug,
+  );
+  const publishedPostsWithoutCurrent = publishedPosts.filter(
+    (post) =>
+      !withoutDuplicates
+        .map((item) => item.frontmatter.slug)
+        .includes(post.frontmatter.slug),
+  );
+
+  return withoutDuplicates
+    .concat(publishedPostsWithoutCurrent)
+    .slice(0, numberOfPostsToReturn);
+};
