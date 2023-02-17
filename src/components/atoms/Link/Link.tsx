@@ -7,7 +7,8 @@ type ButtonVariants =
   | "green-outline"
   | "white"
   | "white-outline"
-  | "tag";
+  | "tag"
+  | "share-social";
 
 const baseButtonStyles =
   "inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed rounded flex flex-row items-center justify-center gap-1.5";
@@ -30,6 +31,8 @@ const buttonVariants = {
     "bg-transparent hover:bg-green-500 text-green-500 hover:text-white border-green-500",
   ),
   tag: "inline-flex transition-colors rounded px-2.5 py-1.5 text-xs bg-zinc-200 hover:bg-green-500 text-zinc-500 hover:text-white",
+  "share-social":
+    "inline-flex transition-colors border-2 rounded px-3 md:px-4 py-2 md:py-3 bg-green-500 hover:bg-green-600 text-white border-green-500 ",
 } as const;
 
 export type LinkProps = {
@@ -59,7 +62,17 @@ export const Link = (props: LinkProps) => {
       {props.children}
     </LinkNext>
   ) : (
-    <a target="_blank" rel="noopener noreferrer" {...props}>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={props.href}
+      tabIndex={props.tabIndex}
+      onClick={props.onClick}
+      className={twMerge(
+        props.buttonStyle && buttonVariants[props.buttonStyle],
+        props.className,
+      )}
+    >
       {props.children}
     </a>
   );

@@ -1,6 +1,7 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Image, { ImageProps } from "next/image";
 import { Link } from "@/components/atoms/Link/Link";
+import { SharePostLinks } from "../SharePostLinks/SharePostLinks";
 
 type PostContentProps = {
   source: MDXRemoteSerializeResult;
@@ -28,7 +29,7 @@ export const PostContent = ({ source, slug, title }: PostContentProps) => {
         </div>
         <footer className="w-full lg:w-7/12 mx-auto mt-16 pt-8 border-t-2 border-greenWhite flex flex-col lg:flex-row gap-6 items-center">
           <p className="font-bold text-zinc-800">Udostępnij artykuł</p>
-          {/* <SharePostLinks slug={slug} title={title} /> */}
+          <SharePostLinks slug={slug} title={title} />
         </footer>
       </div>
     </article>
