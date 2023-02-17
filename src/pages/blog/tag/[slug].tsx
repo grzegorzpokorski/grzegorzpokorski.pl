@@ -16,7 +16,7 @@ type TagArchiveProps = {
 
 const TagArchive = ({ fullTagNameToPass, posts }: TagArchiveProps) => (
   <>
-    {console.log(posts)}
+    {/* {console.log(posts)} */}
     <Seo
       title={`Blog ${addressSeparator} ${siteName}`}
       description={`Wszystkie artykuły, które pojawiły się na blogu. Przeważa tematyka związana z tworzeniem stron internetowych, ale znajdzie się coś również z mniej technicznych zagadnień.`}

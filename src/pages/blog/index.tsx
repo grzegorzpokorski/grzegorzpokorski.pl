@@ -27,8 +27,8 @@ type BlogProps = {
 };
 
 const Blog = ({ posts, categories }: BlogProps) => {
-  console.log(posts);
-  console.log(categories);
+  // console.log(posts);
+  // console.log(categories);
   return (
     <>
       <Seo
