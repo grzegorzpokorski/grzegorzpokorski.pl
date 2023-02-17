@@ -26,6 +26,7 @@
     "react-icons": "^4.7.1",
     "rehype-img-size": "^1.0.1",
     "rehype-prism-plus": "^1.5.1",
+    "sharp": "^0.31.3",
     "slugify": "^1.6.5",
     "tailwind-merge": "^1.9.1",
     "typescript": "4.9.5",
