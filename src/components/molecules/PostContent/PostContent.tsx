@@ -11,15 +11,15 @@ type PostContentProps = {
 
 export const PostContent = ({ source, slug, title }: PostContentProps) => {
   const components = {
-    Img: (props: ImageProps) => (
+    a: Link,
+    img: (props: ImageProps) => (
       <Image
         {...props}
         alt={props.alt}
         sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
       />
     ),
-    A: Link,
-  };
+  } as import("mdx/types").MDXComponents;
 
   return (
     <article className="pb-16">
