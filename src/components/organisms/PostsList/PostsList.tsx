@@ -8,7 +8,10 @@ type PostListProps = {
 
 export const PostsList = ({ posts, postItemTitleTag }: PostListProps) => {
   return (
-    <ul className="flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+    <ul
+      className="list-none flex flex-col md:grid md:grid-cols-2 xl:grid-cols-3 gap-6"
+      role="list"
+    >
       {posts.map((post) => (
         <PostItem
           key={post.frontmatter.slug}
