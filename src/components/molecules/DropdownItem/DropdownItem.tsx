@@ -7,10 +7,11 @@ type DropdownItemProps = {
   name: string;
   active?: boolean;
   customHref?: string;
+  onClick?: () => void;
 };
 
 export const DropdownItem = memo(
-  ({ name, active = false, customHref }: DropdownItemProps) => {
+  ({ name, active = false, customHref, onClick }: DropdownItemProps) => {
     return (
       <li
         className={twMerge(
@@ -30,6 +31,7 @@ export const DropdownItem = memo(
                   lower: true,
                 })}`
           }
+          onClick={onClick}
         >
           {name}
         </Link>

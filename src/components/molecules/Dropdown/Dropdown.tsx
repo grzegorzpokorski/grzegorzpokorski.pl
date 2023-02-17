@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
-import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 import { twMerge } from "tailwind-merge";
+import { useState, useRef, useCallback } from "react";
+import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 import { DropdownItem } from "../DropdownItem/DropdownItem";
+import { useOnKeydown } from "@/hooks/useOnKeydown";
 
 type Props = {
   categories: string[];
@@ -11,7 +11,6 @@ type Props = {
 
 export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { query } = useRouter();
 
   const closeDropdown = () => {
     setIsDropdownOpen(false);
@@ -21,21 +20,15 @@ export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  useEffect(() => {
-    const handleEscapeKeyPress = ({ key }: KeyboardEvent) =>
-      isDropdownOpen && key === "Escape" && setIsDropdownOpen(false);
-
-    window.addEventListener("keydown", handleEscapeKeyPress);
-
-    return () => window.removeEventListener("keydown", handleEscapeKeyPress);
-  });
+  useOnKeydown(
+    "Escape",
+    useCallback(() => {
+      isDropdownOpen && setIsDropdownOpen(false);
+    }, [isDropdownOpen]),
+  );
 
   const dropDownRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(dropDownRef, closeDropdown);
-
-  useEffect(() => {
-    if (Object.keys(query).length > 0) setIsDropdownOpen(false);
-  }, [query]);
 
   return (
     <div className="w-full lg:w-4/12">
@@ -71,6 +64,7 @@ export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
               name="Wszystkie kategorie"
               active={initialDropdownValue === "Wszystkie kategorie"}
               customHref="/blog"
+              onClick={() => closeDropdown()}
             />
           }
           {categories &&
@@ -79,6 +73,7 @@ export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
                 key={category}
                 name={category}
                 active={category === initialDropdownValue ? true : false}
+                onClick={() => closeDropdown()}
               />
             ))}
         </ul>
