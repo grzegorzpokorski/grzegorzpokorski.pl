@@ -1,4 +1,4 @@
-# moja-strona
+# grzegorzpokorski.pl
 
 Personal webpage presenting mine offer, connected with blog.
 
