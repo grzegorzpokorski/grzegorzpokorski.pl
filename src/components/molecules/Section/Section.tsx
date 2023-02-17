@@ -19,7 +19,7 @@ export const Section = ({
     id={id}
     className={twMerge(
       "py-16 lg:py-24",
-      withMarginOnTop && "mt-20 lg:mt-28",
+      withMarginOnTop === true && "mt-20 lg:mt-28",
       className,
     )}
   >

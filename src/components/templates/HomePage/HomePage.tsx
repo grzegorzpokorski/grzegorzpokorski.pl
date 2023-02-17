@@ -3,11 +3,13 @@ import { Main } from "@/components/atoms/Main/Main";
 import { Seo } from "@/components/atoms/Seo/Seo";
 import { Banner } from "@/components/molecules/Banner/Banner";
 import { Hero } from "@/components/molecules/Hero/Hero";
+import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
 import { siteSlogan } from "@/content/seo";
+import { Post } from "@/types";
 import HeroImage from "../../../../public/images/hero.webp";
 import { Layout } from "../Layout/Layout";
 
-export const HomePage = () => {
+export const HomePage = ({ posts }: { posts: Post[] }) => {
   return (
     <>
       <Seo
@@ -44,6 +46,12 @@ export const HomePage = () => {
             }}
             withMarginOnTop
             className="bg-white"
+          />
+          <PromoPosts
+            title="Najnowsze aktykuły na blogu 🔥"
+            subtitle="Blog"
+            posts={posts}
+            link
           />
           <Banner
             title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
