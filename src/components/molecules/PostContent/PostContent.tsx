@@ -24,11 +24,13 @@ export const PostContent = ({ source, slug, title }: PostContentProps) => {
   return (
     <article className="pb-16">
       <div className="container px-3 mx-auto">
-        <div className="w-full lg:w-7/12 prose max-w-none mx-auto">
+        <div className="w-full lg:w-7/12 prose dark:prose-invert max-w-none mx-auto">
           <MDXRemote {...source} components={components} />
         </div>
-        <footer className="w-full lg:w-7/12 mx-auto mt-16 pt-8 border-t-2 border-greenWhite flex flex-col lg:flex-row gap-6 items-center">
-          <p className="font-bold text-zinc-800">Udostępnij artykuł</p>
+        <footer className="w-full lg:w-7/12 mx-auto mt-16 pt-8 border-t-2 border-light-green dark:border-zinc-700 flex flex-col lg:flex-row gap-6 items-center">
+          <p className="font-bold text-zinc-800 dark:text-zinc-200">
+            Udostępnij artykuł
+          </p>
           <SharePostLinks slug={slug} title={title} />
         </footer>
       </div>

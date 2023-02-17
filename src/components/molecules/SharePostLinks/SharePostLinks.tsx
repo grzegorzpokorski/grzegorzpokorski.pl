@@ -18,7 +18,7 @@ export const SharePostLinks = ({ slug, title }: SharePostLinks) => {
           buttonStyle="share-social"
         >
           <span className="sr-only">Udostepnij na Facebooku.</span>
-          <FaFacebook />
+          <FaFacebook className="dark:text-zinc-800" />
         </Link>
       </li>
       <li>
@@ -27,7 +27,7 @@ export const SharePostLinks = ({ slug, title }: SharePostLinks) => {
           buttonStyle="share-social"
         >
           <span className="sr-only">Udostepnij na Twitterze.</span>
-          <FaTwitter />
+          <FaTwitter className="dark:text-zinc-800" />
         </Link>
       </li>
       <li>
@@ -36,7 +36,7 @@ export const SharePostLinks = ({ slug, title }: SharePostLinks) => {
           buttonStyle="share-social"
         >
           <span className="sr-only">Udostepnij na Linkedin.</span>
-          <FaLinkedin />
+          <FaLinkedin className="dark:text-zinc-800" />
         </Link>
       </li>
       <li>
@@ -45,7 +45,7 @@ export const SharePostLinks = ({ slug, title }: SharePostLinks) => {
           buttonStyle="share-social"
         >
           <span className="sr-only">Udostepnij emailem.</span>
-          <FaEnvelope />
+          <FaEnvelope className="dark:text-zinc-800" />
         </Link>
       </li>
     </ul>

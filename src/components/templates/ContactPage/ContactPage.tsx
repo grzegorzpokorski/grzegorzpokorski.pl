@@ -18,7 +18,7 @@ export const ContactPage = () => {
       />
       <Layout>
         <Main>
-          <Section className="bg-light-green" withMarginOnTop>
+          <Section className="bg-light-green dark:bg-zinc-800" withMarginOnTop>
             <Header
               title="Poznajmy się!"
               titleAsH1
@@ -35,8 +35,7 @@ export const ContactPage = () => {
                     >
                       mr.pokorski@gmail.com
                     </Link>
-                    , zagdać na którymś z portali (linki poniżej) lub skorzystać
-                    z formularza kontaktowego.
+                    , zagdać na którymś z portali (linki poniżej 👇).
                   </p>
                   <SocialMenu className="text-xl justify-center gap-5" />
                 </>

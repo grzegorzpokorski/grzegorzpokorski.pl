@@ -23,7 +23,7 @@ export const PostItem = ({
   titleAs: TitleTag = "h3",
 }: PostItemPops) => {
   return (
-    <li className="bg-white drop-shadow-xl border-2 border-greenLight rounded-md">
+    <li className="bg-white dark:bg-zinc-800 drop-shadow-xl border-2 border-light-green dark:border-zinc-600 rounded-md">
       <article>
         <Link href={`/blog/${slug}`} aria-hidden={true} tabIndex={-1}>
           <figure className="w-full h-72 max-h-72 overflow-hidden relative block rounded-t-md">
@@ -36,7 +36,7 @@ export const PostItem = ({
             />
           </figure>
         </Link>
-        <header className="p-8 pb-0 flex flex-col gap-3">
+        <header className="p-8 pb-0 flex flex-col gap-3 dark:text-zinc-200">
           <div className="flex flex-row gap-4 text-sm">
             <Link
               href={`/blog/kategoria/${slugify(category, {
@@ -58,12 +58,12 @@ export const PostItem = ({
           </div>
           <Link
             href={`/blog/${slug}`}
-            className="text-customGray hover:text-green-500 transition"
+            className="text-zinc-800 dark:text-zinc-200 hover:text-green-500 dark:hover:text-green-500 transition"
           >
             <TitleTag className="font-bold text-lg">{title}</TitleTag>
           </Link>
         </header>
-        <div className="p-8 pt-3 flex flex-col gap-3">
+        <div className="p-8 pt-3 flex flex-col gap-3 dark:text-zinc-400">
           <p>{excerpt}</p>
           {/* <p>{post.excerpt.split(" ").splice(0, 20).join(" ")} [...]</p> */}
         </div>

@@ -35,8 +35,8 @@ export const SinglePost = ({
           />
         </article>
         <PromoPosts
-          title="NMogą Cię zainteresować:"
-          subtitle="POSTY O PODOBNEJ TEMATYCE"
+          title="Mogą Cię zainteresować:"
+          subtitle="Posty o podobnej tematyce"
           posts={relatedPosts}
           link
         />

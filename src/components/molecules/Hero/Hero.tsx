@@ -31,7 +31,7 @@ export const Hero = ({
   return (
     <section
       className={twMerge(
-        "py-12 md:py-28",
+        "bg-white dark:bg-zinc-800 py-12 md:py-28",
         withMarginOnTop ? "mt-20 lg:mt-28" : "",
         className,
       )}
@@ -53,15 +53,17 @@ export const Hero = ({
           )}
         >
           {titleAsH1 ? (
-            <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
+            <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200">
               {title}
             </h1>
           ) : (
-            <h2 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-customGray">
+            <h2 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200">
               {title}
             </h2>
           )}
-          <div className="prose max-w-none">{description && description}</div>
+          <div className="prose dark:prose-invert max-w-none">
+            {description && description}
+          </div>
           {links && (
             <div
               className={twMerge(

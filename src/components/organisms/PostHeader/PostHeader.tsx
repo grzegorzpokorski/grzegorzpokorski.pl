@@ -18,7 +18,7 @@ export const PostHeader = ({
   featuredImage,
 }: PostFrontmatter) => {
   return (
-    <header className="pt-16 pb-8 md:pt-24 md:pb-12">
+    <header className="pt-16 pb-8 md:pt-24 md:pb-12 dark:text-zinc-200">
       <div className="container px-3 mx-auto">
         <div className="w-full lg:w-8/12 mx-auto flex flex-col gap-4">
           <span className="flex flex-row items-center gap-3">
@@ -32,7 +32,7 @@ export const PostHeader = ({
               {category}
             </Link>
             <span
-              className="inline-block w-12 h-0.5 bg-zinc-800"
+              className="inline-block w-12 h-0.5 bg-zinc-800 dark:bg-zinc-200"
               aria-hidden="true"
             ></span>
             <time dateTime={dayjs(date, "YYYY.MM.DD").format("YYYY-MM-DD")}>

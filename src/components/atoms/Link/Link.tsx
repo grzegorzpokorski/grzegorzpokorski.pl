@@ -24,13 +24,13 @@ const buttonVariants = {
   ),
   green: twMerge(
     baseButtonStyles,
-    "bg-green-500 hover:bg-green-600 text-white border-green-500",
+    "bg-green-500 hover:bg-green-600 text-white dark:text-zinc-800 border-green-500",
   ),
   "green-outline": twMerge(
     baseButtonStyles,
-    "bg-transparent hover:bg-green-500 text-green-500 hover:text-white border-green-500",
+    "bg-transparent hover:bg-green-500 text-green-500 hover:text-white dark:hover:text-zinc-800 border-green-500",
   ),
-  tag: "inline-flex transition-colors rounded px-2.5 py-1.5 text-xs bg-zinc-200 hover:bg-green-500 text-zinc-500 hover:text-white",
+  tag: "inline-flex transition-colors rounded px-2.5 py-1.5 text-xs bg-zinc-200 dark:bg-zinc-700 hover:bg-green-500 dark:hover:bg-green-500 text-zinc-500 dark:text-zinc-400 hover:text-white dark:hover:text-zinc-800",
   "share-social":
     "inline-flex transition-colors border-2 rounded px-3 md:px-4 py-2 md:py-3 bg-green-500 hover:bg-green-600 text-white border-green-500 ",
 } as const;

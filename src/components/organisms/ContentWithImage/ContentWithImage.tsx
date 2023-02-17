@@ -39,7 +39,9 @@ export const ContentWithImage = ({
       >
         <div className="w-full md:w-1/2">
           <Header title={title} subtitle={subtitle} />
-          {content && <div className="prose mt-6">{content}</div>}
+          {content && (
+            <div className="prose dark:prose-invert mt-6">{content}</div>
+          )}
           {href && (
             <footer className="flex flex-row items-start mt-6">
               <Link href={href} buttonStyle="green">

@@ -31,11 +31,17 @@ export const Header = ({
       <span className="uppercase font-bold text-green-500">{subtitle}</span>
     )}
     {titleAsH1 ? (
-      <h1 className="font-bold text-3xl md:text-4xl text-zinc-800">{title}</h1>
+      <h1 className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200">
+        {title}
+      </h1>
     ) : (
-      <h2 className="font-bold text-2xl md:text-3xl text-zinc-800">{title}</h2>
+      <h2 className="font-bold text-2xl md:text-3xl text-zinc-800 dark:text-zinc-200">
+        {title}
+      </h2>
     )}
-    {description && <div className="prose max-w-none">{description}</div>}
+    {description && (
+      <div className="prose dark:prose-invert max-w-none">{description}</div>
+    )}
     {children}
   </header>
 );

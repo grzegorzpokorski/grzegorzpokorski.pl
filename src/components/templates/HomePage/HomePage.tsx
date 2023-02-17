@@ -45,7 +45,6 @@ export const HomePage = ({ posts }: { posts: Post[] }) => {
               src: HeroImage,
             }}
             withMarginOnTop
-            className="bg-white"
           />
           <PromoPosts
             title="Najnowsze aktykuły na blogu 🔥"

@@ -3,6 +3,7 @@ import "@/styles/prism-theme.css";
 import type { AppProps } from "next/app";
 
 import { Rubik } from "@next/font/google";
+import { AppProviders } from "@/providers/AppProviders";
 const rubik = Rubik({
   subsets: ["latin", "latin-ext"],
 });
@@ -15,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
           --font-rubik: ${rubik.style.fontFamily};
         }
       `}</style>
-      <Component {...pageProps} />
+      <AppProviders>
+        <Component {...pageProps} />
+      </AppProviders>
     </>
   );
 }

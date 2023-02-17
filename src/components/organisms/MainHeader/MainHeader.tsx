@@ -49,7 +49,7 @@ export const MainHeader = ({ children }: HeaderProps) => {
   return (
     <header>
       <nav
-        className={`fixed top-0 z-50 w-full bg-white transition-shadow duration-300 ${
+        className={`fixed top-0 z-50 w-full bg-white dark:bg-zinc-800 transition-shadow duration-300 ${
           isSticky ? "shadow-md" : ""
         }`}
       >

@@ -18,7 +18,10 @@ export const OfferPage = () => {
       />
       <Layout>
         <Main>
-          <Section className="bg-light-green" withMarginOnTop>
+          <Section
+            className="bg-light-green dark:bg-neutral-700"
+            withMarginOnTop
+          >
             <Header
               title="Poznaj moją ofertę"
               titleAsH1

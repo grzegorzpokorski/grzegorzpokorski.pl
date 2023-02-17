@@ -10,7 +10,9 @@ export const SectionsWithOffer = () => {
           key={service.title}
           {...service}
           reverse={i % 2 === 0 && true}
-          className={twMerge(i % 2 === 1 && "bg-light-green")}
+          className={twMerge(
+            i % 2 === 1 && "bg-light-green dark:bg-neutral-700",
+          )}
         />
       ))}
     </>

@@ -29,11 +29,11 @@ const CategoryArchive = ({
     />
     <Layout>
       <Main withMarginOnTop>
-        <section className="py-16 lg:py-24 bg-light-green">
+        <section className="py-16 lg:py-24 bg-light-green dark:bg-neutral-700">
           <Container>
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 pb-16 lg:pb-24">
               <header className="w-full lg:w-8/12 flex flex-col gap-3">
-                <h1 className="font-bold text-3xl md:text-4xl text-zinc-800">
+                <h1 className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200">
                   Kategoria: {fullCategoryNameToPass}
                 </h1>
               </header>

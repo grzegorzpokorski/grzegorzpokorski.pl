@@ -19,7 +19,10 @@ export const PromoPosts = ({
   link,
 }: PromoPostsProps) => {
   return (
-    <Section id={getIDFromString(title)} className="bg-light-green">
+    <Section
+      id={getIDFromString(title)}
+      className="bg-light-green dark:bg-neutral-700"
+    >
       <Header title={title} subtitle={subtitle} className="pb-16 lg:pb-24" />
       <PostsList posts={posts} />
       {link && (
