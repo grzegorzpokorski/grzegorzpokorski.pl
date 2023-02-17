@@ -37,7 +37,7 @@ export const MainMenu = ({
               className={twMerge(
                 "transition-all",
                 item.href === currentPath
-                  ? "text-green-500"
+                  ? "text-green-500 dark:text-zinc-200 lg:dark:text-green-500"
                   : "text-gray-100 dark:text-zinc-800 lg:text-zinc-600 lg:dark:text-zinc-200 hover:text-gray-300 lg:hover:text-green-500 lg:dark:hover:text-green-500",
               )}
               onClick={closeMobileMenu}
