@@ -2,7 +2,12 @@ import { ReactNode } from "react";
 import LinkNext from "next/link";
 import { twMerge } from "tailwind-merge";
 
-type ButtonVariants = "green" | "green-outline" | "white" | "white-outline";
+type ButtonVariants =
+  | "green"
+  | "green-outline"
+  | "white"
+  | "white-outline"
+  | "tag";
 
 const baseButtonStyles =
   "inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed rounded flex flex-row items-center justify-center gap-1.5";
@@ -24,6 +29,7 @@ const buttonVariants = {
     baseButtonStyles,
     "bg-transparent hover:bg-green-500 text-green-500 hover:text-white border-green-500",
   ),
+  tag: "inline-flex transition-colors rounded px-2.5 py-1.5 text-xs bg-zinc-200 hover:bg-green-500 text-zinc-500 hover:text-white",
 } as const;
 
 export type LinkProps = {

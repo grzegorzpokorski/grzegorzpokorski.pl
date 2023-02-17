@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 export type PostFrontmatter = {
   title: string;
   excerpt: string;
@@ -17,5 +19,5 @@ export type PostFrontmatter = {
 
 export type Post = {
   frontmatter: PostFrontmatter;
-  source: string;
+  source: MDXRemoteSerializeResult<Record<string, unknown>>;
 };

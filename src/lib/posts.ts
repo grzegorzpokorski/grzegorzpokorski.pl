@@ -29,7 +29,7 @@ export const getSlugsOfPublishedPosts = async () => {
 
 export const getPostBySlug = async (slug: string): Promise<Post> => {
   const postPath = path.join(postsDir, `${slug}.mdx`);
-  const postSource = await promises.readFile(postPath, { encoding: "utf-8" });
+  const postSource = await promises.readFile(postPath, "utf-8");
   const mdxSource = await serializeSource(postSource);
 
   const frontMatterShema = z.object({
@@ -62,7 +62,7 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
       },
       slug,
     },
-    source: mdxSource.compiledSource,
+    source: mdxSource,
   };
 };
 
