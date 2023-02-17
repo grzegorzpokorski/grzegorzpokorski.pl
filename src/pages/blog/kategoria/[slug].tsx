@@ -1,6 +1,7 @@
 import { Container } from "@/components/atoms/Container/Container";
 import { Main } from "@/components/atoms/Main/Main";
 import { Seo } from "@/components/atoms/Seo/Seo";
+import { Dropdown } from "@/components/molecules/Dropdown/Dropdown";
 import { PostsList } from "@/components/organisms/PostsList/PostsList";
 import { DefaultBanner } from "@/components/templates/DefaultBanner/DefaultBanner";
 import { Layout } from "@/components/templates/Layout/Layout";
@@ -36,6 +37,10 @@ const CategoryArchive = ({
                   Kategoria: {fullCategoryNameToPass}
                 </h1>
               </header>
+              <Dropdown
+                categories={categories}
+                initialDropdownValue={fullCategoryNameToPass}
+              />
             </div>
             <PostsList posts={posts} postItemTitleTag="h2" />
           </Container>
