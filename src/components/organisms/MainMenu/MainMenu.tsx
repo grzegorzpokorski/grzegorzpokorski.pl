@@ -47,7 +47,7 @@ export const MainMenu = ({
           </li>
         ))}
       </ul>
-      <SocialMenu className="text-white dark:text-zinc-800 lg:text-zinc-800 lg:dark:text-zinc-200 pt-4 lg:pt-0 lg:pl-6" />
+      <SocialMenu className="text-white dark:text-zinc-800 lg:text-zinc-600 lg:dark:text-zinc-200 pt-4 lg:pt-0 lg:pl-6" />
       <ThemeSwitch />
     </div>
   );
