@@ -1,12 +1,11 @@
-import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Seo } from "@/components/atoms/Seo/Seo";
-import { Banner } from "@/components/molecules/Banner/Banner";
 import { PostContent } from "@/components/molecules/PostContent/PostContent";
 import { PostHeader } from "@/components/organisms/PostHeader/PostHeader";
 import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
 import { addressSeparator, siteName } from "@/content/seo";
 import { Post } from "@/types";
+import { DefaultBanner } from "../DefaultBanner/DefaultBanner";
 import { Layout } from "../Layout/Layout";
 
 export const SinglePost = ({
@@ -40,20 +39,7 @@ export const SinglePost = ({
           posts={relatedPosts}
           link
         />
-        <Banner
-          title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
-          content="Chętnie pomogę zrealizować Twój projekt."
-          buttons={
-            <>
-              <Link href="/kontakt" buttonStyle="white">
-                Skontaktuj się ze mną
-              </Link>
-              <Link href="/oferta" buttonStyle="white-outline">
-                Zobacz ofertę
-              </Link>
-            </>
-          }
-        />
+        <DefaultBanner />
       </Main>
     </Layout>
   </>

@@ -1,9 +1,8 @@
 import { Container } from "@/components/atoms/Container/Container";
-import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Seo } from "@/components/atoms/Seo/Seo";
-import { Banner } from "@/components/molecules/Banner/Banner";
 import { PostsList } from "@/components/organisms/PostsList/PostsList";
+import { DefaultBanner } from "@/components/templates/DefaultBanner/DefaultBanner";
 import { Layout } from "@/components/templates/Layout/Layout";
 import { addressSeparator, siteName } from "@/content/seo";
 import { getCategories, getPublishedPosts } from "@/lib/posts";
@@ -49,20 +48,7 @@ const Blog = ({ posts, categories }: BlogProps) => (
             <PostsList posts={posts} postItemTitleTag="h2" />
           </Container>
         </section>
-        <Banner
-          title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
-          content="Chętnie pomogę zrealizować Twój projekt."
-          buttons={
-            <>
-              <Link href="/kontakt" buttonStyle="white">
-                Skontaktuj się ze mną
-              </Link>
-              <Link href="/oferta" buttonStyle="white-outline">
-                Zobacz ofertę
-              </Link>
-            </>
-          }
-        />
+        <DefaultBanner />
       </Main>
     </Layout>
   </>

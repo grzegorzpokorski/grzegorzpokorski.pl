@@ -8,7 +8,9 @@ type ButtonVariants =
   | "white"
   | "white-outline"
   | "tag"
-  | "share-social";
+  | "share-social"
+  | "dark"
+  | "dark-outline";
 
 const baseButtonStyles =
   "inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed rounded flex flex-row items-center justify-center gap-1.5";
@@ -21,6 +23,14 @@ const buttonVariants = {
   "white-outline": twMerge(
     baseButtonStyles,
     "bg-transparent hover:bg-white text-white hover:text-gray-800 border-white",
+  ),
+  dark: twMerge(
+    baseButtonStyles,
+    "bg-zinc-800 hover:bg-zinc-900 text-white border-zinc-800",
+  ),
+  "dark-outline": twMerge(
+    baseButtonStyles,
+    "bg-transparent hover:bg-zinc-800 text-zinc-800 hover:text-white border-zinc-800",
   ),
   green: twMerge(
     baseButtonStyles,

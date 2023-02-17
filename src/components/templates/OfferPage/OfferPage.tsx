@@ -1,12 +1,11 @@
 import { Header } from "@/components/atoms/Header/Header";
-import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
-import { Banner } from "@/components/molecules/Banner/Banner";
 import { Section } from "@/components/molecules/Section/Section";
 import { Layout } from "../Layout/Layout";
 import { SectionsWithOffer } from "@/components/templates/Services/Services";
 import { Seo } from "@/components/atoms/Seo/Seo";
 import { addressSeparator, siteName } from "@/content/seo";
+import { DefaultBanner } from "../DefaultBanner/DefaultBanner";
 
 export const OfferPage = () => {
   return (
@@ -40,20 +39,7 @@ export const OfferPage = () => {
             />
           </Section>
           <SectionsWithOffer />
-          <Banner
-            title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
-            content="Chętnie pomogę zrealizować Twój projekt."
-            buttons={
-              <>
-                <Link href="/kontakt" buttonStyle="white">
-                  Skontaktuj się ze mną
-                </Link>
-                <Link href="/oferta" buttonStyle="white-outline">
-                  Zobacz ofertę
-                </Link>
-              </>
-            }
-          />
+          <DefaultBanner />
         </Main>
       </Layout>
     </>
