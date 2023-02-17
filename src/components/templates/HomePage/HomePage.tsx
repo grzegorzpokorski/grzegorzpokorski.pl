@@ -23,11 +23,11 @@ export const HomePage = ({ posts }: { posts: Post[] }) => {
             title="Cześć, jestem Grzegorz!"
             description={
               <p>
-                Jestem Frontend Developerem z wyboru oraz pasji. Nieustannie
-                rozwijam umiejętności programistyczne, aby dostarczać nowoczesne
-                oraz wydajne strony internetowe. Zdobywaną wiedzą oraz
-                przemyśleniami staram się dzielić z innymi tutaj na moim{" "}
-                <Link href="/blog">blogu</Link>.
+                Witam w moich skromnych progach! Jestem Frontend Developerem,
+                nieustannie rozwijam umiejętności programistyczne, aby
+                dostarczać nowoczesne oraz wydajne strony internetowe. Zdobywaną
+                wiedzą oraz przemyśleniami staram się dzielić z innymi tutaj na
+                moim <Link href="/blog">blogu</Link>.
               </p>
             }
             links={
