@@ -21,8 +21,8 @@ const CategoryArchive = ({
   categories,
 }: CategoryArchiveProps) => (
   <>
-    {console.log(posts)}
-    {console.log(categories)}
+    {/* {console.log(posts)}
+    {console.log(categories)} */}
     <Seo
       title={`Blog ${addressSeparator} ${siteName}`}
       description={`Wszystkie artykuły, które pojawiły się na blogu. Przeważa tematyka związana z tworzeniem stron internetowych, ale znajdzie się coś również z mniej technicznych zagadnień.`}
