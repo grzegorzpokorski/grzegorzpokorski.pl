@@ -1,14 +1,16 @@
 import path from "path";
 import { promises } from "fs";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
 import { serializeSource } from "./markdown";
 import { z } from "zod";
 import { Post } from "@/types";
-// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-dayjs.extend(customParseFormat);
 import { getPlaiceholder } from "plaiceholder";
 import slugify from "slugify";
+
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat);
+import "dayjs/locale/pl";
+dayjs.locale("pl");
 
 const postsDir = path.join(process.cwd(), "src/content/posts");
 
