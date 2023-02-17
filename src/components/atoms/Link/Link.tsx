@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { AnchorHTMLAttributes, ReactNode } from "react";
 import LinkNext from "next/link";
 import { twMerge } from "tailwind-merge";
 
@@ -42,7 +42,7 @@ export type LinkProps = {
   tabIndex?: number;
   onClick?: () => void;
   buttonStyle?: ButtonVariants;
-};
+} & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const Link = (props: LinkProps) => {
   const isInternal = props.href
