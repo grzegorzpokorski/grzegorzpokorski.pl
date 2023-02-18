@@ -1,6 +1,7 @@
 import { AnchorHTMLAttributes, ReactNode } from "react";
 import LinkNext from "next/link";
 import { twMerge } from "tailwind-merge";
+import { boolean } from "zod";
 
 type ButtonVariants =
   | "green"
@@ -52,6 +53,7 @@ export type LinkProps = {
   tabIndex?: number;
   onClick?: () => void;
   buttonStyle?: ButtonVariants;
+  "aria-hidden"?: string;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const Link = (props: LinkProps) => {
@@ -61,13 +63,13 @@ export const Link = (props: LinkProps) => {
 
   return isInternal ? (
     <LinkNext
-      href={props.href}
       onClick={props.onClick}
       className={twMerge(
         props.buttonStyle && buttonVariants[props.buttonStyle],
         props.className,
       )}
       tabIndex={props.tabIndex}
+      {...props}
     >
       {props.children}
     </LinkNext>
