@@ -16,18 +16,14 @@ export const Heading = ({
   if (isAnchor && typeof children === "string") {
     const slug = `${getSlug(children)}`;
     return (
-      <Tag
-        {...props}
-        id={slug}
-        className="flex items-start gap-3 relative group"
-      >
+      <Tag {...props} id={slug} className="flex gap-3 relative ml-5 lg:ml-0">
         <Link
           href={`#${slug}`}
-          className="absolute left-0 top-0 -translate-x-full pr-2 pt-1 opacity-0 group-hover:opacity-100 transition-all"
+          className="absolute left-0 top-0 -translate-x-full pr-2 transition-all text-neutral-300 dark:text-neutral-600 hover:text-green-500 dark:hover:text-green-500"
           aria-hidden="true"
           tabIndex={-1}
         >
-          <FaLink />
+          #
         </Link>
         {children}
       </Tag>

@@ -63,13 +63,14 @@ export const Link = (props: LinkProps) => {
 
   return isInternal ? (
     <LinkNext
+      href={props.href}
       onClick={props.onClick}
       className={twMerge(
         props.buttonStyle && buttonVariants[props.buttonStyle],
         props.className,
       )}
       tabIndex={props.tabIndex}
-      {...props}
+      aria-hidden={props["aria-hidden"]}
     >
       {props.children}
     </LinkNext>
