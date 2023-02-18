@@ -7,7 +7,7 @@ import { Layout } from "@/components/templates/Layout/Layout";
 import { addressSeparator, siteName } from "@/content/seo";
 import { getPostsByTag, getTags } from "@/lib/posts";
 import { Post } from "@/types";
-import slugify from "slugify";
+import { getSlug } from "@/utils/getSlug";
 
 type TagArchiveProps = {
   fullTagNameToPass: string;
@@ -49,9 +49,7 @@ export const getStaticProps = async ({
   const posts = await getPostsByTag(slug);
   const tags = await getTags();
 
-  const fullTagNameToPass = tags.find(
-    (tag) => slugify(tag, { replacement: "-", lower: true }) === slug,
-  );
+  const fullTagNameToPass = tags.find((tag) => getSlug(tag) === slug);
 
   return {
     props: {
@@ -64,7 +62,7 @@ export const getStaticProps = async ({
 export const getStaticPaths = async () => {
   const tags = await getTags();
   const paths = tags.map((tag) => ({
-    params: { slug: slugify(tag, { replacement: "-", lower: true }) },
+    params: { slug: getSlug(tag) },
   }));
 
   return {
