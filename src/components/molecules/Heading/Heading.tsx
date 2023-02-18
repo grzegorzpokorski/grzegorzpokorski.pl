@@ -1,6 +1,5 @@
 import { Link } from "@/components/atoms/Link/Link";
 import { getSlug } from "@/utils/getSlug";
-import { FaLink } from "react-icons/fa";
 
 type HeadingProps = {
   as: "h1" | "h2" | "h3" | "h4" | "h5";
