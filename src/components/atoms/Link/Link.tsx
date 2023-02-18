@@ -1,7 +1,6 @@
 import { AnchorHTMLAttributes, ReactNode } from "react";
 import LinkNext from "next/link";
 import { twMerge } from "tailwind-merge";
-import { boolean } from "zod";
 
 type ButtonVariants =
   | "green"
