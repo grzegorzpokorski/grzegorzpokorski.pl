@@ -52,6 +52,7 @@ export type LinkProps = {
   tabIndex?: number;
   onClick?: () => void;
   buttonStyle?: ButtonVariants;
+  "aria-hidden"?: string;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const Link = (props: LinkProps) => {
@@ -68,6 +69,7 @@ export const Link = (props: LinkProps) => {
         props.className,
       )}
       tabIndex={props.tabIndex}
+      aria-hidden={props["aria-hidden"]}
     >
       {props.children}
     </LinkNext>

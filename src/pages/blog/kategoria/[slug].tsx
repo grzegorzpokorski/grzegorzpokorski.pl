@@ -8,7 +8,7 @@ import { Layout } from "@/components/templates/Layout/Layout";
 import { addressSeparator, siteName } from "@/content/seo";
 import { getCategories, getPostsByCategory } from "@/lib/posts";
 import { Post } from "@/types";
-import slugify from "slugify";
+import { getSlug } from "@/utils/getSlug";
 
 type CategoryArchiveProps = {
   posts: Post[];
@@ -60,7 +60,7 @@ export const getStaticProps = async ({
   const categories = await getCategories();
 
   const fullCategoryNameToPass = categories.find(
-    (cat) => slugify(cat, { replacement: "-", lower: true }) === slug,
+    (cat) => getSlug(cat) === slug,
   );
 
   return {
@@ -75,7 +75,7 @@ export const getStaticProps = async ({
 export const getStaticPaths = async () => {
   const categories = await getCategories();
   const paths = categories.map((cat) => ({
-    params: { slug: slugify(cat, { replacement: "-", lower: true }) },
+    params: { slug: getSlug(cat) },
   }));
 
   return {
