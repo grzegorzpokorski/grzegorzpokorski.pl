@@ -9,7 +9,7 @@ Personal webpage presenting mine offer, connected with blog.
 3. Typescript
 4. Tailwind CSS
 5. SCSS
-6. MDX with MDX Bundler
+6. MDX
 
 ## Installation 👷
 
