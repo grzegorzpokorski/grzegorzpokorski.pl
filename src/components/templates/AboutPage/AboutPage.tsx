@@ -6,10 +6,13 @@ import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
 import { addressSeparator, siteName } from "@/content/seo";
 import { Post } from "@/types";
 import HeroImage from "../../../../public/images/about.webp";
+import HeroImageDark from "../../../../public/images/about-dark.webp";
 import { DefaultBanner } from "../DefaultBanner/DefaultBanner";
 import { Layout } from "../Layout/Layout";
+import { useThemeContext } from "@/providers/ThemeProvider";
 
 export const AboutPage = ({ posts }: { posts: Post[] }) => {
+  const { theme } = useThemeContext();
   return (
     <>
       <Seo
@@ -61,7 +64,7 @@ export const AboutPage = ({ posts }: { posts: Post[] }) => {
             }
             image={{
               alt: "zadowoleni klienci przeglądają otrzymany produkt",
-              src: HeroImage,
+              src: theme === "dark" ? HeroImageDark : HeroImage,
             }}
             withMarginOnTop
           />
