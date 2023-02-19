@@ -1,8 +1,8 @@
 import Image from "next/image";
-import slugify from "slugify";
 import { FaCalendarDay, FaTag } from "react-icons/fa";
 import Link from "next/link";
 import { PostFrontmatter } from "@/types";
+import { getSlug } from "@/utils/getSlug";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
@@ -39,10 +39,7 @@ export const PostItem = ({
         <header className="p-8 pb-0 flex flex-col gap-3 dark:text-zinc-200">
           <div className="flex flex-row gap-4 text-sm">
             <Link
-              href={`/blog/kategoria/${slugify(category, {
-                replacement: "-",
-                lower: true,
-              })}`}
+              href={`/blog/kategoria/${getSlug(category)}`}
               className="hover:underline flex flex-row items-center"
             >
               <FaTag className="mr-2 text-green-500" />

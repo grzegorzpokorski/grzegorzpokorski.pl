@@ -1,6 +1,6 @@
 import { Link } from "@/components/atoms/Link/Link";
+import { getSlug } from "@/utils/getSlug";
 import { memo } from "react";
-import slugify from "slugify";
 import { twMerge } from "tailwind-merge";
 
 type DropdownItemProps = {
@@ -23,14 +23,7 @@ export const DropdownItem = memo(
       >
         <Link
           className="block"
-          href={
-            customHref
-              ? customHref
-              : `/blog/kategoria/${slugify(name, {
-                  replacement: "-",
-                  lower: true,
-                })}`
-          }
+          href={customHref ? customHref : `/blog/kategoria/${getSlug(name)}`}
           onClick={onClick}
         >
           {name}
