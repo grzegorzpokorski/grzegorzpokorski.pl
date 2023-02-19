@@ -1,4 +1,4 @@
 import slugify from "slugify";
 
 export const getSlug = (text: string): string =>
-  slugify(text, { replacement: "-", lower: true });
+  slugify(text, { replacement: "-", lower: true, strict: true });
