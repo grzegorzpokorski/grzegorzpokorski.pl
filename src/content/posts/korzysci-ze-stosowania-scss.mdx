@@ -184,19 +184,20 @@ SCSS wspiera importy plików SCSS, dzięki czemu kod można dzielić na tzw. mod
 
 Poniżej podaje przykładową strukturę plików SCSS, która często sam stosuję:
 
-```
+```txt
 style.scss
 core
-  - _variables.scss
-  - _global.scss
-  - _typography.scss
-  - ...
-modules
-  - _container.scss
-  - _card.scss
-  - _footer.scss
-  - ...
-...
+
+- _variables.scss
+- _global.scss
+- _typography.scss
+- ...
+  modules
+- _container.scss
+- _card.scss
+- _footer.scss
+- ...
+  ...
 ```
 
 Rozwijanie i utrzymanie takich uporządkowanych projektów jest na pewno o wiele łatwiejsze.
@@ -227,7 +228,7 @@ article p {
 
 - **expanded** — właściwości są wcięte wewnątrz reguł, ale same reguły nie są wcięte w żaden specjalny sposób, jak w stylu 'nested'. Przykład poniżej:
 
-```css
+````css
 main {
   padding: 12px 24px;
   margin-bottom: 24px;
@@ -262,7 +263,7 @@ article p {
   font-style: italic;
   margin-bottom: 12px;
 }
-```
+````
 
 - **compressed** — style zajmują minimalną możliwą ilość miejsca. Nie ma w nich białych znaków, z wyjątkiem spacji potrzebnej do oddzielenia selektorów i nowej linii na końcu dokumentu. Nie są one przeznaczone do czytania przez człowieka, lecz raczej do wersji produkcyjnej.
 

@@ -1,3 +1,4 @@
+pre,
 code[class*="language-"],
 pre[class*="language-"] {
   @apply whitespace-pre break-normal bg-[#fafafa] text-left font-mono text-base leading-[1.5em] text-[#90a4ae] dark:bg-neutral-800 dark:text-[#eee];
@@ -8,14 +9,16 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
+pre,
 pre[class*="language-"] {
-  @apply rounded-lg rounded border border-t-0 dark:border-neutral-700;
+  @apply rounded-lg rounded border dark:border-neutral-700;
 }
 
 :not(pre) > code[class*="language-"] {
   @apply whitespace-normal rounded-[0.2em] p-[0.1em];
 }
 
+pre,
 pre[class*="language-"] {
   @apply relative my-0 mx-0 overflow-auto py-[1.25em] px-[1em];
 }
