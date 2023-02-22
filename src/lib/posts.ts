@@ -4,7 +4,7 @@ import { serializeSource } from "./markdown";
 import { z } from "zod";
 import { Post } from "@/types";
 import { getPlaiceholder } from "plaiceholder";
-import slugify from "slugify";
+import { getSlug } from "@/utils/getSlug";
 
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
@@ -106,20 +106,14 @@ export const getTags = async () => {
 export const getPostsByTag = async (givenTag: string) => {
   const posts = await getPublishedPosts();
   return posts.filter((post) =>
-    post.frontmatter.tags
-      .map((tag) => slugify(tag, { replacement: "-", lower: true }))
-      .includes(givenTag),
+    post.frontmatter.tags.map((tag) => getSlug(tag)).includes(givenTag),
   );
 };
 
 export const getPostsByCategory = async (givenCategory: string) => {
   const posts = await getPublishedPosts();
   return posts.filter(
-    (post) =>
-      slugify(post.frontmatter.category, {
-        replacement: "-",
-        lower: true,
-      }) == givenCategory,
+    (post) => getSlug(post.frontmatter.category) == givenCategory,
   );
 };
 
