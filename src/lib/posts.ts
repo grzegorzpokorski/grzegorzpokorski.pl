@@ -48,7 +48,7 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
   });
 
   const frontmatter = frontMatterShema.parse(mdxSource.frontmatter);
-  const { img } = await getPlaiceholder(frontmatter.featuredImage);
+  const { img, base64 } = await getPlaiceholder(frontmatter.featuredImage);
 
   return {
     frontmatter: {
@@ -61,6 +61,7 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
       featuredImage: {
         ...img,
         alt: frontmatter.featuredImageAlt ? frontmatter.featuredImageAlt : "",
+        base64,
       },
       slug,
     },

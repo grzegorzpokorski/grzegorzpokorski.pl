@@ -33,6 +33,8 @@ export const PostItem = ({
               fill
               sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
               alt={featuredImage.alt}
+              placeholder="blur"
+              blurDataURL={featuredImage.base64}
             />
           </figure>
         </Link>
