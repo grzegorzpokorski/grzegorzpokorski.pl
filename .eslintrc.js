@@ -22,6 +22,13 @@ module.exports = {
       version: "detect",
     },
   },
-  ignorePatterns: ["build/", "dist/", "node_modules/", "*.js", "*.jsx"],
+  ignorePatterns: [
+    "build/",
+    "dist/",
+    "node_modules/",
+    "*.js",
+    "*.jsx",
+    "src/pages_old/",
+  ],
   rules: {},
 };

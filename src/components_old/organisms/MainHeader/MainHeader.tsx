@@ -1,19 +1,16 @@
-"use client";
-
 import { ReactNode, useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import { useStickyElement } from "@/hooks/useStickyElement";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { Logo } from "@/components/molecules/Logo/Logo";
 import { Hamburger } from "@/components/atoms/Hamburger/Hamburger";
 import { MainMenu } from "../MainMenu/MainMenu";
-import { usePathname } from "next/navigation";
 
 type HeaderProps = {
   children?: ReactNode;
 };
 
 export const MainHeader = ({ children }: HeaderProps) => {
-  const [isSticky] = useStickyElement();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const closeMobileMenu = () => {
@@ -32,8 +29,10 @@ export const MainHeader = ({ children }: HeaderProps) => {
     }
   };
 
+  const [isSticky] = useStickyElement();
+
   const [isHome, setIsHome] = useState(false);
-  const pathname = usePathname();
+  const { pathname } = useRouter();
 
   useEffect(() => {
     if (pathname === "/") {
