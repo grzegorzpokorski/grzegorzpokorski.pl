@@ -30,5 +30,7 @@ module.exports = {
     "*.jsx",
     "src/pages_old/",
   ],
-  rules: {},
+  rules: {
+    "@next/next/no-html-link-for-pages": "off",
+  },
 };
