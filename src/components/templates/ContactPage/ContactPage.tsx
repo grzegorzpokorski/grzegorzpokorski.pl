@@ -1,9 +1,9 @@
 import { Header } from "@/components/atoms/Header/Header";
 import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
-import { Banner } from "@/components/molecules/Banner/Banner";
 import { Section } from "@/components/molecules/Section/Section";
 import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
+import { ContactBanner } from "../ContactBanner/ContactBanner";
 
 export const ContactPage = () => {
   return (
@@ -32,20 +32,7 @@ export const ContactPage = () => {
           }
         />
       </Section>
-      <Banner
-        title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
-        content="Chętnie pomogę zrealizować Twój projekt."
-        buttons={
-          <>
-            <Link href="/oferta" buttonStyle="white">
-              Zobacz czym się zajmuję
-            </Link>
-            <Link href="/blog" buttonStyle="white-outline">
-              Owiedź mojego bloga
-            </Link>
-          </>
-        }
-      />
+      <ContactBanner />
     </Main>
   );
 };
