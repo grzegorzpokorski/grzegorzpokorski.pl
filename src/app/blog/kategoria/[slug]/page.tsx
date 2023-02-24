@@ -1,16 +1,16 @@
 import { Dropdown } from "@/components/molecules/Dropdown/Dropdown";
 import { PostsList } from "@/components/organisms/PostsList/PostsList";
-import { getCategories, getPostsByCategory } from "@/lib/posts";
+import {
+  getCategories,
+  getCategoriesParams,
+  getPostsByCategory,
+} from "@/lib/posts";
 import { getSlug } from "@/utils/getSlug";
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
-  const categories = await getCategories();
-
-  return categories.map((cat) => ({
-    slug: getSlug(cat),
-  }));
+export function generateStaticParams() {
+  return getCategoriesParams();
 }
 
 export default async function TagArchive({

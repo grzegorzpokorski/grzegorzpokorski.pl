@@ -197,3 +197,19 @@ export const getRelatedPosts = async (
     .concat(publishedPostsWithoutCurrent)
     .slice(0, numberOfPostsToReturn);
 };
+
+export const getTagsParams = async () => {
+  const tags = await getTags();
+
+  return tags.map((tag) => ({
+    slug: getSlug(tag),
+  }));
+};
+
+export const getCategoriesParams = async () => {
+  const categories = await getCategories();
+
+  return categories.map((cat) => ({
+    slug: getSlug(cat),
+  }));
+};
