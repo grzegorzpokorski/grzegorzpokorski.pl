@@ -201,15 +201,16 @@ export const getRelatedPosts = async (
 export const getTagsParams = async () => {
   const tags = await getTags();
 
-  return tags.map((tag) => ({
-    slug: getSlug(tag),
-  }));
+  return tags.map((tag) => ({ slug: getSlug(tag) }));
 };
 
 export const getCategoriesParams = async () => {
   const categories = await getCategories();
 
-  return categories.map((cat) => ({
-    slug: getSlug(cat),
-  }));
+  return categories.map((cat) => ({ slug: getSlug(cat) }));
+};
+
+export const getPostsParams = async () => {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({ slug: post.frontmatter.slug }));
 };
