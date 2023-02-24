@@ -1,10 +1,6 @@
 import { Dropdown } from "@/components/molecules/Dropdown/Dropdown";
 import { PostsList } from "@/components/organisms/PostsList/PostsList";
-import { getCategories, getPostsParams, getPublishedPosts } from "@/lib/posts";
-
-export function generateStaticParams() {
-  return getPostsParams();
-}
+import { getCategories, getPublishedPosts } from "@/lib/posts";
 
 export default async function Blog() {
   const categories = await getCategories();

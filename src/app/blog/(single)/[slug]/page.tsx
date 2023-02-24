@@ -1,5 +1,11 @@
 import { SinglePost } from "@/components/templates/SinglePost/SinglePost";
-import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
+import { getPostBySlug, getPostsParams, getRelatedPosts } from "@/lib/posts";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getPostsParams();
+}
 
 export default async function BlogPost({
   params: { slug },
