@@ -1,3 +1,5 @@
+"use client";
+
 import { twMerge } from "tailwind-merge";
 import { useState, useRef, useCallback } from "react";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
@@ -6,10 +8,13 @@ import { useOnKeydown } from "@/hooks/useOnKeydown";
 
 type Props = {
   categories: string[];
-  initialDropdownValue: string;
+  initialDropdownValue?: string;
 };
 
-export const Dropdown = ({ categories, initialDropdownValue }: Props) => {
+export const Dropdown = ({
+  categories,
+  initialDropdownValue = "Wszystkie kategorie",
+}: Props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const closeDropdown = () => {
