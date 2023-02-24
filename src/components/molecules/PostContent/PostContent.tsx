@@ -1,3 +1,5 @@
+"use client";
+
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Image, { ImageProps } from "next/image";
 import { Link } from "@/components/atoms/Link/Link";
@@ -38,7 +40,7 @@ export const PostContent = ({ source, slug, title }: PostContentProps) => {
     <article className="pb-16">
       <div className="container px-3 mx-auto">
         <div className="w-full lg:w-7/12 prose dark:prose-invert max-w-none mx-auto">
-          {/* <MDXRemote {...source} components={components} /> */}
+          <MDXRemote {...source} components={components} />
         </div>
         <footer className="w-full lg:w-7/12 mx-auto mt-16 pt-8 border-t-2 border-light-green dark:border-zinc-700 flex flex-col lg:flex-row gap-6 items-center">
           <p className="font-bold text-zinc-800 dark:text-zinc-200">
