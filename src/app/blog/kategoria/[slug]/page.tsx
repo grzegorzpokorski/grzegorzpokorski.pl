@@ -9,7 +9,7 @@ export async function generateStaticParams() {
   const categories = await getCategories();
 
   return categories.map((cat) => ({
-    slug: cat,
+    slug: getSlug(cat),
   }));
 }
 

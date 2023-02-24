@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   const tags = await getTags();
 
   return tags.map((tag) => ({
-    slug: tag,
+    slug: getSlug(tag),
   }));
 }
 
