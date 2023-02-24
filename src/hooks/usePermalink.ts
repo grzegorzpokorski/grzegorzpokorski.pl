@@ -1,9 +1,10 @@
+"use client";
+
 import { siteUrl } from "@/content/seo";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export const usePermalink = () => {
-  const router = useRouter();
-  const { asPath: path } = router;
+  const path = usePathname();
 
   if (path === "/") {
     return siteUrl;

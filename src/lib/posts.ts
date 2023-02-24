@@ -10,6 +10,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 import "dayjs/locale/pl";
+import { siteUrl } from "@/content/seo";
 dayjs.locale("pl");
 
 const postsDir = path.join(process.cwd(), "src/content/posts");
@@ -90,11 +91,9 @@ export const getPublishedPosts = async () => {
   return posts.filter((post) => post.frontmatter.published === true);
 };
 
-export const getCategories = async () => {
+export const getPostsParams = async () => {
   const posts = await getPublishedPosts();
-  const categories = new Set(posts.map((post) => post.frontmatter.category));
-
-  return Array.from(categories);
+  return posts.map((post) => ({ slug: post.frontmatter.slug }));
 };
 
 export const getTags = async () => {
@@ -104,18 +103,58 @@ export const getTags = async () => {
   return Array.from(tags);
 };
 
+export const getTagsParams = async () => {
+  const tags = await getTags();
+
+  return tags.map((tag) => ({ slug: getSlug(tag) }));
+};
+
+export const getTagBySlug = async (slug: string) => {
+  const tags = await getTags();
+  const fullTagName = tags.find((tag) => getSlug(tag) === slug);
+
+  return fullTagName ? fullTagName : slug;
+};
+
 export const getPostsByTag = async (givenTag: string) => {
   const posts = await getPublishedPosts();
-  return posts.filter((post) =>
-    post.frontmatter.tags.map((tag) => getSlug(tag)).includes(givenTag),
-  );
+  return {
+    posts: posts.filter((post) =>
+      post.frontmatter.tags.map((tag) => getSlug(tag)).includes(givenTag),
+    ),
+    tag: await getTagBySlug(givenTag),
+    canonical: `${siteUrl}/blog/tag/${givenTag}`,
+  };
+};
+export const getCategories = async () => {
+  const posts = await getPublishedPosts();
+  const categories = new Set(posts.map((post) => post.frontmatter.category));
+
+  return Array.from(categories);
+};
+
+export const getCategoriesParams = async () => {
+  const categories = await getCategories();
+
+  return categories.map((cat) => ({ slug: getSlug(cat) }));
+};
+
+export const getCategoryBySlug = async (slug: string) => {
+  const categories = await getCategories();
+  const fullCategoryName = categories.find((cat) => getSlug(cat) === slug);
+
+  return fullCategoryName ? fullCategoryName : slug;
 };
 
 export const getPostsByCategory = async (givenCategory: string) => {
   const posts = await getPublishedPosts();
-  return posts.filter(
-    (post) => getSlug(post.frontmatter.category) == givenCategory,
-  );
+  return {
+    posts: posts.filter(
+      (post) => getSlug(post.frontmatter.category) == givenCategory,
+    ),
+    category: await getCategoryBySlug(givenCategory),
+    canonical: `${siteUrl}/blog/kategoria/${givenCategory}`,
+  };
 };
 
 export const getRelatedPostsByCategory = async (
@@ -196,21 +235,4 @@ export const getRelatedPosts = async (
   return withoutDuplicates
     .concat(publishedPostsWithoutCurrent)
     .slice(0, numberOfPostsToReturn);
-};
-
-export const getTagsParams = async () => {
-  const tags = await getTags();
-
-  return tags.map((tag) => ({ slug: getSlug(tag) }));
-};
-
-export const getCategoriesParams = async () => {
-  const categories = await getCategories();
-
-  return categories.map((cat) => ({ slug: getSlug(cat) }));
-};
-
-export const getPostsParams = async () => {
-  const posts = await getPublishedPosts();
-  return posts.map((post) => ({ slug: post.frontmatter.slug }));
 };

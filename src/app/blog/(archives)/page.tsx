@@ -1,7 +1,17 @@
 import { Dropdown } from "@/components/molecules/Dropdown/Dropdown";
 import { PostsList } from "@/components/organisms/PostsList/PostsList";
 import { getCategories, getPublishedPosts } from "@/lib/posts";
+import type { Metadata } from "next";
+import { getMetadata } from "@/utils/getMetadata";
+import { siteUrl } from "@/content/seo";
 
+export function generateMetadata(): Metadata {
+  return getMetadata({
+    article: false,
+    title: "Blog",
+    canonical: `${siteUrl}/blog`,
+  });
+}
 export default async function Blog() {
   const categories = await getCategories();
   const posts = await getPublishedPosts();
