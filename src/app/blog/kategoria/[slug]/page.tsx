@@ -3,6 +3,14 @@ import { PostsList } from "@/components/organisms/PostsList/PostsList";
 import { getCategories, getPostsByCategory } from "@/lib/posts";
 import { getSlug } from "@/utils/getSlug";
 
+export async function generateStaticParams() {
+  const categories = await getCategories();
+
+  return categories.map((cat) => ({
+    slug: cat,
+  }));
+}
+
 export default async function TagArchive({
   params: { slug },
 }: {

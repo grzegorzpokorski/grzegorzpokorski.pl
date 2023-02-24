@@ -2,6 +2,14 @@ import { PostsList } from "@/components/organisms/PostsList/PostsList";
 import { getPostsByTag, getTags } from "@/lib/posts";
 import { getSlug } from "@/utils/getSlug";
 
+export async function generateStaticParams() {
+  const tags = await getTags();
+
+  return tags.map((tag) => ({
+    slug: tag,
+  }));
+}
+
 export default async function TagArchive({
   params: { slug },
 }: {
