@@ -1,4 +1,3 @@
-import { Link } from "@/components/atoms/Link/Link";
 import { getSlug } from "@/utils/getSlug";
 
 type HeadingProps = {
