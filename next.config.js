@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: true,
     fontLoaders: [
       {
-        loader: "@next/font/google",
+        loader: "next/font/google",
         options: { subsets: ["latin", "latin-ext"] },
       },
     ],
