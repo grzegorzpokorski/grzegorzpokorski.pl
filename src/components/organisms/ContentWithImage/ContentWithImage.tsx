@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
-import { getIDFromString } from "@/utils/getIDFromString";
 import { twMerge } from "tailwind-merge";
 import { Link } from "@/components/atoms/Link/Link";
 import { Section } from "@/components/molecules/Section/Section";
 import { Container } from "@/components/atoms/Container/Container";
 import { Header } from "@/components/atoms/Header/Header";
+import { getSlug } from "@/utils/getSlug";
 
 type ContentWithImageProps = {
   subtitle: string;
@@ -30,7 +30,7 @@ export const ContentWithImage = ({
   className,
 }: ContentWithImageProps) => {
   return (
-    <Section id={getIDFromString(title)} className={className}>
+    <Section id={getSlug(title)} className={className}>
       <Container
         className={twMerge(
           "flex flex-col gap-3 items-center",
