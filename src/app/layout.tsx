@@ -10,7 +10,6 @@ import { Metadata } from "next";
 import { getMetadata } from "@/utils/getMetadata";
 import { siteName } from "@/content/seo";
 const rubik = Rubik({
-  subsets: ["latin", "latin-ext"],
   variable: "--font-rubik",
 });
 
