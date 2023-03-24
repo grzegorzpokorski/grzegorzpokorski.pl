@@ -5,13 +5,8 @@ import { z } from "zod";
 import { Post } from "@/types";
 import { getPlaiceholder } from "plaiceholder";
 import { getSlug } from "@/utils/getSlug";
-
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-dayjs.extend(customParseFormat);
-import "dayjs/locale/pl";
 import { siteUrl } from "@/content/seo";
-dayjs.locale("pl");
+import { getISODateFromPublicatedDate } from "@/utils/getISODateFromPublicationDate";
 
 const postsDir = path.join(process.cwd(), "src/content/posts");
 
@@ -76,10 +71,10 @@ export const getAllPosts = async () => {
     slugs.map(async (slug) => await getPostBySlug(slug)),
   );
   const postSortedByDate = posts.sort((a, b) => {
-    const first = dayjs(a.frontmatter.date, "YYYY.MM.DD");
-    const second = dayjs(b.frontmatter.date, "YYYY.MM.DD");
+    const first = getISODateFromPublicatedDate(a.frontmatter.date);
+    const second = getISODateFromPublicatedDate(b.frontmatter.date);
 
-    return first.isBefore(second) ? 1 : -1;
+    return first < second ? 1 : -1;
   });
 
   return postSortedByDate;

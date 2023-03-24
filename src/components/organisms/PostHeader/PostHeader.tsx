@@ -1,14 +1,10 @@
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-dayjs.extend(customParseFormat);
-import "dayjs/locale/pl";
-dayjs.locale("pl");
-
 import slugify from "slugify";
 import { PostFrontmatter } from "@/types";
 import { Link } from "@/components/atoms/Link/Link";
 import Image from "next/image";
 import { TagsList } from "@/components/molecules/TagsList/TagsList";
+import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
+import { getFormatedPublicationDate } from "@/utils/getFormatedPublicationDate";
 
 export const PostHeader = ({
   category,
@@ -35,8 +31,8 @@ export const PostHeader = ({
               className="inline-block w-12 h-0.5 bg-zinc-800 dark:bg-zinc-200"
               aria-hidden="true"
             ></span>
-            <time dateTime={dayjs(date, "YYYY.MM.DD").format("YYYY-MM-DD")}>
-              {dayjs(date, "YYYY.MM.DD").locale("pl").format("DD MMMM YYYY")}
+            <time dateTime={getISOStringFromPublicationDate(date)}>
+              {getFormatedPublicationDate(date)}
             </time>
           </span>
           <h1 className="font-bold text-3xl md:text-4xl">{title}</h1>

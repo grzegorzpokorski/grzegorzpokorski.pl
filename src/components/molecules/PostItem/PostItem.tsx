@@ -3,11 +3,8 @@ import { FaCalendarDay, FaTag } from "react-icons/fa";
 import Link from "next/link";
 import { PostFrontmatter } from "@/types";
 import { getSlug } from "@/utils/getSlug";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-dayjs.extend(customParseFormat);
-import "dayjs/locale/pl";
-dayjs.locale("pl");
+import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
+import { getFormatedPublicationDate } from "@/utils/getFormatedPublicationDate";
 
 type PostItemPops = PostFrontmatter & {
   titleAs?: "h1" | "h2" | "h3";
@@ -48,11 +45,11 @@ export const PostItem = ({
               {category}
             </Link>
             <time
-              dateTime={dayjs(date, "YYYY.MM.DD").format("YYYY-MM-DD")}
+              dateTime={getISOStringFromPublicationDate(date)}
               className="flex flex-row items-center"
             >
               <FaCalendarDay className="mr-2 text-green-500" />
-              {dayjs(date, "YYYY.MM.DD").format("DD MMMM YYYY")}
+              {getFormatedPublicationDate(date)}
             </time>
           </div>
           <Link
