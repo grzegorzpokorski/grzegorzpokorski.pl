@@ -1,4 +1,3 @@
-// @todo implement when Next.js team will create new error page to handle errors
 import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Hero } from "@/components/molecules/Hero/Hero";
