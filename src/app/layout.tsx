@@ -11,6 +11,7 @@ import { getMetadata } from "@/utils/getMetadata";
 import { siteName } from "@/content/seo";
 const rubik = Rubik({
   variable: "--font-rubik",
+  subsets: ["latin", "latin-ext"],
 });
 
 export function generateMetadata(): Metadata {
