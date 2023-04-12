@@ -6,7 +6,7 @@ export const SocialMenu = ({ className }: { className?: string }) => (
   <ul className={twMerge("list-none p-0 m-0 flex flex-row gap-6", className)}>
     {socialLinks.map(({ label, href, icon: Icon }) => (
       <li key={label}>
-        <Link href={href} className="hover:text-green-500 transition-colors">
+        <Link href={href} buttonStyle="social-menu-link">
           <>
             <span className="sr-only">{label}</span>
             <Icon aria-hidden="true" />

@@ -1,4 +1,4 @@
-import { Link } from "@/components/atoms/Link/Link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { menuItems } from "@/content/menu";
 import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
