@@ -3,14 +3,20 @@ import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Section } from "@/components/molecules/Section/Section";
 import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
+import { getSlug } from "@/utils/getSlug";
 import { ContactBanner } from "../ContactBanner/ContactBanner";
 
 export const ContactPage = () => {
   return (
     <Main>
-      <Section className="bg-light-green dark:bg-zinc-800" withMarginOnTop>
+      <Section
+        className="bg-light-green dark:bg-zinc-800"
+        withMarginOnTop
+        ariaLabelledBy={getSlug("Poznajmy się!")}
+      >
         <Header
           title="Poznajmy się!"
+          titleId={getSlug("Poznajmy się!")}
           titleAsH1
           subtitle="Kontakt"
           centered

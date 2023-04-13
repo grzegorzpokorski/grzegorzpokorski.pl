@@ -7,15 +7,21 @@ import { Banner } from "@/components/molecules/Banner/Banner";
 import { Section } from "@/components/molecules/Section/Section";
 import { SectionsWithOffer } from "@/components/templates/Services/Services";
 import { useThemeContext } from "@/providers/ThemeProvider";
+import { getSlug } from "@/utils/getSlug";
 
 export const OfferPage = () => {
   const { theme } = useThemeContext();
   const isDark = theme === "dark";
   return (
     <Main>
-      <Section className="bg-light-green dark:bg-neutral-700" withMarginOnTop>
+      <Section
+        className="bg-light-green dark:bg-neutral-700"
+        withMarginOnTop
+        ariaLabelledBy={getSlug("Poznaj moją ofertę")}
+      >
         <Header
           title="Poznaj moją ofertę"
+          titleId={getSlug("Poznaj moją ofertę")}
           titleAsH1
           subtitle="Oferta"
           centered

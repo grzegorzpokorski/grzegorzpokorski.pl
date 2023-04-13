@@ -37,7 +37,7 @@ export const PostHeader = ({
           </span>
           <h1 className="font-bold text-3xl md:text-4xl">{title}</h1>
           <TagsList tags={tags} />
-          <figure className="w-full h-60 md:h-80 lg:h-[30rem] overflow-hidden relative block mt-4 rounded-md shadow-md">
+          <picture className="w-full h-60 md:h-80 lg:h-[30rem] overflow-hidden relative block mt-4 rounded-md shadow-md">
             <Image
               src={featuredImage}
               width={featuredImage.width}
@@ -47,7 +47,7 @@ export const PostHeader = ({
               sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
               priority
             />
-          </figure>
+          </picture>
         </div>
       </div>
     </header>

@@ -30,7 +30,11 @@ export const ContentWithImage = ({
   className,
 }: ContentWithImageProps) => {
   return (
-    <Section id={getSlug(title)} className={className}>
+    <Section
+      id={getSlug(title)}
+      className={className}
+      ariaLabelledBy={getSlug(title)}
+    >
       <Container
         className={twMerge(
           "flex flex-col gap-3 items-center",
@@ -38,7 +42,7 @@ export const ContentWithImage = ({
         )}
       >
         <div className="w-full md:w-1/2">
-          <Header title={title} subtitle={subtitle} />
+          <Header title={title} titleId={getSlug(title)} subtitle={subtitle} />
           {content && (
             <div className="prose dark:prose-invert mt-6">{content}</div>
           )}

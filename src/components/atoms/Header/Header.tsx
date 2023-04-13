@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 type HeaderProps = {
   subtitle?: string;
   title: string;
+  titleId: string;
   description?: ReactNode;
   centered?: boolean;
   titleAsH1?: boolean;
@@ -14,6 +15,7 @@ type HeaderProps = {
 export const Header = ({
   subtitle,
   title,
+  titleId,
   description,
   centered,
   titleAsH1,
@@ -31,11 +33,17 @@ export const Header = ({
       <span className="uppercase font-bold text-green-500">{subtitle}</span>
     )}
     {titleAsH1 ? (
-      <h1 className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200">
+      <h1
+        className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200"
+        id={titleId}
+      >
         {title}
       </h1>
     ) : (
-      <h2 className="font-bold text-2xl md:text-3xl text-zinc-800 dark:text-zinc-200">
+      <h2
+        className="font-bold text-2xl md:text-3xl text-zinc-800 dark:text-zinc-200"
+        id={titleId}
+      >
         {title}
       </h2>
     )}

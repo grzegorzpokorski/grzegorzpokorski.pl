@@ -1,3 +1,4 @@
+import { getSlug } from "@/utils/getSlug";
 import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
@@ -36,6 +37,7 @@ export const Hero = ({
         className,
       )}
       id="hero"
+      aria-labelledby={getSlug(title)}
     >
       <div
         className={twMerge(
@@ -53,11 +55,17 @@ export const Hero = ({
           )}
         >
           {titleAsH1 ? (
-            <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200">
+            <h1
+              className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200"
+              id={getSlug(title)}
+            >
               {title}
             </h1>
           ) : (
-            <h2 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200">
+            <h2
+              className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200"
+              id={getSlug(title)}
+            >
               {title}
             </h2>
           )}

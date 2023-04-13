@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 type SectionProps = {
   children: ReactNode;
+  ariaLabelledBy: string;
   withMarginOnTop?: boolean;
   className?: string;
   id?: string;
@@ -11,6 +12,7 @@ type SectionProps = {
 
 export const Section = ({
   children,
+  ariaLabelledBy,
   className,
   id,
   withMarginOnTop,
@@ -22,6 +24,7 @@ export const Section = ({
       withMarginOnTop === true && "mt-20 lg:mt-28",
       className,
     )}
+    aria-labelledby={ariaLabelledBy}
   >
     <Container>{children}</Container>
   </section>

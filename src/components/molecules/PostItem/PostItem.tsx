@@ -23,7 +23,7 @@ export const PostItem = ({
     <li className="bg-white dark:bg-zinc-800 drop-shadow-xl border-2 border-light-green dark:border-zinc-600 rounded-md">
       <article>
         <Link href={`/blog/${slug}`} aria-hidden={true} tabIndex={-1}>
-          <figure className="w-full h-72 max-h-72 overflow-hidden relative block rounded-t-md">
+          <picture className="w-full h-72 max-h-72 overflow-hidden relative block rounded-t-md">
             <Image
               src={featuredImage}
               className="object-cover object-center w-full h-full hover:scale-105 transition-all duration-300"
@@ -33,7 +33,7 @@ export const PostItem = ({
               placeholder="blur"
               blurDataURL={featuredImage.base64}
             />
-          </figure>
+          </picture>
         </Link>
         <header className="p-8 pb-0 flex flex-col gap-3 dark:text-zinc-200">
           <div className="flex flex-row gap-4 text-sm">
