@@ -21,8 +21,8 @@ export const PromoPosts = ({
   return (
     <Section
       id={getSlug(title)}
-      className="bg-light-green dark:bg-neutral-700"
       ariaLabelledBy={getSlug(title)}
+      bgColor={{ light: "light-green", dark: "light-gray" }}
     >
       <Header
         title={title}

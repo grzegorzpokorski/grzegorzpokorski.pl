@@ -25,7 +25,6 @@ export const NotFoundPage = () => {
           alt: "zadowoleni klienci przeglądają otrzymany produkt",
           src: NotFoundImage,
         }}
-        withMarginOnTop
       />
     </Main>
   );

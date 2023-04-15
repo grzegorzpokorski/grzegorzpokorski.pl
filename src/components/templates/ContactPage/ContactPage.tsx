@@ -10,9 +10,9 @@ export const ContactPage = () => {
   return (
     <Main>
       <Section
-        className="bg-light-green dark:bg-zinc-800"
-        withMarginOnTop
         ariaLabelledBy={getSlug("Poznajmy się!")}
+        withMarginOnTop
+        bgColor={{ light: "light-green", dark: "dark-gray" }}
       >
         <Header
           title="Poznajmy się!"

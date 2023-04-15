@@ -15,7 +15,7 @@ export const OfferPage = () => {
   return (
     <Main>
       <Section
-        className="bg-light-green dark:bg-neutral-700"
+        bgColor={{ light: "light-green", dark: "light-gray" }}
         withMarginOnTop
         ariaLabelledBy={getSlug("Poznaj moją ofertę")}
       >

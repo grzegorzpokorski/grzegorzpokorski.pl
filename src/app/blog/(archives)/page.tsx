@@ -20,7 +20,10 @@ export default async function Blog() {
     <>
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 pb-16 lg:pb-24">
         <header className="w-full lg:w-8/12 flex flex-col gap-3">
-          <h1 className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200">
+          <h1
+            className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200"
+            id="archive-title"
+          >
             Artykuły, ciekawostki z świata stron internetowych i nie tylko 🔥
           </h1>
         </header>

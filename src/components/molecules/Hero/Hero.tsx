@@ -2,6 +2,7 @@ import { getSlug } from "@/utils/getSlug";
 import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import { Section } from "../Section/Section";
 
 type HeroProps = {
   title: string;
@@ -12,7 +13,6 @@ type HeroProps = {
     alt: string;
   };
   titleAsH1?: boolean;
-  withMarginOnTop?: boolean;
   imageFirst?: boolean;
   className?: string;
   alignToLeftOnMobile?: boolean;
@@ -24,24 +24,20 @@ export const Hero = ({
   links,
   image,
   titleAsH1,
-  withMarginOnTop,
   imageFirst,
-  className,
   alignToLeftOnMobile,
 }: HeroProps) => {
   return (
-    <section
-      className={twMerge(
-        "bg-white dark:bg-zinc-800 py-12 md:py-28",
-        withMarginOnTop ? "mt-20 lg:mt-28" : "",
-        className,
-      )}
+    <Section
+      ariaLabelledBy={getSlug(title)}
       id="hero"
-      aria-labelledby={getSlug(title)}
+      bgColor={{ light: "white", dark: "dark-gray" }}
+      paddingVariant="hero"
+      withMarginOnTop
     >
       <div
         className={twMerge(
-          "container mx-auto px-3 flex flex-col md:flex-row",
+          "flex flex-col md:flex-row",
           imageFirst && "flex-col-reverse md:flex-row-reverse",
           "items-center gap-3",
         )}
@@ -93,6 +89,7 @@ export const Hero = ({
           />
         </picture>
       </div>
-    </section>
+      {/* </section> */}
+    </Section>
   );
 };

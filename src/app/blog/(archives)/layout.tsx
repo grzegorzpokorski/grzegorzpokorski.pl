@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Main } from "@/components/atoms/Main/Main";
-import { Container } from "@/components/atoms/Container/Container";
 import { DefaultBanner } from "@/components/templates/DefaultBanner/DefaultBanner";
+import { Section } from "@/components/molecules/Section/Section";
 
 export default function BlogLayout({
   children,
@@ -10,9 +10,12 @@ export default function BlogLayout({
 }) {
   return (
     <Main withMarginOnTop>
-      <section className="py-16 lg:py-24 bg-light-green dark:bg-neutral-700">
-        <Container>{children}</Container>
-      </section>
+      <Section
+        bgColor={{ light: "light-green", dark: "light-gray" }}
+        ariaLabelledBy="archive-title"
+      >
+        {children}
+      </Section>
       <DefaultBanner />
     </Main>
   );

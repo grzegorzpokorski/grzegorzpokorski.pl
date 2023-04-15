@@ -56,7 +56,6 @@ export const AboutPage = ({ posts }: { posts: Post[] }) => {
           alt: "zadowoleni klienci przeglądają otrzymany produkt",
           src: theme === "dark" ? HeroImageDark : HeroImage,
         }}
-        withMarginOnTop
       />
       <PromoPosts
         title="Najnowsze aktykuły na blogu 🔥"
