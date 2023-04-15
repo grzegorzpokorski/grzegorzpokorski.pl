@@ -1,51 +1,23 @@
 "use client";
 
-import { ReactNode, useState, useEffect, useRef } from "react";
-import { useStickyElement } from "@/hooks/useStickyElement";
-import { useOnClickOutside } from "@/hooks/useOnClickOutside";
+import { ReactNode } from "react";
 import { Logo } from "@/components/molecules/Logo/Logo";
 import { Hamburger } from "@/components/atoms/Hamburger/Hamburger";
 import { MainMenu } from "../MainMenu/MainMenu";
-import { usePathname } from "next/navigation";
+import { useMainHeader } from "./useMainHeader";
 
 type HeaderProps = {
   children?: ReactNode;
 };
 
 export const MainHeader = ({ children }: HeaderProps) => {
-  const [isSticky] = useStickyElement();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const closeMobileMenu = () => {
-    document.body.classList.remove("overflow-hidden", "lg:overflow-y-auto");
-    setIsMobileMenuOpen(false);
-  };
-  const openMobileMenu = () => {
-    document.body.classList.add("overflow-hidden", "lg:overflow-y-auto");
-    setIsMobileMenuOpen(true);
-  };
-  const handleMobileMenu = () => {
-    if (isMobileMenuOpen) {
-      closeMobileMenu();
-    } else {
-      openMobileMenu();
-    }
-  };
-
-  const [isHome, setIsHome] = useState(false);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (pathname === "/") {
-      setIsHome(true);
-    }
-  }, [pathname]);
-
-  const menuContainerRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(
+  const {
+    handleMobileMenu,
+    isHome,
+    isMobileMenuOpen,
+    isSticky,
     menuContainerRef,
-    () => isMobileMenuOpen && closeMobileMenu(),
-  );
+  } = useMainHeader();
 
   return (
     <header>
