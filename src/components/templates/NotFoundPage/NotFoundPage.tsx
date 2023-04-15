@@ -26,7 +26,6 @@ export const NotFoundPage = () => {
           src: NotFoundImage,
         }}
         withMarginOnTop
-        className="bg-white"
       />
     </Main>
   );
