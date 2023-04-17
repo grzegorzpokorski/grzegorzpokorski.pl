@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 type MainProps = {
@@ -8,10 +8,7 @@ type MainProps = {
 
 export const Main = ({ children, withMarginOnTop }: MainProps) => {
   return (
-    <main
-      id="tresc"
-      className={twMerge(withMarginOnTop ? "mt-20 lg:mt-28" : "")}
-    >
+    <main id="tresc" className={twMerge(withMarginOnTop && "mt-20 lg:mt-28")}>
       {children}
     </main>
   );
