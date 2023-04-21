@@ -26,7 +26,7 @@ W dalszej części omówię kilka ważnych aspektów projektowania stron interne
 
 Każda strona internetowa jest pewnego rodzaju dokumentem. Dokumenty zwyczajowo mają tytuł, sekcje, jasno wyszczególnione nagłówki, różnego rodzaju listy. Semantyczny kod HTML to właśnie nic innego jak kod, który możliwie jak najwierniej odzwierciedla strukturę naszej strony, aby poszczególne składowe można było bez wysiłku rozpoznać jaką pełnią funkcję nawet w sytuacji, gdy nie są ostylowane.
 
-Stosowanie semantycznych znaczników takich, jak `section`, `header`, `article`, `aside`, `nav`, `figure`, `footer` `blockquote`, `ul` - jeśli tylko zostają użyte we właściwy sposób - znacząco ułatwiają korzystanie ze strony internetowej osobom, które używają czytników ekranowych. Przyczynia się to również do poprawy SEO oraz czytelności samego kodu — nie błądzimy wzrokiem po tak samo wyglądających "divach", dzięki czemu praca nad stroną jest przyjemniejsza.
+Stosowanie semantycznych znaczników takich, jak `section`, `header`, `article`, `aside`, `nav`, `figure`, `footer` `blockquote`, `ul` — jeśli tylko zostają użyte we właściwy sposób — znacząco ułatwiają korzystanie ze strony internetowej osobom, które używają czytników ekranowych. Przyczynia się to również do poprawy SEO oraz czytelności samego kodu — nie błądzimy wzrokiem po tak samo wyglądających "divach", dzięki czemu praca nad stroną jest przyjemniejsza.
 
 Więcej na ten temat znajdziesz tu:
 
@@ -49,16 +49,16 @@ Wiecej na temat nagłówków znajdziesz:
 
 ## Label w formularzach
 
-Mało która strona nie posiada choćby jednego formularza czy to logowania, zapisu do newslettera, albo kontaktowego. Istotne jest, aby zadbać o to, aby użytkownik wiedział, co ma wpisać w dane pole. Do tego służy znacznik `label` który po powiązaniu z danym polem jednoznacznie informuje użytkownika, co ma się w nim znaleźć.
+Mało która strona nie posiada choćby jednego formularza czy to logowania, zapisu do newslettera, albo kontaktowego. Istotne jest, aby zadbać o to, aby użytkownik wiedział, co ma wpisać w dane pole. Do tego służy znacznik `label`, który po powiązaniu z danym polem jednoznacznie informuje użytkownika, co ma się w nim znaleźć.
 
 W swojej prostej funkcji jest on praktycznie niezastąpiony, a mimo to często spotyka się formularze, które ich nie posiadają. Jeśli zależy nam, aby nie psuć designu formularza można go zwyczajnie ukryć, korzystając z CSS, choć nie jest to zalecane — o ile czytniki ekranowe poprawnie odczytają etykietę i podadzą informację co, powinno się znaleźć w danym polu, to użytkownicy korzystający z ekranu mogą poczuć się zdezorientowani.
 
-Warto wspomnieć, że atrybut `placeholder` nie może zastąpić znacznika `label`. O to kilka powodw dlaczego:
+Warto wspomnieć, że atrybut `placeholder` nie może zastąpić znacznika `label`. O to kilka powodów dlaczego:
 
-- `placeholder` który posiada kolor za nardzo zbliżony do koloru tekstu wpisanego do tego pola, może zostać mylnie odebrany przez użytkownika jako wypełnione pole i zostać pominięte;
-- `placeholder` znika po wpisaniu treści do pola, przez co wracając do niego możemy zapomnieć co powinno sie znaleźć w danym polu, jeśli nie posiada ono etykiety (`label`).
+- `placeholder`, który posiada kolor za bardzo zbliżony do koloru tekstu wpisanego do tego pola, może zostać mylnie odebrany przez użytkownika jako wypełnione pole i zostać pominięte;
+- `placeholder` znika po wpisaniu treści do pola, przez co wracając do niego, możemy zapomnieć, co powinno sie znaleźć w danym polu, jeśli nie posiada ono etykiety (`label`).
 
-Jeśli chcesz zgłębić temat tworzenia dostępnych formularzy zachecam do odwiedzenia [tego artykułu od webAIM.org](https://webaim.org/techniques/forms/controls)
+Jeśli chcesz zgłębić temat tworzenia dostępnych formularzy zachęcam do odwiedzenia [tego artykułu od webAIM.org](https://webaim.org/techniques/forms/controls)
 
 ## Focus — czyli nawigacja klawiaturą
 
@@ -66,11 +66,11 @@ Nawigowanie klawiaturą po stronie powinno być tak samo przyjemne, jak nawigowa
 
 ## Odpowiedni kontrast
 
-Projektując dostępną stronę internetową warto zadbać, aby poszczególne elementy posiadały dobry kontrast. To co na przysłowiowy pierwszy rzut oka może wyglądać ładnie, może okazać sie nie dostępne. Najlepiej ilustruje to poniższy obraz:
+Projektując dostępną stronę internetową, warto zadbać, aby poszczególne elementy posiadały dobry kontrast. To, co na przysłowiowy pierwszy rzut oka może wyglądać ładnie, może okazać się niedostępne. Najlepiej ilustruje to poniższy obraz:
 
 ![obraz prezentuje stronę z czarnym tłem, nagłówkami koloru białego oraz tekstem w ciemnym szarym kolorze](/images/posts/dostepnosc-w-kilku-krokach/low-contrast-ratio-example.png)
 
-Jak można łatwo zauważyć, kolor nagłówków bardzo dobrze kontrastuje z czarnym tłem. Co innego można powiedzieć o kolorze tekstu pod nagłówkami oraz listy. To bardzo skrajny przykład i czasami to czy dany element posiada wystarczający kontrast, jest trudne do ocenienia na oko. Polecam wspomagać się narzędziami takimi jak to: [WebAIM color checker](https://webaim.org/resources/contrastchecker/), które na podstawie dostarczonych kolorów określa współczynnik kontrastu oraz daje natychmiastową informację czy i jakie standardy spełnia.
+Jak można łatwo zauważyć, kolor nagłówków bardzo dobrze kontrastuje z czarnym tłem. Co innego można powiedzieć o kolorze tekstu pod nagłówkami oraz kolorze elementów listy po lewo. To bardzo skrajny przykład i czasami to czy dany element posiada wystarczający kontrast, jest trudne do ocenienia na oko. Polecam wspomagać się narzędziami takimi jak to: [WebAIM color checker](https://webaim.org/resources/contrastchecker/), które na podstawie dostarczonych kolorów określa współczynnik kontrastu oraz daje natychmiastową informację czy i jakie standardy spełnia.
 
 Dobry kontrast to również **dobór odpowiedniej czcionki**, która nie jest zbyć wąska, aby można było ją wygodnie czytać. Zaleca się ograniczenie ilości krojów czcionki na stronie do dwóch. Odpowiednia wielkość odstępu od poszczególnych linii tekstu czy liter oraz wyrazów nie pozwala na "zlewanie się" tekstu w jedną trudną do odczytania całość. Warto zadbać o takie szczegóły. Uniwersalną praktyką jest to, aby stosować proporcjonalnie coraz większą interlinię wraz ze zmniejszaniem rozmiaru fontu.
 
@@ -78,13 +78,13 @@ Dobry kontrast to również **dobór odpowiedniej czcionki**, która nie jest zb
 
 ## Nie przesadzajmy z animacjami
 
-Animacje potrafią upiększyć i wnieść życie do naszych stron internetowych. Na przykład płynne przejścia podczas otwierania menu, modali itp. sprawiają, że korzystanie z interfejsu naszej aplikacji jest przyjemniejsze. Niektórzy jednak nie lubią animacji, bo wolą skupić się na treści i nie chca zbędnych rozpraszaczy. Inni unikają animacji ze względów zdrowotnych (np. osoby neuroatopowe). Tak czy inaczej powinniśmy w naszej stronie internetowej uwzględnić **respektowanie ustawień użytkownika** dotyczacych redukcji animacji.
+Animacje potrafią upiększyć i wnieść życie do naszych stron internetowych. Na przykład płynne przejścia podczas otwierania menu, modali itp. sprawiają, że korzystanie z interfejsu naszej aplikacji jest przyjemniejsze. Niektórzy jednak nie lubią animacji, bo wolą skupić się na treści i nie chcą zbędnych rozpraszaczy. Inni unikają animacji ze względów zdrowotnych (np. osoby neuroatypowe). Tak czy inaczej, powinniśmy w naszej stronie internetowej uwzględnić **respektowanie ustawień użytkownika** dotyczących redukcji animacji.
 
-Projektujac animacje **dostosowywujmy ich zachowanie**, aby uwzględnić różne rodzaje urządzeń na których bedzie udostepniona nasza aplikacja / strona internetowa. Najprostszy przyklad, dlaczego jest to istotne to fakt, że na urządzeniach mobilnych użytkownicy nie maja do dyspozycji kursora, a przewijanie strony odbywa sie w zupelnie inny sposób niż ma to miejsce na komputerze.
+Projektując animacje, starajmy się **dostosować ich zachowanie**, aby uwzględnić różne rodzaje urządzeń, na których będzie udostępniona nasza aplikacja / strona internetowa. Najprostszy przykład, dlaczego jest to istotne to fakt, że na urządzeniach mobilnych użytkownicy nie mają do dyspozycji kursora, a przewijanie strony odbywa się w zupełnie inny sposób niż ma to miejsce na komputerze.
 
 ## Prostota przekazu
 
-Podczas redagowania treści koniecznie posługuj się jezykiem możliwie jak najbardziej zrozumialym i prostym, aby każdy mógł bez problemu je zrozumieć. Stosuj uniwersalne przyklady, by mieć pewność, że twoje intencje zostana odczytane we właściwy sposób. Stosowanie języka neutralniego płuciowo sprawi, że pisane przez Ciebie artykuły będą odbierane bardziej osobiście przez osoby, które je czytają.
+Podczas redagowania treści koniecznie posługuj się językiem możliwie jak najbardziej zrozumiałym i prostym, aby każdy mógł bez problemu je zrozumieć. Stosuj uniwersalne przykłady, by mieć pewność, że twoje intencje zostaną odczytane we właściwy sposób. Stosowanie języka neutralnego płciowo sprawi, że pisane przez Ciebie artykuły będą odbierane bardziej osobiście przez osoby, które je czytają.
 
 ## Podsumowanie
 
