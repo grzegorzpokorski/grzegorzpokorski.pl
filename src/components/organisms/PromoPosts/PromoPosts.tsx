@@ -3,6 +3,7 @@ import { Link } from "@/components/atoms/Link/Link";
 import { Section } from "@/components/molecules/Section/Section";
 import { Post } from "@/types";
 import { getSlug } from "@/utils/getSlug";
+import { useId } from "react";
 import { PostsList } from "../PostsList/PostsList";
 
 type PromoPostsProps = {
@@ -18,15 +19,17 @@ export const PromoPosts = ({
   posts,
   link,
 }: PromoPostsProps) => {
+  const sectionID = useId();
+  const sectionTitleId = `${sectionID}-${getSlug(title)}`;
   return (
     <Section
-      id={getSlug(title)}
-      ariaLabelledBy={getSlug(title)}
+      id={sectionID}
+      ariaLabelledBy={sectionTitleId}
       bgColor={{ light: "light-green", dark: "light-gray" }}
     >
       <Header
         title={title}
-        titleId={getSlug(title)}
+        titleId={sectionTitleId}
         subtitle={subtitle}
         className="pb-16 lg:pb-24"
       />
