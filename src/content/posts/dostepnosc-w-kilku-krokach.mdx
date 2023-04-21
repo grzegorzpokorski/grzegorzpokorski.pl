@@ -30,13 +30,13 @@ Stosowanie semantycznych znaczników takich, jak `section`, `header`, `article`,
 
 Więcej na ten temat znajdziesz tu:
 
-- [semantic — web.dev](https://web.dev/learn/html/semantic-html/),
+- [semantic HTML — web.dev](https://web.dev/learn/html/semantic-html/),
 - [Semantyczny blog w HTML — comandeer.pl](https://tutorials.comandeer.pl/html5-blog.html),
 - [Dostępność - projektowanie i semantyczny HTML — frontlive.pl](https://frontlive.pl/blog/dostepnosc-semantyczny-html#dostepnosc-a-html).
 
 ## Właściwa hierarchia nagłówków
 
-Nagłówki bardzo często wykorzystywane są do nawigowania po stronie przez osoby korzystające z czytników ekranowych.
+Nagłówki bardzo często wykorzystywane są do nawigowania po stronie przez osoby korzystające z technologii asystujących.
 
 Ważne jest zatem zrozumienie, że poziom nagłówka nie powinien być powiązany z jego wizualnym rozmiarem. Przypisywanie rozmiaru czcionki do poszczególnych poziomów nagłówków na sztywno może w przyszłości generować dodatkową pracę, przy dostosowywaniu ich do designu lub generować pokusę do porzucenia stosowania właściwego porządku poziomów nagłówków na stronie.
 
@@ -45,13 +45,13 @@ Właściwie zachowana hierarchia nagłówków daje również taką korzyść, ż
 Wiecej na temat nagłówków znajdziesz:
 
 - [na stronie a11project.com](https://www.a11yproject.com/posts/how-to-accessible-heading-structure/),
-- [w artykiule od comandeer.pl](https://blog.comandeer.pl/o-naglowkach-slow-kilka.html).
+- [w artykule od comandeer.pl](https://blog.comandeer.pl/o-naglowkach-slow-kilka.html).
 
 ## Label w formularzach
 
 Mało która strona nie posiada choćby jednego formularza czy to logowania, zapisu do newslettera, albo kontaktowego. Istotne jest, aby zadbać o to, aby użytkownik wiedział, co ma wpisać w dane pole. Do tego służy znacznik `label`, który po powiązaniu z danym polem jednoznacznie informuje użytkownika, co ma się w nim znaleźć.
 
-W swojej prostej funkcji jest on praktycznie niezastąpiony, a mimo to często spotyka się formularze, które ich nie posiadają. Jeśli zależy nam, aby nie psuć designu formularza można go zwyczajnie ukryć, korzystając z CSS, choć nie jest to zalecane — o ile czytniki ekranowe poprawnie odczytają etykietę i podadzą informację co, powinno się znaleźć w danym polu, to użytkownicy korzystający z ekranu mogą poczuć się zdezorientowani.
+W swojej prostej funkcji jest on praktycznie niezastąpiony, a mimo to często spotyka się formularze, które ich nie posiadają. Jeśli zależy nam, aby nie psuć designu formularza można go [zwyczajnie ukryć](https://webaim.org/techniques/css/invisiblecontent/), korzystając z CSS, choć nie jest to zalecane — o ile czytniki ekranowe poprawnie odczytają etykietę i podadzą informację co, powinno się znaleźć w danym polu, to użytkownicy korzystający z ekranu mogą poczuć się zdezorientowani.
 
 Warto wspomnieć, że atrybut `placeholder` nie może zastąpić znacznika `label`. O to kilka powodów dlaczego:
 
@@ -66,7 +66,7 @@ Nawigowanie klawiaturą po stronie powinno być tak samo przyjemne, jak nawigowa
 
 ## Odpowiedni kontrast
 
-Projektując dostępną stronę internetową, warto zadbać, aby poszczególne elementy posiadały dobry kontrast. To, co na przysłowiowy pierwszy rzut oka może wyglądać ładnie, może okazać się niedostępne. Najlepiej ilustruje to poniższy obraz:
+Projektując dostępną stronę internetową, warto dopilnować, aby poszczególne elementy posiadały dobry kontrast. To, co na przysłowiowy pierwszy rzut oka może wyglądać ładnie, może okazać się niedostępne. Najlepiej ilustruje to poniższy obraz:
 
 ![obraz prezentuje stronę z czarnym tłem, nagłówkami koloru białego oraz tekstem w ciemnym szarym kolorze](/images/posts/dostepnosc-w-kilku-krokach/low-contrast-ratio-example.png)
 
@@ -78,7 +78,7 @@ Dobry kontrast to również **dobór odpowiedniej czcionki**, która nie jest zb
 
 ## Nie przesadzajmy z animacjami
 
-Animacje potrafią upiększyć i wnieść życie do naszych stron internetowych. Na przykład płynne przejścia podczas otwierania menu, modali itp. sprawiają, że korzystanie z interfejsu naszej aplikacji jest przyjemniejsze. Niektórzy jednak nie lubią animacji, bo wolą skupić się na treści i nie chcą zbędnych rozpraszaczy. Inni unikają animacji ze względów zdrowotnych (np. osoby neuroatypowe). Tak czy inaczej, powinniśmy w naszej stronie internetowej uwzględnić **respektowanie ustawień użytkownika** dotyczących redukcji animacji.
+Animacje potrafią upiększyć i wnieść życie do naszych stron internetowych. Na przykład płynne przejścia podczas otwierania menu, modali itp. sprawiają, że korzystanie z interfejsu naszej aplikacji jest przyjemniejsze. Niektórzy jednak nie lubią animacji, bo wolą skupić się na treści i nie chcą zbędnych rozpraszaczy. Inni unikają animacji ze względów zdrowotnych (np. osoby neuroatypowe). Tak czy inaczej, powinniśmy w naszej stronie internetowej uwzględnić **respektowanie [ustawień użytkownika](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)** dotyczących redukcji animacji.
 
 Projektując animacje, starajmy się **dostosować ich zachowanie**, aby uwzględnić różne rodzaje urządzeń, na których będzie udostępniona nasza aplikacja / strona internetowa. Najprostszy przykład, dlaczego jest to istotne to fakt, że na urządzeniach mobilnych użytkownicy nie mają do dyspozycji kursora, a przewijanie strony odbywa się w zupełnie inny sposób niż ma to miejsce na komputerze.
 
