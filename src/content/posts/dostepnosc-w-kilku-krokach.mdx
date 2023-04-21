@@ -29,9 +29,10 @@ Każda strona internetowa jest pewnego rodzaju dokumentem. Dokumenty zwyczajowo 
 Stosowanie semantycznych znaczników takich, jak `section`, `header`, `article`, `aside`, `nav`, `figure`, `footer` `blockquote`, `ul` - jeśli tylko zostają użyte we właściwy sposób z atrybutami `aria` znacząco ułatwiają korzystanie ze strony internetowej osobom, które używają czytników ekranowych. Przyczynia się to również do poprawy SEO oraz czytelności samego kodu — nie błądzimy wzrokiem po tak samo wyglądających "divach", dzięki czemu praca nad stroną jest przyjemniejsza.
 
 Więcej na ten temat znajdziesz tu:
-- [semantic - web.dev](https://web.dev/learn/html/semantic-html/),
-- [Semantyczny blog w HTML - comandeer.pl](https://tutorials.comandeer.pl/html5-blog.html),
-- [Dostępność - projektowanie i semantyczny HTML - frontlive.pl](https://frontlive.pl/blog/dostepnosc-semantyczny-html#dostepnosc-a-html)
+
+- [semantic — web.dev](https://web.dev/learn/html/semantic-html/),
+- [Semantyczny blog w HTML — comandeer.pl](https://tutorials.comandeer.pl/html5-blog.html),
+- [Dostępność - projektowanie i semantyczny HTML — frontlive.pl](https://frontlive.pl/blog/dostepnosc-semantyczny-html#dostepnosc-a-html).
 
 ## Właściwa hierarchia nagłówków
 
@@ -41,7 +42,10 @@ Ważne jest zatem zrozumienie, że poziom nagłówka nie powinien być powiązan
 
 Właściwie zachowana hierarchia nagłówków daje również taką korzyść, że w prosty sposób można na ich podstawie wygenerować mapę strony. Taka strona dobrze wygląda również w różnych agregatorach treści, czytnikach upraszczających widok strony czy kanałach RRS.
 
-Wiecej na temat nagłówków dowiesz sie [znajdziesz na stronie a11project.com](https://www.a11yproject.com/posts/how-to-accessible-heading-structure/)
+Wiecej na temat nagłówków znajdziesz:
+
+- [na stronie a11project.com](https://www.a11yproject.com/posts/how-to-accessible-heading-structure/),
+- [w artykiule od comandeer.pl](https://blog.comandeer.pl/o-naglowkach-slow-kilka.html).
 
 ## Label w formularzach
 
@@ -50,16 +54,15 @@ Mało która strona nie posiada choćby jednego formularza czy to logowania, zap
 W swojej prostej funkcji jest on praktycznie niezastąpiony, a mimo to często spotyka się formularze, które ich nie posiadają. Jeśli zależy nam, aby nie psuć designu formularza można go zwyczajnie ukryć, korzystając z CSS, choć nie jest to zalecane — o ile czytniki ekranowe poprawnie odczytają etykietę i podadzą informację co, powinno się znaleźć w danym polu, to użytkownicy korzystający z ekranu mogą poczuć się zdezorientowani.
 
 Warto wspomnieć, że atrybut `placeholder` nie może zastąpić znacznika `label`. O to kilka powodw dlaczego:
-- `placeholder` który posiada kolor za nardzo zbliżony do koloru tekstu wpisanego do tego pola, może zostać mylnie odebrany przez użytkownika jako wypełnione pole i zostać pominięte; 
+
+- `placeholder` który posiada kolor za nardzo zbliżony do koloru tekstu wpisanego do tego pola, może zostać mylnie odebrany przez użytkownika jako wypełnione pole i zostać pominięte;
 - `placeholder` znika również po wpisaniu treści do pola, przez co wracając do niego możemy zapomnieć co powinno sie znaleźć w danym polu, jeśli nie posiada ono etykiety (`label`).
 
 Jeśli chcesz zgłębić temat tworzenia dostępnych formularzy zachecam do odwiedzenia [tego artykułu od webAIM.org](https://webaim.org/techniques/forms/controls)
 
 ## Focus — czyli nawigacja klawiaturą
 
-Nawigowanie klawiaturą po stronie powinno być tak samo przyjemne, jak nawigowanie klikając np. myszką. Zadbaj zatem, aby wszystkie elementy sterujące, odsyłające do innych podstron czy wyzwalające jakąś inną akcję na stronie były dobrze wi
-
-oczne przy operowaniu klawiaturą.
+Nawigowanie klawiaturą po stronie powinno być tak samo przyjemne, jak nawigowanie klikając np. myszką. Zadbaj zatem, aby wszystkie elementy sterujące, odsyłające do innych podstron czy wyzwalające jakąś inną akcję na stronie były dobrze widoczne przy operowaniu klawiaturą.
 
 ## Odpowiedni kontrast
 
@@ -69,7 +72,9 @@ Projektując dostępną stronę internetową warto pamiętać, aby poszczególne
 
 Jak można łatwo zauważyć, kolor nagłówków bardzo dobrze kontrastuje z czarnym tłem. Co innego można powiedzieć o kolorze tekstu pod nagłówkami oraz listy. To bardzo skrajny przykład i czasami to czy dany element posiada wystarczający kontrast, jest trudne do ocenienia na oko. Polecam zatem stosować narzędzia takie jak to: [WebAIM color checker](https://webaim.org/resources/contrastchecker/), które na podstawie dostarczonych kolorów określa współczynnik kontrastu oraz daje natychmiastową informację czy i jakie standardy spełnia.
 
-Dobry kontrast to również dobór odpowiedniej czcionki, która nie jest zbyć wąska, aby można było ją wygodnie czytać. Odpowiednia wielkość odstępu od poszczególnych linii tekstu czy liter oraz wyrazów nie pozwala na "zlewanie się" tekstu w jedną trudną do odczytania całość. Warto zadbać o takie szczegóły. Uniwersalną praktyką jest to, aby stosować proporcjonalnie coraz większą interlinię wraz ze zwiększaniem rozmiaru fontu.
+Dobry kontrast to również dobór odpowiedniej czcionki, która nie jest zbyć wąska, aby można było ją wygodnie czytać.Zaleca się ograniczenie ilości krojów czcionki na stronie do dwóch. Odpowiednia wielkość odstępu od poszczególnych linii tekstu czy liter oraz wyrazów nie pozwala na "zlewanie się" tekstu w jedną trudną do odczytania całość. Warto zadbać o takie szczegóły. Uniwersalną praktyką jest to, aby stosować proporcjonalnie coraz większą interlinię wraz ze zmniejszaniem rozmiaru fontu.
+
+![Kolaż: 1. mężczyzna patrzy z obrzydzeniem na przykład tekstu z nieprawidłowo dobraną interlinią. 2. Mężczyzna z kolażu pierwszego, patrzy z zadowoleniem na poprawone odstępy w tekście.](/images/posts/dostepnosc-w-kilku-krokach/good-bad-lineheight.png)
 
 ## Nie przesadzajmy z animacjami
 
@@ -79,4 +84,12 @@ Projektujac animacje dostosowywujmy ich zachowanie, aby uwzględnić różne rod
 
 ## Prostota przekazu
 
-Podczas redagowania treści koniecznie zwróć uwage na to, by posługiwać się jezykiem możliwie jak najbardziej zrozumialym i prostym, aby każdy mógł nas bezproblemu zrozumieć. Stosuj uniwersalne przyklady, by mieć pewność, ze twoje intencje zostana odczytane we właściwy sposób.
+Podczas redagowania treści koniecznie zwróć uwage na to, by posługiwać się jezykiem możliwie jak najbardziej zrozumialym i prostym, aby każdy mógł nas bezproblemu zrozumieć. Stosuj uniwersalne przyklady, by mieć pewność, ze twoje intencje zostana odczytane we właściwy sposób. Stosowanie języka neutralniego płuciowo sprawi, że pisane przez Ciebie artykuły będą odbierane bardziej osobiście przez osoby, które je czytają.
+
+## Podsumowanie
+
+Dostępność to temat rzeka. Jeśli chcesz zgłębić ten temat, polecam odwiedzić poniższe źródła wiedzy na ten temat:
+
+- [a11project.com](https://www.a11yproject.com/),
+- [wytyczne dla dostępności treści WCAG](https://www.w3.org/Translations/WCAG21-pl/),
+- [learn accessibility MDN](https://developer.mozilla.org/en-US/docs/Learn/Accessibility).
