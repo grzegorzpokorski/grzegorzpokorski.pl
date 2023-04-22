@@ -53,7 +53,7 @@ Mało która strona nie posiada choćby jednego formularza czy to logowania, zap
 
 W swojej prostej funkcji jest on praktycznie niezastąpiony, a mimo to często spotyka się formularze, które ich nie posiadają. Jeśli zależy nam, aby nie psuć designu formularza można go [zwyczajnie ukryć](https://webaim.org/techniques/css/invisiblecontent/), korzystając z CSS, choć nie jest to zalecane — o ile czytniki ekranowe poprawnie odczytają etykietę i podadzą informację co, powinno się znaleźć w danym polu, to użytkownicy korzystający z ekranu mogą poczuć się zdezorientowani.
 
-Warto wspomnieć, że atrybut `placeholder` nie może zastąpić znacznika `label`. O to kilka powodów dlaczego:
+Warto wspomnieć, [że atrybut `placeholder` nie może zastąpić znacznika `label`](https://html.spec.whatwg.org/multipage/input.html#the-placeholder-attribute). O to kilka powodów dlaczego:
 
 - `placeholder`, który posiada kolor za bardzo zbliżony do koloru tekstu wpisanego do tego pola, może zostać mylnie odebrany przez użytkownika jako wypełnione pole i zostać pominięte;
 - `placeholder` znika po wpisaniu treści do pola, przez co wracając do niego, możemy zapomnieć, co powinno sie znaleźć w danym polu, jeśli nie posiada ono etykiety (`label`).
