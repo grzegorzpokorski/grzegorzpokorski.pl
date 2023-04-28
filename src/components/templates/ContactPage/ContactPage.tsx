@@ -33,7 +33,10 @@ export const ContactPage = () => {
                 </Link>
                 , zagdać na którymś z portali (linki poniżej 👇).
               </p>
-              <SocialMenu className="text-xl justify-center gap-5" />
+              <div className="flex flex-col items-center text-xl">
+                <SocialMenu />
+              </div>
+              {/* <SocialMenu className="text-xl justify-center gap-5" /> */}
             </>
           }
         />

@@ -12,7 +12,8 @@ type ButtonVariants =
   | "dark"
   | "dark-outline"
   | "footer-link"
-  | "social-menu-link";
+  | "social-menu-link"
+  | "social-menu-link-mobile-nav";
 
 const baseButtonStyles =
   "inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed rounded items-center justify-center gap-1.5";
@@ -46,7 +47,9 @@ const buttonVariants = {
   "share-social":
     "inline-flex transition-colors border-2 rounded px-3 md:px-4 py-2 md:py-3 bg-green-500 hover:bg-green-600 text-white border-green-500 ",
   "footer-link": "hover:underline dark:text-zinc-200",
-  "social-menu-link": "hover:text-green-500 transition-colors",
+  "social-menu-link": "text-green-500 hover:text-green-700 transition-colors",
+  "social-menu-link-mobile-nav":
+    "text-white dark:text-zinc-800 hover:text-green-500 dark:hover:text-white lg:text-zinc-600 md:hover:text-green-500 lg:dark:text-white lg:dark:hover:text-green-500 transition-colors",
 } as const;
 
 export type LinkProps = {
