@@ -63,7 +63,3 @@ pnpm build
 ## Contributing
 
 If you find any bug, have suggestion how to improve this project feel free to tell about it in [issues](https://github.com/grzegorzpokorski/grzegorzpokorski.pl/issues) tab. Pull requests also are welcoming.
-
-## Upcoming changes
-
-Soon website will be fully migrated to Next.js v13 with app directory - you can follow progress of work in branch named [app-dir](https://github.com/grzegorzpokorski/grzegorzpokorski.pl/tree/app-dir).
