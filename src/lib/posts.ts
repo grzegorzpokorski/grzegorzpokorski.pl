@@ -118,7 +118,6 @@ export const getPostsByTag = async (givenTag: string) => {
       post.frontmatter.tags.map((tag) => getSlug(tag)).includes(givenTag),
     ),
     tag: await getTagBySlug(givenTag),
-    canonical: `${siteUrl}/blog/tag/${givenTag}`,
   };
 };
 export const getCategories = async () => {
@@ -148,7 +147,6 @@ export const getPostsByCategory = async (givenCategory: string) => {
       (post) => getSlug(post.frontmatter.category) == givenCategory,
     ),
     category: await getCategoryBySlug(givenCategory),
-    canonical: `${siteUrl}/blog/kategoria/${givenCategory}`,
   };
 };
 

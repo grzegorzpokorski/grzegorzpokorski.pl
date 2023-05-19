@@ -36,6 +36,7 @@ export const getMetadata = (args: GetMetadataArgs) => {
   const data: Metadata = {
     title: title,
     description: description,
+    metadataBase: new URL(siteUrl),
     robots: {
       index: true,
       follow: true,
@@ -63,7 +64,7 @@ export const getMetadata = (args: GetMetadataArgs) => {
       type: "website",
       images: [
         {
-          url: `${siteUrl}/images/default-og-image.jpg`,
+          url: `/images/default-og-image.jpg`,
           width: 1200,
           height: 630,
           type: "image/jpeg",

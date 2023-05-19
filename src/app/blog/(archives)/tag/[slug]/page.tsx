@@ -8,11 +8,11 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const { tag, canonical } = await getPostsByTag(slug);
+  const { tag } = await getPostsByTag(slug);
   return getMetadata({
     article: false,
     title: `Tag: ${tag}`,
-    canonical,
+    canonical: `/blog/tag/${slug}`,
   });
 }
 

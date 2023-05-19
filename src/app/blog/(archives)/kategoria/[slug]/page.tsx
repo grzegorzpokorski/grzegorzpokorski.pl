@@ -14,11 +14,11 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const { category, canonical } = await getPostsByCategory(slug);
+  const { category } = await getPostsByCategory(slug);
   return getMetadata({
     article: false,
     title: `Kategoria: ${category}`,
-    canonical,
+    canonical: `/blog/kategoria/${slug}`,
   });
 }
 
