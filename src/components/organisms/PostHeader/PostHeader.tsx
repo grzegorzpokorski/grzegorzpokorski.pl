@@ -1,6 +1,6 @@
 import slugify from "slugify";
 import { PostFrontmatter } from "@/types";
-import { Link } from "@/components/atoms/Link/Link";
+import Link from "next/link";
 import Image from "next/image";
 import { TagsList } from "@/components/molecules/TagsList/TagsList";
 import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
