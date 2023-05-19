@@ -1,14 +1,10 @@
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-dayjs.extend(customParseFormat);
-import "dayjs/locale/pl";
-dayjs.locale("pl");
-
 import slugify from "slugify";
 import { PostFrontmatter } from "@/types";
-import { Link } from "@/components/atoms/Link/Link";
+import Link from "next/link";
 import Image from "next/image";
 import { TagsList } from "@/components/molecules/TagsList/TagsList";
+import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
+import { getFormatedPublicationDate } from "@/utils/getFormatedPublicationDate";
 
 export const PostHeader = ({
   category,
@@ -35,13 +31,13 @@ export const PostHeader = ({
               className="inline-block w-12 h-0.5 bg-zinc-800 dark:bg-zinc-200"
               aria-hidden="true"
             ></span>
-            <time dateTime={dayjs(date, "YYYY.MM.DD").format("YYYY-MM-DD")}>
-              {dayjs(date, "YYYY.MM.DD").locale("pl").format("DD MMMM YYYY")}
+            <time dateTime={getISOStringFromPublicationDate(date)}>
+              {getFormatedPublicationDate(date)}
             </time>
           </span>
           <h1 className="font-bold text-3xl md:text-4xl">{title}</h1>
           <TagsList tags={tags} />
-          <figure className="w-full h-60 md:h-80 lg:h-[30rem] overflow-hidden relative block mt-4 rounded-md shadow-md">
+          <picture className="w-full h-60 md:h-80 lg:h-[30rem] overflow-hidden relative block mt-4 rounded-md shadow-md">
             <Image
               src={featuredImage}
               width={featuredImage.width}
@@ -51,7 +47,7 @@ export const PostHeader = ({
               sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
               priority
             />
-          </figure>
+          </picture>
         </div>
       </div>
     </header>

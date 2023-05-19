@@ -3,7 +3,8 @@ import { Link } from "@/components/atoms/Link/Link";
 import { Section } from "@/components/molecules/Section/Section";
 import { Post } from "@/types";
 import { getSlug } from "@/utils/getSlug";
-import { PostsList } from "../PostsList/PostsList";
+import { useId } from "react";
+import { PostsList } from "@/components/organisms/PostsList/PostsList";
 
 type PromoPostsProps = {
   subtitle?: string;
@@ -18,13 +19,24 @@ export const PromoPosts = ({
   posts,
   link,
 }: PromoPostsProps) => {
+  const sectionID = useId();
+  const sectionTitleId = `${sectionID}-${getSlug(title)}`;
   return (
-    <Section id={getSlug(title)} className="bg-light-green dark:bg-neutral-700">
-      <Header title={title} subtitle={subtitle} className="pb-16 lg:pb-24" />
+    <Section
+      id={sectionID}
+      ariaLabelledBy={sectionTitleId}
+      bgColor={{ light: "light-green", dark: "light-gray" }}
+    >
+      <Header
+        title={title}
+        titleId={sectionTitleId}
+        subtitle={subtitle}
+        className="pb-16 lg:pb-24"
+      />
       <PostsList posts={posts} />
       {link && (
         <footer className="mt-12 text-center">
-          <Link href="/blog" buttonStyle="green" className="inline-flex">
+          <Link href="/blog" buttonStyle="green">
             Zobacz wszystkie wpisy
           </Link>
         </footer>

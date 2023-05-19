@@ -10,14 +10,13 @@ import { getSlug } from "@/utils/getSlug";
 type ContentWithImageProps = {
   subtitle: string;
   title: string;
-  content?: ReactNode;
-  href?: string;
   image: {
     src: StaticImageData;
     alt: string;
   };
+  content?: ReactNode;
+  href?: string;
   reverse?: boolean;
-  className?: string;
 };
 
 export const ContentWithImage = ({
@@ -27,10 +26,17 @@ export const ContentWithImage = ({
   href,
   image,
   reverse,
-  className,
 }: ContentWithImageProps) => {
   return (
-    <Section id={getSlug(title)} className={className}>
+    <Section
+      id={getSlug(title)}
+      ariaLabelledBy={getSlug(title)}
+      bgColor={
+        reverse
+          ? { light: "white", dark: "dark-gray" }
+          : { light: "light-green", dark: "light-gray" }
+      }
+    >
       <Container
         className={twMerge(
           "flex flex-col gap-3 items-center",
@@ -38,7 +44,7 @@ export const ContentWithImage = ({
         )}
       >
         <div className="w-full md:w-1/2">
-          <Header title={title} subtitle={subtitle} />
+          <Header title={title} titleId={getSlug(title)} subtitle={subtitle} />
           {content && (
             <div className="prose dark:prose-invert mt-6">{content}</div>
           )}

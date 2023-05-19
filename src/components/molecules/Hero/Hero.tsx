@@ -1,6 +1,8 @@
+import { getSlug } from "@/utils/getSlug";
 import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import { Section } from "../Section/Section";
 
 type HeroProps = {
   title: string;
@@ -11,7 +13,6 @@ type HeroProps = {
     alt: string;
   };
   titleAsH1?: boolean;
-  withMarginOnTop?: boolean;
   imageFirst?: boolean;
   className?: string;
   alignToLeftOnMobile?: boolean;
@@ -23,23 +24,20 @@ export const Hero = ({
   links,
   image,
   titleAsH1,
-  withMarginOnTop,
   imageFirst,
-  className,
   alignToLeftOnMobile,
 }: HeroProps) => {
   return (
-    <section
-      className={twMerge(
-        "bg-white dark:bg-zinc-800 py-12 md:py-28",
-        withMarginOnTop ? "mt-20 lg:mt-28" : "",
-        className,
-      )}
+    <Section
+      ariaLabelledBy={getSlug(title)}
       id="hero"
+      bgColor={{ light: "white", dark: "dark-gray" }}
+      paddingVariant="hero"
+      withMarginOnTop
     >
       <div
         className={twMerge(
-          "container mx-auto px-3 flex flex-col md:flex-row",
+          "flex flex-col md:flex-row",
           imageFirst && "flex-col-reverse md:flex-row-reverse",
           "items-center gap-3",
         )}
@@ -53,11 +51,17 @@ export const Hero = ({
           )}
         >
           {titleAsH1 ? (
-            <h1 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200">
+            <h1
+              className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200"
+              id={getSlug(title)}
+            >
               {title}
             </h1>
           ) : (
-            <h2 className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200">
+            <h2
+              className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200"
+              id={getSlug(title)}
+            >
               {title}
             </h2>
           )}
@@ -85,6 +89,7 @@ export const Hero = ({
           />
         </picture>
       </div>
-    </section>
+      {/* </section> */}
+    </Section>
   );
 };

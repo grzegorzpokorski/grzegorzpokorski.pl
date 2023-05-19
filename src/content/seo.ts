@@ -1,4 +1,5 @@
-export const siteSlogan = "Grzegorz Pokorski";
+export const siteSlogan =
+  "Programuję strony internetowe, koduję szablony graficzne oraz przygotowuję projekty graficzne stron internetowych.";
 export const siteName = "Grzegorz Pokorski";
 export const addressSeparator = "|";
 

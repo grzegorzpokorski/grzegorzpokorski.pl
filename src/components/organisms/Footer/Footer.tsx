@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Logo } from "@/components/molecules/Logo/Logo";
-import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
 import { FooterMenu } from "@/components/molecules/FooterMenu/FooterMenu";
+import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
 
 type FooterProps = {
   isHome?: boolean;
@@ -22,7 +22,7 @@ export const Footer = memo(({ isHome }: FooterProps) => {
           doodleipsum.com. Created by Grzegorz Pokorski.
         </p>
         <div className="flex flex-row grow basis-0 gap-4 text-green md:justify-end md:order-3 text-lg">
-          <SocialMenu className="text-green-500 gap-5" />
+          <SocialMenu />
         </div>
       </div>
     </footer>

@@ -1,9 +1,9 @@
-import { Link } from "@/components/atoms/Link/Link";
-import { useRouter } from "next/router";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { menuItems } from "@/content/menu";
-import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
 import { twMerge } from "tailwind-merge";
 import { ThemeSwitch } from "@/components/atoms/ThemeSwitch/ThemeShitch";
+import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
 
 type MainMenuProps = {
   isMobileMenuOpen: boolean;
@@ -16,7 +16,7 @@ export const MainMenu = ({
   isSticky,
   closeMobileMenu,
 }: MainMenuProps) => {
-  const currentPath = useRouter().asPath.split("#")[0];
+  const pahtname = usePathname();
 
   return (
     <div
@@ -36,7 +36,7 @@ export const MainMenu = ({
               href={item.href}
               className={twMerge(
                 "transition-all",
-                item.href === currentPath
+                item.href === pahtname
                   ? "text-green-500 dark:text-zinc-200 lg:dark:text-green-500"
                   : "text-gray-100 dark:text-zinc-800 lg:text-zinc-600 lg:dark:text-zinc-200 hover:text-gray-300 lg:hover:text-green-500 lg:dark:hover:text-green-500",
               )}
@@ -47,7 +47,9 @@ export const MainMenu = ({
           </li>
         ))}
       </ul>
-      <SocialMenu className="text-white dark:text-zinc-800 lg:text-zinc-600 lg:dark:text-zinc-200 pt-4 lg:pt-0 lg:pl-6" />
+      <div className="pt-4 lg:pt-0 lg:pl-6">
+        <SocialMenu inMobileMenu />
+      </div>
       <ThemeSwitch />
     </div>
   );

@@ -23,5 +23,7 @@ module.exports = {
     },
   },
   ignorePatterns: ["build/", "dist/", "node_modules/", "*.js", "*.jsx"],
-  rules: {},
+  rules: {
+    "@next/next/no-html-link-for-pages": "off",
+  },
 };

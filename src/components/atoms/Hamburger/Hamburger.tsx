@@ -29,7 +29,7 @@ export const Hamburger = ({ isMobileMenuOpen, onClick }: HamburgerProps) => {
       <div
         className={twMerge(
           itemStyles,
-          isMobileMenuOpen ? "opacity-0" : "opacity-100",
+          isMobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100",
         )}
       />
       <div

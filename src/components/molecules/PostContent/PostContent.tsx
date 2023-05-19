@@ -1,3 +1,5 @@
+"use client";
+
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Image, { ImageProps } from "next/image";
 import { Link } from "@/components/atoms/Link/Link";

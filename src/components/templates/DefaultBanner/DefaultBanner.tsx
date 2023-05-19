@@ -1,3 +1,5 @@
+"use client";
+
 import { Link } from "@/components/atoms/Link/Link";
 import { Banner } from "@/components/molecules/Banner/Banner";
 import { useThemeContext } from "@/providers/ThemeProvider";

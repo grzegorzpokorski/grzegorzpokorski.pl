@@ -1,4 +1,4 @@
-export const getISOStringFromPublicationDate = (date: string): string => {
+export const getISOStringFromPublicationDate = (date: string) => {
   const [year, month, day] = date.split(".");
 
   return new Date(

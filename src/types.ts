@@ -20,5 +20,5 @@ export type PostFrontmatter = {
 
 export type Post = {
   frontmatter: PostFrontmatter;
-  source: MDXRemoteSerializeResult<Record<string, unknown>>;
+  source: MDXRemoteSerializeResult;
 };
