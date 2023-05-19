@@ -13,7 +13,13 @@ type GetMetadataArgs = {
   | {
       article: true;
       publicationDate: string;
-      featuredImage: string;
+      featuredImage: {
+        src: string;
+        height: number;
+        width: number;
+        alt: string;
+        type: string;
+      };
     }
 );
 
@@ -88,14 +94,22 @@ export const getMetadata = (args: GetMetadataArgs) => {
       openGraph: {
         ...data.openGraph,
         type: "article",
-        authors: ["https://www.linkedin.com/in/grzegorz-pokorski/"],
+        authors: [
+          {
+            name: "Grzegorz Pokorski",
+            url: "https://www.linkedin.com/in/grzegorz-pokorski/",
+          },
+        ],
         publishedTime: getISOStringFromPublicationDate(args.publicationDate),
         images: [
           {
-            url: `${siteUrl}${args.featuredImage}`,
-            width: 1200,
-            height: 630,
-            type: "image/jpeg",
+            url: `${siteUrl}${args.featuredImage.src}`,
+            width: args.featuredImage.width,
+            height: args.featuredImage.height,
+            type:
+              args.featuredImage.type === "jpg"
+                ? "image/jpeg"
+                : `type/${args.featuredImage.type}`,
           },
         ],
       },

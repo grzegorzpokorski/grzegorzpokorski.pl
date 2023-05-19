@@ -17,7 +17,10 @@ export async function generateMetadata({
     article: true,
     canonical: `${siteUrl}/blog/${slug}`,
     publicationDate: post.frontmatter.date,
-    featuredImage: post.frontmatter.featuredImage.src,
+    featuredImage: {
+      ...post.frontmatter.featuredImage,
+      type: post.frontmatter.featuredImage.type || "jpeg",
+    },
   });
 }
 
