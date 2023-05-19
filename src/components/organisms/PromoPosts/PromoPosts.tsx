@@ -4,7 +4,7 @@ import { Section } from "@/components/molecules/Section/Section";
 import { Post } from "@/types";
 import { getSlug } from "@/utils/getSlug";
 import { useId } from "react";
-import { PostsList } from "../PostsList/PostsList";
+import { PostsList } from "@/components/organisms/PostsList/PostsList";
 
 type PromoPostsProps = {
   subtitle?: string;

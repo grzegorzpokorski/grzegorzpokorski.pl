@@ -1,0 +1,95 @@
+---
+title: Dostępność w kilku krokach
+excerpt: Artykuł stanowi pewnego rodzaju listę kontrolną, która pomoże Ci uczynić Twoją stronę dostępną i wygodną w użytkowaniu dla jak największej liczby użytkowników.
+category: Poradniki
+tags:
+  - dostępność
+  - a11y
+  - inkluzywność
+  - dobre praktyki
+  - semantyczny kod
+date: 2023.04.21
+published: true
+featuredImage: /images/posts/dostepnosc-w-kilku-krokach/featured-image.jpg
+featuredImageAlt: laptop z wyświetloną sentencją "I design and develop experiences that make people's lives simple" leży na stole
+---
+
+## Czym właściwie jest dostępna strona internetowa?
+
+Dostępna strona internetowa to taka strona, która przez zastosowane rozwiązania, zarówno w samym designie, jak i wybranych technologiach, w których została wykonana, jest używalna i wygodna dla wszystkich (dla tak wielu, jak tylko to możliwe).
+
+Budując dostępne strony / aplikacje internetowe myślimy o osobach z różnymi niepełnosprawnościami, nieposiadającymi dostępu do najnowszego sprzętu / technologii, rozmaitym statusie społecznym itd. Każda z uprzednio wymienionych grup może posiadać specjalne wymagania, które warunkują to, w jaki sposób korzystają z naszej strony. I tu tkwi cała kwintesencja budowania dostępnych stron internetowych — chodzi o to, aby być świadomym tych potrzeb / wymagań i uwzględniać je w designie oraz funkcjonalności budowanych aplikacji.
+
+W dalszej części omówię kilka ważnych aspektów projektowania stron internetowych, które pomogą Ci zbadać, w jakim stopniu Twoja strona jest dostępna, albo co można by poprawić.
+
+## Semantyczny kod HTML
+
+Każda strona internetowa jest pewnego rodzaju dokumentem. Dokumenty zwyczajowo mają tytuł, sekcje, jasno wyszczególnione nagłówki, różnego rodzaju listy. Semantyczny kod HTML to właśnie nic innego jak kod, który możliwie jak najwierniej odzwierciedla strukturę naszej strony, aby poszczególne składowe można było bez wysiłku rozpoznać jaką pełnią funkcję nawet w sytuacji, gdy nie są ostylowane.
+
+Stosowanie semantycznych znaczników takich, jak `section`, `header`, `article`, `aside`, `nav`, `figure`, `footer` `blockquote`, `ul` — jeśli tylko zostają użyte we właściwy sposób — znacząco ułatwiają korzystanie ze strony internetowej osobom, które używają czytników ekranowych. Przyczynia się to również do poprawy SEO oraz czytelności samego kodu — nie błądzimy wzrokiem po tak samo wyglądających "divach", dzięki czemu praca nad stroną jest przyjemniejsza.
+
+Więcej na ten temat znajdziesz tu:
+
+- [semantic HTML — web.dev](https://web.dev/learn/html/semantic-html/),
+- [Semantyczny blog w HTML — comandeer.pl](https://tutorials.comandeer.pl/html5-blog.html),
+- [Dostępność - projektowanie i semantyczny HTML — frontlive.pl](https://frontlive.pl/blog/dostepnosc-semantyczny-html#dostepnosc-a-html).
+
+## Właściwa hierarchia nagłówków
+
+Nagłówki bardzo często wykorzystywane są do nawigowania po stronie przez osoby korzystające z technologii asystujących.
+
+Ważne jest zatem zrozumienie, że poziom nagłówka nie powinien być powiązany z jego wizualnym rozmiarem. Przypisywanie rozmiaru czcionki do poszczególnych poziomów nagłówków na sztywno może w przyszłości generować dodatkową pracę, przy dostosowywaniu ich do designu lub generować pokusę do porzucenia stosowania właściwego porządku poziomów nagłówków na stronie.
+
+Właściwie zachowana hierarchia nagłówków daje również taką korzyść, że w prosty sposób można na ich podstawie wygenerować mapę strony. Taka strona dobrze wygląda również w różnych agregatorach treści, czytnikach upraszczających widok strony czy kanałach RRS.
+
+Wiecej na temat nagłówków znajdziesz:
+
+- [na stronie a11project.com](https://www.a11yproject.com/posts/how-to-accessible-heading-structure/),
+- [w artykule od comandeer.pl](https://blog.comandeer.pl/o-naglowkach-slow-kilka.html).
+
+## Label w formularzach
+
+Mało która strona nie posiada choćby jednego formularza czy to logowania, zapisu do newslettera, albo kontaktowego. Istotne jest, aby zadbać o to, aby użytkownik wiedział, co ma wpisać w dane pole. Do tego służy znacznik `label`, który po powiązaniu z danym polem jednoznacznie informuje użytkownika, co ma się w nim znaleźć.
+
+W swojej prostej funkcji jest on praktycznie niezastąpiony, a mimo to często spotyka się formularze, które ich nie posiadają. Jeśli zależy nam, aby nie psuć designu formularza można go [zwyczajnie ukryć](https://webaim.org/techniques/css/invisiblecontent/), korzystając z CSS, choć nie jest to zalecane — o ile czytniki ekranowe poprawnie odczytają etykietę i podadzą informację co, powinno się znaleźć w danym polu, to użytkownicy korzystający z ekranu mogą poczuć się zdezorientowani.
+
+Warto wspomnieć, że [atrybut `placeholder` nie może zastąpić znacznika `label`](https://html.spec.whatwg.org/multipage/input.html#the-placeholder-attribute). O to kilka powodów dlaczego:
+
+- `placeholder`, który posiada kolor za bardzo zbliżony do koloru tekstu wpisanego do tego pola, może zostać mylnie odebrany przez użytkownika jako wypełnione pole i zostać pominięte;
+- `placeholder` znika po wpisaniu treści do pola, przez co wracając do niego, możemy zapomnieć, co powinno sie znaleźć w danym polu, jeśli nie posiada ono etykiety (`label`).
+
+Jeśli chcesz zgłębić temat tworzenia dostępnych formularzy zachęcam do odwiedzenia [tego artykułu od webAIM.org](https://webaim.org/techniques/forms/controls)
+
+## Focus — czyli nawigacja klawiaturą
+
+Nawigowanie klawiaturą po stronie powinno być tak samo przyjemne, jak nawigowanie klikając np. myszką. Zadbaj zatem, aby wszystkie elementy sterujące, odsyłające do innych podstron czy wyzwalające jakąś inną akcję na stronie były dobrze widoczne przy operowaniu klawiaturą.
+
+## Odpowiedni kontrast
+
+Projektując dostępną stronę internetową, warto dopilnować, aby poszczególne elementy posiadały dobry kontrast. To, co na przysłowiowy pierwszy rzut oka może wyglądać ładnie, może okazać się niedostępne. Najlepiej ilustruje to poniższy obraz:
+
+![obraz prezentuje stronę z czarnym tłem, nagłówkami koloru białego oraz tekstem w ciemnym szarym kolorze](/images/posts/dostepnosc-w-kilku-krokach/low-contrast-ratio-example.png)
+
+Jak można łatwo zauważyć, kolor nagłówków bardzo dobrze kontrastuje z czarnym tłem. Co innego można powiedzieć o kolorze tekstu pod nagłówkami oraz kolorze elementów listy po lewo. To bardzo skrajny przykład i czasami to czy dany element posiada wystarczający kontrast, jest trudne do ocenienia na oko. Polecam wspomagać się narzędziami takimi jak to: [WebAIM color checker](https://webaim.org/resources/contrastchecker/), które na podstawie dostarczonych kolorów określa współczynnik kontrastu oraz daje natychmiastową informację czy i jakie standardy spełnia.
+
+Dobry kontrast to również **dobór odpowiedniej czcionki**, która nie jest zbyć wąska, aby można było ją wygodnie czytać. Zaleca się ograniczenie ilości krojów czcionki na stronie do dwóch. Odpowiednia wielkość odstępu od poszczególnych linii tekstu czy liter oraz wyrazów nie pozwala na "zlewanie się" tekstu w jedną trudną do odczytania całość. Warto zadbać o takie szczegóły. Uniwersalną praktyką jest to, aby stosować proporcjonalnie coraz większą interlinię wraz ze zmniejszaniem rozmiaru fontu.
+
+![Kolaż: 1. mężczyzna patrzy z obrzydzeniem na przykład tekstu z nieprawidłowo dobraną interlinią. 2. Mężczyzna z kolażu pierwszego, patrzy z zadowoleniem na poprawone odstępy w tekście.](/images/posts/dostepnosc-w-kilku-krokach/good-bad-lineheight.png)
+
+## Nie przesadzajmy z animacjami
+
+Animacje potrafią upiększyć i wnieść życie do naszych stron internetowych. Na przykład płynne przejścia podczas otwierania menu, modali itp. sprawiają, że korzystanie z interfejsu naszej aplikacji jest przyjemniejsze. Niektórzy jednak nie lubią animacji, bo wolą skupić się na treści i nie chcą zbędnych rozpraszaczy. Inni unikają animacji ze względów zdrowotnych (np. osoby neuroatypowe). Tak czy inaczej, powinniśmy w naszej stronie internetowej uwzględnić **respektowanie [ustawień użytkownika](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)** dotyczących redukcji animacji.
+
+Projektując animacje, starajmy się **dostosować ich zachowanie**, aby uwzględnić różne rodzaje urządzeń, na których będzie udostępniona nasza aplikacja / strona internetowa. Najprostszy przykład, dlaczego jest to istotne to fakt, że na urządzeniach mobilnych użytkownicy nie mają do dyspozycji kursora, a przewijanie strony odbywa się w zupełnie inny sposób niż ma to miejsce na komputerze.
+
+## Prostota przekazu
+
+Podczas redagowania treści koniecznie posługuj się językiem możliwie jak najbardziej zrozumiałym i prostym, aby każdy mógł bez problemu je zrozumieć. Stosuj uniwersalne przykłady, by mieć pewność, że twoje intencje zostaną odczytane we właściwy sposób. Stosowanie języka neutralnego płciowo sprawi, że pisane przez Ciebie artykuły będą odbierane bardziej osobiście przez osoby, które je czytają.
+
+## Podsumowanie
+
+Dostępność to temat rzeka, który wymaga stałego monitorowania. Zachęcam do regularnego sprawdzania dostępności swojej strony internetowej i podejmowania działań naprawczych w razie potrzeby. Jeśli chcesz zgłębić ten temat, polecam odwiedzić poniższe źródła wiedzy:
+
+- [a11project.com](https://www.a11yproject.com/),
+- [wytyczne dla dostępności treści WCAG](https://www.w3.org/Translations/WCAG21-pl/),
+- [learn accessibility MDN](https://developer.mozilla.org/en-US/docs/Learn/Accessibility).

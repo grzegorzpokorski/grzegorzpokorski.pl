@@ -5,7 +5,6 @@ import { z } from "zod";
 import { Post } from "@/types";
 import { getPlaiceholder } from "plaiceholder";
 import { getSlug } from "@/utils/getSlug";
-import { siteUrl } from "@/content/seo";
 import { getISODateFromPublicatedDate } from "@/utils/getISODateFromPublicationDate";
 
 const postsDir = path.join(process.cwd(), "src/content/posts");
