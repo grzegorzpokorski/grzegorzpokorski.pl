@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "@/styles/prism-theme.css";
 
 import { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { AppProviders } from "@/providers/AppProviders";
 import { Layout } from "@/components/templates/Layout/Layout";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <AppProviders>
           <Layout>{children}</Layout>
         </AppProviders>
+        <Analytics />
       </body>
     </html>
   );
