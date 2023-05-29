@@ -38,7 +38,7 @@ specifiers:
   typescript: 5.0.4
   vfile: ^5.3.7
   vitest: ^0.28.5
-  zod: ^3.20.6
+  zod: ^3.21.4
 
 dependencies:
   '@next/env': 13.4.4
@@ -60,7 +60,7 @@ dependencies:
   tailwind-merge: 1.12.0
   typescript: 5.0.4
   vfile: 5.3.7
-  zod: 3.20.6
+  zod: 3.21.4
 
 devDependencies:
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.2
@@ -5622,10 +5622,6 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
-
-  /zod/3.20.6:
-    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
-    dev: false
 
   /zod/3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
