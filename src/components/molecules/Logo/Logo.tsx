@@ -9,7 +9,7 @@ export const Logo = ({ isHome, isTitle }: LogoProps) => {
   return (
     <Link
       href={`${isHome ? "#" : "/"}`}
-      className="transition hover:opacity-60"
+      className="transition hover:opacity-60 motion-reduce:transition-none"
     >
       {isTitle ? (
         <h1 className="text-lg font-bold">

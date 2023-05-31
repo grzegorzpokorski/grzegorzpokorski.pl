@@ -31,6 +31,7 @@ export const Dropdown = ({
             "after:content-[''] after:right-6 after:top-1/2 after:-translate-y-1/2 after:absolute after:border-l-[6px] after:border-l-transparent after:border-t-[6px] after:border-t-zinc-500 after:border-r-[6px] after:border-r-transparent after:transition-all",
             isDropdownOpen &&
               "border-green-500 text-green-500 after:rotate-180 after:border-y-green-500",
+            "motion-reduce:transition-none after:motion-reduce:transition-none",
           )}
           type="button"
           id="dropdownMenuButton"

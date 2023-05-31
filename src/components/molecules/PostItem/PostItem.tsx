@@ -26,7 +26,7 @@ export const PostItem = ({
           <picture className="w-full h-72 max-h-72 overflow-hidden relative block rounded-t-md">
             <Image
               src={featuredImage}
-              className="object-cover object-center w-full h-full hover:scale-105 transition-all duration-300"
+              className="object-cover object-center w-full h-full motion-safe:hover:scale-105 transition-all duration-300 motion-reduce:transition-none"
               fill
               sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
               alt={featuredImage.alt}
@@ -54,7 +54,7 @@ export const PostItem = ({
           </div>
           <Link
             href={`/blog/${slug}`}
-            className="text-zinc-800 dark:text-zinc-200 hover:text-green-500 dark:hover:text-green-500 transition"
+            className="text-zinc-800 dark:text-zinc-200 hover:text-green-500 dark:hover:text-green-500 transition motion-reduce:transition-none"
           >
             <TitleTag className="font-bold text-lg">{title}</TitleTag>
           </Link>

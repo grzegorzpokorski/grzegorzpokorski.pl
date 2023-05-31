@@ -7,7 +7,7 @@ type HamburgerProps = {
 
 export const Hamburger = ({ isMobileMenuOpen, onClick }: HamburgerProps) => {
   const itemStyles =
-    "ease h-0.5 w-8 bg-zinc-800 dark:bg-zinc-200 transition duration-300";
+    "ease h-0.5 w-8 bg-zinc-800 dark:bg-zinc-200 transition duration-300 motion-reduce:transition-none";
   return (
     <button
       id="hamburger"

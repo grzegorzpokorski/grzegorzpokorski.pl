@@ -18,7 +18,7 @@ export const Heading = ({
         {/* @todo replace A tag with next/lint or my custom Link component what uses next/link when https://github.com/vercel/next.js/issues/44295 issue will be resolved */}
         <a
           href={`#${slug}`}
-          className="absolute left-0 top-0 -translate-x-full pr-2 transition-all text-neutral-300 dark:text-neutral-600 hover:text-green-500 dark:hover:text-green-500"
+          className="absolute left-0 top-0 -translate-x-full pr-2 transition-all motion-reduce:transition-none text-neutral-300 dark:text-neutral-600 hover:text-green-500 dark:hover:text-green-500"
           aria-hidden="true"
           tabIndex={-1}
         >

@@ -16,7 +16,7 @@ type ButtonVariants =
   | "social-menu-link-mobile-nav";
 
 const baseButtonStyles =
-  "inline-flex transition-colors border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed rounded items-center justify-center gap-1.5";
+  "inline-flex transition-colors motion-reduce:transition-none border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed rounded items-center justify-center gap-1.5";
 
 const buttonVariants = {
   white: twMerge(
