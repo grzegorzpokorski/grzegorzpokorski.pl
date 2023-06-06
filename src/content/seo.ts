@@ -3,8 +3,7 @@ export const siteSlogan =
 export const siteName = "Grzegorz Pokorski";
 export const addressSeparator = "|";
 
-const productionHost =
-  process.env.NEXT_PUBLIC_VERCEL_URL || "grzegorzpokorski.pl";
+const productionHost = "grzegorzpokorski.pl";
 const devHost = "localhost:3000";
 const host = process.env.NODE_ENV === "production" ? productionHost : devHost;
 const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
