@@ -9,8 +9,7 @@
     "lint": "next lint --dir .",
     "lint:fix": "next lint --dir . --fix --quiet",
     "test": "vitest",
-    "prepare": "husky install",
-    "postbuild": "next-sitemap"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@next/env": "^13.4.4",
@@ -48,7 +47,6 @@
     "husky": "^8.0.3",
     "jsdom": "^21.1.0",
     "lint-staged": "^13.2.0",
-    "next-sitemap": "^3.1.49",
     "postcss": "^8.4.21",
     "prettier": "2.8.4",
     "tailwindcss": "^3.3.2",
