@@ -44,7 +44,7 @@ export const PostHeader = ({
               height={featuredImage.height}
               alt={featuredImage.alt}
               className="object-cover object-center w-full h-full"
-              sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 33vw"
+              sizes="(max-width: 720px) 100vw, (max-width: 1140px) 50vw, 66vw"
               priority
             />
           </picture>
