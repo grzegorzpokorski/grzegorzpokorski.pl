@@ -13,7 +13,7 @@ type HeaderProps = {
 
 export const MainHeader = ({ children }: HeaderProps) => {
   const {
-    handleMobileMenu,
+    toggleMobileMenu,
     isHome,
     isMobileMenuOpen,
     isSticky,
@@ -39,11 +39,11 @@ export const MainHeader = ({ children }: HeaderProps) => {
           <Logo isHome={isHome} isTitle={isHome} />
           <div ref={menuContainerRef}>
             <Hamburger
-              onClick={handleMobileMenu}
+              onClick={toggleMobileMenu}
               isMobileMenuOpen={isMobileMenuOpen}
             />
             <MainMenu
-              closeMobileMenu={handleMobileMenu}
+              closeMobileMenu={toggleMobileMenu}
               isMobileMenuOpen={isMobileMenuOpen}
               isSticky={isSticky}
             />

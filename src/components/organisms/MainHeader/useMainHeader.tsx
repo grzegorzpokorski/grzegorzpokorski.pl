@@ -17,7 +17,7 @@ export const useMainHeader = () => {
     setIsMobileMenuOpen(true);
   }, []);
 
-  const handleMobileMenu = useCallback(() => {
+  const toggleMobileMenu = useCallback(() => {
     if (isMobileMenuOpen) {
       closeMobileMenu();
     } else {
@@ -45,8 +45,8 @@ export const useMainHeader = () => {
       isSticky,
       isMobileMenuOpen,
       menuContainerRef,
-      handleMobileMenu,
+      toggleMobileMenu,
     }),
-    [handleMobileMenu, isHome, isMobileMenuOpen, isSticky],
+    [toggleMobileMenu, isHome, isMobileMenuOpen, isSticky],
   );
 };
