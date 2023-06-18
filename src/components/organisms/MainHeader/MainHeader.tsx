@@ -6,6 +6,7 @@ import { Hamburger } from "@/components/atoms/Hamburger/Hamburger";
 import { MainMenu } from "../MainMenu/MainMenu";
 import { useMainHeader } from "./useMainHeader";
 import { twMerge } from "tailwind-merge";
+import FocusLock from "react-focus-lock";
 
 type HeaderProps = {
   children?: ReactNode;
@@ -18,6 +19,7 @@ export const MainHeader = ({ children }: HeaderProps) => {
     isMobileMenuOpen,
     isSticky,
     menuContainerRef,
+    mobileMenuTogglerRef,
   } = useMainHeader();
 
   return (
@@ -37,17 +39,23 @@ export const MainHeader = ({ children }: HeaderProps) => {
           )}
         >
           <Logo isHome={isHome} isTitle={isHome} />
-          <div ref={menuContainerRef}>
+          <FocusLock
+            as="div"
+            disabled={!isMobileMenuOpen}
+            ref={menuContainerRef}
+            returnFocus
+          >
             <Hamburger
               onClick={toggleMobileMenu}
               isMobileMenuOpen={isMobileMenuOpen}
+              ref={mobileMenuTogglerRef}
             />
             <MainMenu
               closeMobileMenu={toggleMobileMenu}
               isMobileMenuOpen={isMobileMenuOpen}
               isSticky={isSticky}
             />
-          </div>
+          </FocusLock>
         </section>
       </nav>
       {children}

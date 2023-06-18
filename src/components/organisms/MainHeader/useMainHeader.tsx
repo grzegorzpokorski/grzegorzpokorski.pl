@@ -2,14 +2,17 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useStickyElement } from "@/hooks/useStickyElement";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { usePathname } from "next/navigation";
+import { useOnKeydown } from "@/hooks/useOnKeydown";
 
 export const useMainHeader = () => {
   const [isSticky] = useStickyElement();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuTogglerRef = useRef<HTMLButtonElement>(null);
 
   const closeMobileMenu = useCallback(() => {
     document.body.classList.remove("overflow-hidden", "lg:overflow-y-auto");
     setIsMobileMenuOpen(false);
+    if (mobileMenuTogglerRef.current) mobileMenuTogglerRef.current.focus();
   }, []);
 
   const openMobileMenu = useCallback(() => {
@@ -39,6 +42,14 @@ export const useMainHeader = () => {
     () => isMobileMenuOpen && closeMobileMenu(),
   );
 
+  useOnKeydown(
+    "Escape",
+    useCallback(
+      () => isMobileMenuOpen && closeMobileMenu(),
+      [closeMobileMenu, isMobileMenuOpen],
+    ),
+  );
+
   return useMemo(
     () => ({
       isHome,
@@ -46,6 +57,7 @@ export const useMainHeader = () => {
       isMobileMenuOpen,
       menuContainerRef,
       toggleMobileMenu,
+      mobileMenuTogglerRef,
     }),
     [toggleMobileMenu, isHome, isMobileMenuOpen, isSticky],
   );
