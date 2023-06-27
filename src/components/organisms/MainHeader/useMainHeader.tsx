@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useRef, useCallback, useMemo } from "react";
 import { useStickyElement } from "@/hooks/useStickyElement";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { usePathname } from "next/navigation";
@@ -28,13 +28,8 @@ export const useMainHeader = () => {
     }
   }, [closeMobileMenu, isMobileMenuOpen, openMobileMenu]);
 
-  const [isHome, setIsHome] = useState(false);
   const pathname = usePathname();
-  useEffect(() => {
-    if (pathname === "/") {
-      setIsHome(true);
-    }
-  }, [pathname]);
+  const isHome = pathname === "/" ? true : false;
 
   const menuContainerRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(

@@ -3,16 +3,12 @@ import { Logo } from "@/components/molecules/Logo/Logo";
 import { FooterMenu } from "@/components/molecules/FooterMenu/FooterMenu";
 import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
 
-type FooterProps = {
-  isHome?: boolean;
-};
-
-export const Footer = memo(({ isHome }: FooterProps) => {
+export const Footer = memo(() => {
   return (
     <footer className="py-20 bg-white dark:bg-zinc-800 border-t-2 border-green-light dark:border-zinc-600">
       <div className="container mx-auto px-3 flex flex-wrap flex-col md:flex-row justify-between items-center gap-6">
         <span className="md:order-2 hover:underline">
-          <Logo isHome={isHome} />
+          <Logo />
         </span>
         <nav className="md:order-1 grow basis-0">
           <FooterMenu />
