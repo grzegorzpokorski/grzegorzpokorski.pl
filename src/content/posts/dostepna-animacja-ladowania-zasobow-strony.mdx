@@ -1,0 +1,36 @@
+---
+title: Dostępna animacja ładowania zasobów strony
+excerpt: Jak stworzyć dostęną animację ładowania strony? Czy posiadanie takiej animacji to dobry pomysł? To i więcej dowiesz się z tego artykułu.
+category: Programowanie
+tags:
+  - SEO
+  - dostępność
+  - nowoczesny design
+  - CLS
+  - animacje
+  - web vitals
+  - skeleton loader
+date: 2023.06.27
+seo: description dla robotów indeksujących
+published: true
+featuredImage: /images/posts/dostepna-animacja-ladowania-zasobow-strony/featured-image.jpg
+featuredImageAlt: latptop oraz notatnik na stole, obok mężczyzna gestykuluje rękoma
+---
+
+## O co chodzi?
+
+Jednym z aspektów, które trzeba wziąć pod uwagę przy tworzeniu dostępnych stron internetowych to fakt, że nie wszyscy użytkownicy internetu posiadają szybkie łącze internetowe. Warto zatem jak najbardziej "odchudzać" pliki i zasoby składające się na naszą stronę. Nie zawsze jednak jest to możliwe, chociażby ze względu na naturę, treść strony — np. strona prezentująca prace fotografa, która zawiera wiele zdjęć (choć i tu można wiele zdziałać).
+
+W minionej dekadzie często stosowano różnego rodzaju "loadery", które zakrywały cala stronę do momentu, aż cała zawartość strony zostanie załadowana. Obecnie wiele elementów składających się na stronę ładowana jest asynchronicznie, dzięki czemu można korzystać choćby z części funkcjonalności strony, nawet gdy nie została ona w pełni załadowana.
+
+## Dlaczego to zmieniać?
+
+Zakrywanie całej strony jest obecnie wręcz niewskazane i może bardzo mocno obniżyć wskaźnik [FCP](https://web.dev/fcp/), który mierzy czas od rozpoczęcia ładowania strony do momentu, kiedy użytkownik zobaczy pierwsza treść, którą może skonsumować na naszej stronie.
+
+Obecnie rzadko konieczne jest oczekiwanie na załadowanie całej strony, aby móc z niej korzystać. Aby jednak wskazać użytkownikom, które elementy na stronie jeszcze nie posiadają pełnej funkcjonalności lub nie są załadowane w pełni i nie są gotowe do użycia, zaleca się stosowanie z tzw. skeleton loaderów, które nie zakrywają całej strony, pozwalając na interakcje z jej załadowana treścią, a wskazują jedynie na elementy / sekcje, które jeszcze nie zostały załadowane.
+
+Jest to bardzo dobra praktyka, ponieważ użytkownik nie jest zdezorientowany i wie, co się dzieje na stronie, często loadery te są rozmiarów faktycznej treści strony, dzięki czemu unikamy dużych zmian układu strony podczas jej ładowania ([Cumulative Layout Shift](https://web.dev/cls/)), co poprawia SEO i wydajność naszej witryny oraz ogólne wrażenia z jej używania (UX).
+
+## Jak to osiągnąć?
+
+Czy zatem wystarczy wstawić pustego diva z animacją? Niestety nie. Poniżej pokaże, na jakie atrybuty trzeba zwrócić uwagę, aby również tego typu loadery były dostępne na naszej stronie oraz nie wprowadzały dodatkowego zamieszania dla użytkowników technologi asystujących.
