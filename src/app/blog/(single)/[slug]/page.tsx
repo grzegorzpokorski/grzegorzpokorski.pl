@@ -42,5 +42,5 @@ export default async function BlogPost({
     post.frontmatter.tags,
   );
 
-  return <SinglePostPage post={post} relatedPosts={relatedPosts} />;
+  return <SinglePostPage post={post} relatedPosts={relatedPosts.slice(0, 3)} />;
 }
