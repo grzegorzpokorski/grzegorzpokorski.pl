@@ -1,4 +1,4 @@
-import { HomePage } from "@/components/templates/HomePage/HomePage";
+import { HomePage } from "@/components/pages/HomePage/HomePage";
 import { getPublishedPosts } from "@/lib/posts";
 
 export default async function Index() {

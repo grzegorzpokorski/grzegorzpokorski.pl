@@ -3,8 +3,8 @@ import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Section } from "@/components/molecules/Section/Section";
 import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
+import { ContactBanner } from "@/components/templates/ContactBanner/ContactBanner";
 import { getSlug } from "@/utils/getSlug";
-import { ContactBanner } from "../ContactBanner/ContactBanner";
 
 export const ContactPage = () => {
   return (

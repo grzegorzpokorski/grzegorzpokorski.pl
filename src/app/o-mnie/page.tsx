@@ -1,4 +1,4 @@
-import { AboutPage } from "@/components/templates/AboutPage/AboutPage";
+import { AboutPage } from "@/components/pages/AboutPage/AboutPage";
 import { getPublishedPosts } from "@/lib/posts";
 import type { Metadata } from "next";
 import { getMetadata } from "@/utils/getMetadata";

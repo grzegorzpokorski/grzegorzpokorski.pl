@@ -3,7 +3,7 @@ import { PostHeader } from "@/components/organisms/PostHeader/PostHeader";
 import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
 import { Post } from "@/types";
 
-export const SinglePost = ({
+export const SinglePostPage = ({
   post,
   relatedPosts,
 }: {

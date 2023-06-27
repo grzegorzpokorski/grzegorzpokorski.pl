@@ -1,4 +1,4 @@
-import { OfferPage } from "@/components/templates/OfferPage/OfferPage";
+import { OfferPage } from "@/components/pages/OfferPage/OfferPage";
 import type { Metadata } from "next";
 import { getMetadata } from "@/utils/getMetadata";
 import { siteUrl } from "@/content/seo";

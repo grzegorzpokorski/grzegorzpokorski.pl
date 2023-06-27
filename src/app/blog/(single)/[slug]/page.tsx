@@ -1,4 +1,4 @@
-import { SinglePost } from "@/components/templates/SinglePost/SinglePost";
+import { SinglePostPage } from "@/components/pages/SinglePostPage/SinglePostPage";
 import { siteUrl } from "@/content/seo";
 import { getPostBySlug, getPostsParams, getRelatedPosts } from "@/lib/posts";
 import { getMetadata } from "@/utils/getMetadata";
@@ -42,5 +42,5 @@ export default async function BlogPost({
     post.frontmatter.tags,
   );
 
-  return <SinglePost post={post} relatedPosts={relatedPosts} />;
+  return <SinglePostPage post={post} relatedPosts={relatedPosts} />;
 }

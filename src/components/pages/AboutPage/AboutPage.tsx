@@ -4,11 +4,11 @@ import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Hero } from "@/components/molecules/Hero/Hero";
 import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
-import { Post } from "@/types";
+import { DefaultBanner } from "@/components/templates/DefaultBanner/DefaultBanner";
+import { useThemeContext } from "@/providers/ThemeProvider";
 import HeroImage from "../../../../public/images/about.webp";
 import HeroImageDark from "../../../../public/images/about-dark.webp";
-import { DefaultBanner } from "../DefaultBanner/DefaultBanner";
-import { useThemeContext } from "@/providers/ThemeProvider";
+import { Post } from "@/types";
 
 export const AboutPage = ({ posts }: { posts: Post[] }) => {
   const { theme } = useThemeContext();
