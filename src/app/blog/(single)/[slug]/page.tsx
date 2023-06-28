@@ -21,6 +21,7 @@ export async function generateMetadata({
       ...post.frontmatter.featuredImage,
       type: post.frontmatter.featuredImage.type || "jpeg",
     },
+    keywords: post.frontmatter.tags,
   });
 }
 

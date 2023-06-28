@@ -20,6 +20,7 @@ type GetMetadataArgs = {
         alt: string;
         type: string;
       };
+      keywords: string[];
     }
 );
 
@@ -92,6 +93,7 @@ export const getMetadata = (args: GetMetadataArgs) => {
   if (args.article) {
     return {
       ...data,
+      keywords: args.keywords,
       openGraph: {
         ...data.openGraph,
         type: "article",
