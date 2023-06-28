@@ -1,5 +1,6 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useRef } from "react";
 import { useOnKeydown } from "@/hooks/useOnKeydown";
+import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 
 export const useDropdown = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,8 +20,12 @@ export const useDropdown = () => {
     }, [isDropdownOpen]),
   );
 
+  const dropDownRef = useRef<HTMLDivElement>(null);
+  useOnClickOutside(dropDownRef, closeDropdown);
+
   return useMemo(
     () => ({
+      dropDownRef,
       isDropdownOpen,
       closeDropdown,
       toggleDropdown,

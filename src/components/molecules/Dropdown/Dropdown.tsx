@@ -1,23 +1,25 @@
 "use client";
 
-import { useRef } from "react";
+import { useId } from "react";
 import { twMerge } from "tailwind-merge";
-import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
-import { DropdownItem } from "../DropdownItem/DropdownItem";
+import { DropdownItem } from "@/components/molecules/DropdownItem/DropdownItem";
 import { useDropdown } from "./useDropdown";
+import FocusLock from "react-focus-lock";
 
 type Props = {
-  categories: string[];
-  initialDropdownValue?: string;
+  items: string[];
+  activeItem: string;
+  defaultItem: {
+    label: string;
+    href: string;
+  };
+  label: string;
 };
 
-export const Dropdown = ({
-  categories,
-  initialDropdownValue = "Wszystkie kategorie",
-}: Props) => {
-  const { isDropdownOpen, closeDropdown, toggleDropdown } = useDropdown();
-  const dropDownRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(dropDownRef, closeDropdown);
+export const Dropdown = ({ items, activeItem, defaultItem, label }: Props) => {
+  const { dropDownRef, isDropdownOpen, closeDropdown, toggleDropdown } =
+    useDropdown();
+  const id = useId();
 
   return (
     <div className="w-full lg:w-4/12">
@@ -27,46 +29,54 @@ export const Dropdown = ({
       >
         <button
           className={twMerge(
-            "h-12 lg:h-16 px-6 border-2 border-zinc-400 hover:border-green-500 bg-white dark:bg-zinc-800 rounded text-left text-zinc-600 dark:text-zinc-400 hover:text-green-500 dark:hover:text-green-500 relative transition-colors",
+            "relative py-4 px-6 border-2 border-zinc-400 hover:border-green-500 bg-white dark:bg-zinc-800 rounded text-left text-zinc-600 dark:text-zinc-400 hover:text-green-500 dark:hover:text-green-500 relative transition-colors",
             "after:content-[''] after:right-6 after:top-1/2 after:-translate-y-1/2 after:absolute after:border-l-[6px] after:border-l-transparent after:border-t-[6px] after:border-t-zinc-500 after:border-r-[6px] after:border-r-transparent after:transition-all",
             isDropdownOpen &&
               "border-green-500 text-green-500 after:rotate-180 after:border-y-green-500",
             "motion-reduce:transition-none after:motion-reduce:transition-none",
           )}
           type="button"
-          id="dropdownMenuButton"
+          id={id}
+          role="combobox"
           aria-expanded={isDropdownOpen}
+          aria-controls={`${id}-controls`}
           aria-haspopup="true"
+          aria-label={label}
+          aria-autocomplete="none"
           onClick={toggleDropdown}
         >
-          {initialDropdownValue}
+          {activeItem}
         </button>
-        <ul
-          className={twMerge(
-            "flex flex-col py-2 lg:py-4 bg-white dark:bg-zinc-800 shadow-md z-10 rounded absolute top-0 left-0 right-0 translate-y-12 lg:translate-y-16 hidden",
-            isDropdownOpen && "block",
-          )}
-          aria-labelledby="dropdownMenuButton"
-        >
-          {
-            <DropdownItem
-              key="wszystkie-kategorie"
-              name="Wszystkie kategorie"
-              active={initialDropdownValue === "Wszystkie kategorie"}
-              customHref="/blog"
-              onClick={() => closeDropdown()}
-            />
-          }
-          {categories &&
-            categories.map((category) => (
+        <FocusLock disabled={!isDropdownOpen}>
+          <ul
+            className={twMerge(
+              "absolute bottom-0 translate-y-full flex flex-col py-2 lg:py-4 bg-white dark:bg-zinc-800 shadow-md z-10 rounded w-full hidden",
+              isDropdownOpen && "block",
+            )}
+            id={`${id}-controls`}
+            aria-labelledby="dropdownMenuButton"
+            role="listbox"
+          >
+            {
               <DropdownItem
-                key={category}
-                name={category}
-                active={category === initialDropdownValue ? true : false}
+                key={defaultItem.label}
+                name={defaultItem.label}
+                active={defaultItem.label === activeItem}
+                customHref={defaultItem.href}
                 onClick={() => closeDropdown()}
               />
-            ))}
-        </ul>
+            }
+            {items &&
+              items.map((item) => (
+                <DropdownItem
+                  key={item}
+                  name={item}
+                  active={item === activeItem}
+                  onClick={() => closeDropdown()}
+                />
+              ))}
+          </ul>
+        </FocusLock>
       </div>
     </div>
   );

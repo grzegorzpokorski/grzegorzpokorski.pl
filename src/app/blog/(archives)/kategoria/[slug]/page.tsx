@@ -47,7 +47,12 @@ export default async function TagArchive({
             Kategoria: {category}
           </h1>
         </header>
-        <Dropdown categories={categories} initialDropdownValue={category} />
+        <Dropdown
+          items={categories}
+          activeItem={category}
+          defaultItem={{ label: "Wszystkie kategorie", href: "/blog" }}
+          label="Kategorie"
+        />
       </div>
       <PostsList posts={posts} postItemTitleTag="h2" />
     </>

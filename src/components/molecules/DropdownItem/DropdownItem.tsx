@@ -15,15 +15,17 @@ export const DropdownItem = memo(
     return (
       <li
         className={twMerge(
-          "px-6 py-1 transition dark:text-zinc-400",
+          "flex flex-col",
+          "px-6 py-1.5 transition dark:text-zinc-400",
           "motion-reduce:transition-none",
           active
             ? "text-green-500 dark:text-green-500"
             : "hover:text-green-500 dark:hover:text-white",
         )}
+        role="option"
+        aria-selected={active}
       >
         <Link
-          className="block"
           href={customHref ? customHref : `/blog/kategoria/${getSlug(name)}`}
           onClick={onClick}
         >

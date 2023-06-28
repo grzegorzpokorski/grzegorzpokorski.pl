@@ -28,8 +28,10 @@ export default async function Blog() {
           </h1>
         </header>
         <Dropdown
-          categories={categories}
-          initialDropdownValue="Wszystkie kategorie"
+          items={categories}
+          activeItem="Wszystkie kategorie"
+          defaultItem={{ label: "Wszystkie kategorie", href: "/blog" }}
+          label="Kategorie"
         />
       </div>
       <PostsList posts={posts} postItemTitleTag="h2" />
