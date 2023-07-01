@@ -1,6 +1,7 @@
 import { SinglePostPage } from "@/components/pages/SinglePostPage/SinglePostPage";
 import { siteUrl } from "@/content/seo";
 import { getPostBySlug, getPostsParams, getRelatedPosts } from "@/lib/posts";
+import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
 import { getMetadata } from "@/utils/getMetadata";
 import type { Metadata } from "next";
 
@@ -42,6 +43,29 @@ export default async function BlogPost({
     post.frontmatter.category,
     post.frontmatter.tags,
   );
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.frontmatter.title,
+    image: [post.frontmatter.featuredImage.src],
+    datePublished: getISOStringFromPublicationDate(post.frontmatter.date),
+    dateModified: getISOStringFromPublicationDate(post.frontmatter.date),
+    author: [
+      {
+        "@type": "Person",
+        name: "Grzegorz Pokorski",
+        url: "https://www.linkedin.com/in/grzegorz-pokorski/",
+      },
+    ],
+  };
 
-  return <SinglePostPage post={post} relatedPosts={relatedPosts.slice(0, 3)} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SinglePostPage post={post} relatedPosts={relatedPosts.slice(0, 3)} />
+    </>
+  );
 }
