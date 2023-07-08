@@ -1,10 +1,13 @@
 "use client";
 
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import Image, { ImageProps } from "next/image";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote";
+import type { ImageProps } from "next/image";
+import Image from "next/image";
 import { Link } from "@/components/atoms/Link/Link";
 import { SharePostLinks } from "@/components/molecules/SharePostLinks/SharePostLinks";
 import { MdxHeading } from "@/components/molecules/MdxHeading/MdxHeading";
+import type { MDXComponents } from "mdx/types";
 
 type PostContentProps = {
   source: MDXRemoteSerializeResult;
@@ -34,7 +37,7 @@ export const PostContent = ({ source, slug, title }: PostContentProps) => {
     h5: (props: JSX.IntrinsicElements["h5"]) => (
       <MdxHeading as="h5" isAnchor {...props} />
     ),
-  } as import("mdx/types").MDXComponents;
+  } as MDXComponents;
 
   return (
     <article className="pb-16">

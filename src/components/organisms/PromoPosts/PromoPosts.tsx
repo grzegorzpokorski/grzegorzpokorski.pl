@@ -1,7 +1,7 @@
 import { Header } from "@/components/molecules/Header/Header";
 import { Link } from "@/components/atoms/Link/Link";
 import { Section } from "@/components/molecules/Section/Section";
-import { Post } from "@/types";
+import type { Post } from "@/types";
 import { getSlug } from "@/utils/getSlug";
 import { useId } from "react";
 import { PostsList } from "@/components/organisms/PostsList/PostsList";

@@ -1,6 +1,7 @@
 import { getSlug } from "@/utils/getSlug";
-import Image, { StaticImageData } from "next/image";
-import { ReactNode } from "react";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
+import type { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 import { Section } from "../Section/Section";
 import { Heading } from "@/components/atoms/Heading/Heading";

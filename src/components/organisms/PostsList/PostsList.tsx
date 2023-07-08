@@ -1,5 +1,5 @@
 import { PostItem } from "@/components/molecules/PostItem/PostItem";
-import { Post } from "@/types";
+import type { Post } from "@/types";
 
 type PostListProps = {
   posts: Post[];

@@ -2,7 +2,7 @@ import path from "path";
 import { promises } from "fs";
 import { serializeSource } from "./markdown";
 import { z } from "zod";
-import { Post } from "@/types";
+import type { Post } from "@/types";
 import { getPlaiceholder } from "plaiceholder";
 import { getSlug } from "@/utils/getSlug";
 import { getISODateFromPublicatedDate } from "@/utils/getISODateFromPublicationDate";

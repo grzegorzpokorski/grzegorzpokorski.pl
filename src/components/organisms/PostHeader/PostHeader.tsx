@@ -1,5 +1,5 @@
 import slugify from "slugify";
-import { PostFrontmatter } from "@/types";
+import type { PostFrontmatter } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
 import { TagsList } from "@/components/molecules/TagsList/TagsList";

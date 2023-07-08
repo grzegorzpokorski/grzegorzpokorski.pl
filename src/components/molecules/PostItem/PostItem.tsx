@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/components/atoms/Link/Link";
 import { Heading } from "@/components/atoms/Heading/Heading";
-import { PostFrontmatter } from "@/types";
+import type { PostFrontmatter } from "@/types";
 import { getSlug } from "@/utils/getSlug";
 import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
 import { getFormatedPublicationDate } from "@/utils/getFormatedPublicationDate";

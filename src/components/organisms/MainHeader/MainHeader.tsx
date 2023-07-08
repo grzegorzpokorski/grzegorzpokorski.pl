@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Logo } from "@/components/molecules/Logo/Logo";
 import { Hamburger } from "@/components/atoms/Hamburger/Hamburger";
 import { MainMenu } from "../MainMenu/MainMenu";

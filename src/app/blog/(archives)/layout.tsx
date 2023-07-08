@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Main } from "@/components/atoms/Main/Main";
 import { DefaultBanner } from "@/components/templates/DefaultBanner/DefaultBanner";
 import { Section } from "@/components/molecules/Section/Section";

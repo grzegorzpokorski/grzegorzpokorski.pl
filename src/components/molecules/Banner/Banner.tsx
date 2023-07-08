@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Section } from "@/components/molecules/Section/Section";
 import { Heading } from "@/components/atoms/Heading/Heading";
 import { getSlug } from "@/utils/getSlug";

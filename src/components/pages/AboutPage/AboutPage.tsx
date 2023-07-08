@@ -8,7 +8,7 @@ import { DefaultBanner } from "@/components/templates/DefaultBanner/DefaultBanne
 import { useThemeContext } from "@/providers/ThemeProvider";
 import HeroImage from "../../../../public/images/about.webp";
 import HeroImageDark from "../../../../public/images/about-dark.webp";
-import { Post } from "@/types";
+import type { Post } from "@/types";
 
 export const AboutPage = ({ posts }: { posts: Post[] }) => {
   const { theme } = useThemeContext();

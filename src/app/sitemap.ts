@@ -4,7 +4,7 @@ import {
   getPublishedPosts,
   getTagsParams,
 } from "@/lib/posts";
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = ["", "/blog", "/kontakt", "/o-mnie", "/oferta"];

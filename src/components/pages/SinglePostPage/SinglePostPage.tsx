@@ -1,7 +1,7 @@
 import { PostContent } from "@/components/molecules/PostContent/PostContent";
 import { PostHeader } from "@/components/organisms/PostHeader/PostHeader";
 import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
-import { Post } from "@/types";
+import type { Post } from "@/types";
 
 export const SinglePostPage = ({
   post,

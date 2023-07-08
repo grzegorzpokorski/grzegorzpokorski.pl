@@ -1,13 +1,13 @@
 import "@/styles/globals.css";
 import "@/styles/prism-theme.css";
 
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { AppProviders } from "@/providers/AppProviders";
 import { Layout } from "@/components/templates/Layout/Layout";
 
 import { Rubik } from "next/font/google";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { getMetadata } from "@/utils/getMetadata";
 import { siteName } from "@/content/seo";
 const rubik = Rubik({

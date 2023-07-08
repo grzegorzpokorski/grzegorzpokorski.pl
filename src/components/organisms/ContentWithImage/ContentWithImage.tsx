@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
-import Image, { StaticImageData } from "next/image";
+import type { ReactNode } from "react";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { Link } from "@/components/atoms/Link/Link";
 import { Section } from "@/components/molecules/Section/Section";

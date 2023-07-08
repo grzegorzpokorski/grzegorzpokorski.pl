@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 import LinkNext from "next/link";
 import { twMerge } from "tailwind-merge";
 

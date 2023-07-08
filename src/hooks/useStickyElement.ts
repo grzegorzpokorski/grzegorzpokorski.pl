@@ -1,4 +1,5 @@
-import { useEffect, useCallback, useRef, useState, RefObject } from "react";
+import type { RefObject } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 
 export const useStickyElement = (
   customOffset?: number,
