@@ -1,16 +1,16 @@
 import { getSlug } from "@/utils/getSlug";
 
-type HeadingProps = {
+type MdxHeadingProps = {
   as: "h1" | "h2" | "h3" | "h4" | "h5";
   isAnchor?: boolean;
 } & JSX.IntrinsicElements["h1"];
 
-export const Heading = ({
+export const MdxHeading = ({
   as: Tag,
   isAnchor,
   children,
   ...props
-}: HeadingProps) => {
+}: MdxHeadingProps) => {
   if (isAnchor && typeof children === "string") {
     const slug = `${getSlug(children)}`;
     return (

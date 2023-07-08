@@ -3,8 +3,8 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Image, { ImageProps } from "next/image";
 import { Link } from "@/components/atoms/Link/Link";
-import { SharePostLinks } from "../SharePostLinks/SharePostLinks";
-import { Heading } from "../Heading/Heading";
+import { SharePostLinks } from "@/components/molecules/SharePostLinks/SharePostLinks";
+import { MdxHeading } from "@/components/molecules/MdxHeading/MdxHeading";
 
 type PostContentProps = {
   source: MDXRemoteSerializeResult;
@@ -23,16 +23,16 @@ export const PostContent = ({ source, slug, title }: PostContentProps) => {
       />
     ),
     h2: (props: JSX.IntrinsicElements["h2"]) => (
-      <Heading as="h2" isAnchor {...props} />
+      <MdxHeading as="h2" isAnchor {...props} />
     ),
     h3: (props: JSX.IntrinsicElements["h3"]) => (
-      <Heading as="h3" isAnchor {...props} />
+      <MdxHeading as="h3" isAnchor {...props} />
     ),
     h4: (props: JSX.IntrinsicElements["h4"]) => (
-      <Heading as="h4" isAnchor {...props} />
+      <MdxHeading as="h4" isAnchor {...props} />
     ),
     h5: (props: JSX.IntrinsicElements["h5"]) => (
-      <Heading as="h5" isAnchor {...props} />
+      <MdxHeading as="h5" isAnchor {...props} />
     ),
   } as import("mdx/types").MDXComponents;
 

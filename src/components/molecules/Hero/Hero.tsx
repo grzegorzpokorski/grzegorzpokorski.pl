@@ -89,7 +89,6 @@ export const Hero = ({
           />
         </picture>
       </div>
-      {/* </section> */}
     </Section>
   );
 };
