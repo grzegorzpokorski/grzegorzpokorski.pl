@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Link } from "@/components/atoms/Link/Link";
+import { Heading } from "@/components/atoms/Heading/Heading";
 import { PostFrontmatter } from "@/types";
 import { getSlug } from "@/utils/getSlug";
 import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
@@ -53,12 +54,13 @@ export const PostItem = ({
             </time>
           </div>
           <Link href={`/blog/${slug}`} variant="post-item-title">
-            <TitleTag className="font-bold text-lg">{title}</TitleTag>
+            <Heading as={TitleTag} size="logo">
+              {title}
+            </Heading>
           </Link>
         </header>
         <div className="p-8 pt-3 flex flex-col gap-3 dark:text-zinc-400">
           <p>{excerpt}</p>
-          {/* <p>{post.excerpt.split(" ").splice(0, 20).join(" ")} [...]</p> */}
         </div>
       </article>
     </li>

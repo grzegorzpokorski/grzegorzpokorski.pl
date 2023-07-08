@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
-import { getSlug } from "@/utils/getSlug";
 import { Section } from "@/components/molecules/Section/Section";
+import { Heading } from "@/components/atoms/Heading/Heading";
+import { getSlug } from "@/utils/getSlug";
 
 type BannerProps = {
   title: string;
@@ -16,12 +17,9 @@ export const Banner = ({ title, content, buttons }: BannerProps) => {
       paddingVariant="fixed"
     >
       <header className="w-full md:w-2/3 text-center mx-auto text-white flex flex-col gap-5">
-        <h2
-          className="text-3xl font-bold dark:text-zinc-800"
-          id={getSlug(title)}
-        >
+        <Heading as="h2" variant="banner" size="banner" id={getSlug(title)}>
           {title}
-        </h2>
+        </Heading>
         {content && <p className="dark:text-zinc-800">{content}</p>}
         {buttons && (
           <div className="flex flex-row flex-wrap gap-2 justify-center items-center">

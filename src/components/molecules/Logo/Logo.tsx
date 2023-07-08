@@ -1,3 +1,4 @@
+import { Heading } from "@/components/atoms/Heading/Heading";
 import { Link } from "@/components/atoms/Link/Link";
 
 type LogoProps = {
@@ -12,10 +13,10 @@ export const Logo = ({ isHome, isTitle }: LogoProps) => {
       className="transition hover:opacity-60 motion-reduce:transition-none"
     >
       {isTitle ? (
-        <h1 className="text-lg font-bold">
+        <Heading as="h1" size="logo">
           <span className="text-green-500">Grzegorz </span>
           <span className="text-zinc-800 dark:text-white">Pokorski</span>
-        </h1>
+        </Heading>
       ) : (
         <>
           <span className="text-lg font-bold text-green-500">Grzegorz </span>

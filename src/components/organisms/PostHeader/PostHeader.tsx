@@ -5,6 +5,7 @@ import Image from "next/image";
 import { TagsList } from "@/components/molecules/TagsList/TagsList";
 import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
 import { getFormatedPublicationDate } from "@/utils/getFormatedPublicationDate";
+import { Heading } from "@/components/atoms/Heading/Heading";
 
 export const PostHeader = ({
   category,
@@ -35,7 +36,9 @@ export const PostHeader = ({
               {getFormatedPublicationDate(date)}
             </time>
           </span>
-          <h1 className="font-bold text-3xl md:text-4xl">{title}</h1>
+          <Heading as="h1" size="default">
+            {title}
+          </Heading>
           <TagsList tags={tags} />
           <picture className="w-full h-60 md:h-80 lg:h-[30rem] overflow-hidden relative block mt-4 rounded-md shadow-md">
             <Image

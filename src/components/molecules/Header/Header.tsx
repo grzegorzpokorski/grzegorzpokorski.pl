@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import { Heading } from "@/components/atoms/Heading/Heading";
 
 type HeaderProps = {
   subtitle?: string;
@@ -33,19 +34,13 @@ export const Header = ({
       <span className="uppercase font-bold text-green-500">{subtitle}</span>
     )}
     {titleAsH1 ? (
-      <h1
-        className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200"
-        id={titleId}
-      >
+      <Heading as="h1" size="default" id={titleId} variant="default">
         {title}
-      </h1>
+      </Heading>
     ) : (
-      <h2
-        className="font-bold text-2xl md:text-3xl text-zinc-800 dark:text-zinc-200"
-        id={titleId}
-      >
+      <Heading as="h2" size="small" id={titleId} variant="default">
         {title}
-      </h2>
+      </Heading>
     )}
     {description && (
       <div className="prose dark:prose-invert max-w-none">{description}</div>

@@ -1,5 +1,6 @@
 import { Dropdown } from "@/components/molecules/Dropdown/Dropdown";
 import { PostsList } from "@/components/organisms/PostsList/PostsList";
+import { Heading } from "@/components/atoms/Heading/Heading";
 import { getCategories, getPublishedPosts } from "@/lib/posts";
 import type { Metadata } from "next";
 import { getMetadata } from "@/utils/getMetadata";
@@ -20,12 +21,9 @@ export default async function Blog() {
     <>
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 pb-16 lg:pb-24">
         <header className="w-full lg:w-8/12 flex flex-col gap-3">
-          <h1
-            className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200"
-            id="archive-title"
-          >
+          <Heading as="h1" id="archive-title" variant="default" size="default">
             Artykuły, ciekawostki z świata stron internetowych i nie tylko 🔥
-          </h1>
+          </Heading>
         </header>
         <Dropdown
           items={categories}

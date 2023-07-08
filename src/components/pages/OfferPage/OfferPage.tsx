@@ -1,6 +1,6 @@
 "use client";
 
-import { Header } from "@/components/atoms/Header/Header";
+import { Header } from "@/components/molecules/Header/Header";
 import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Banner } from "@/components/molecules/Banner/Banner";

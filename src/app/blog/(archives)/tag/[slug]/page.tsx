@@ -2,6 +2,7 @@ import { PostsList } from "@/components/organisms/PostsList/PostsList";
 import { getPostsByTag, getTagsParams } from "@/lib/posts";
 import type { Metadata } from "next";
 import { getMetadata } from "@/utils/getMetadata";
+import { Heading } from "@/components/atoms/Heading/Heading";
 
 export async function generateMetadata({
   params: { slug },
@@ -33,12 +34,9 @@ export default async function TagArchive({
     <>
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 pb-16 lg:pb-24">
         <header className="w-full lg:w-8/12 flex flex-col gap-3">
-          <h1
-            className="font-bold text-3xl md:text-4xl text-zinc-800 dark:text-zinc-200"
-            id="archive-title"
-          >
+          <Heading as="h1" id="archive-title" variant="default" size="default">
             Tag: {tag}
-          </h1>
+          </Heading>
         </header>
       </div>
       <PostsList posts={posts} postItemTitleTag="h2" />

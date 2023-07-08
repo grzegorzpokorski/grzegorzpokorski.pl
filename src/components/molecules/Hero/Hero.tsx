@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 import { Section } from "../Section/Section";
+import { Heading } from "@/components/atoms/Heading/Heading";
 
 type HeroProps = {
   title: string;
@@ -50,21 +51,14 @@ export const Hero = ({
               : "text-center items-center md:items-start",
           )}
         >
-          {titleAsH1 ? (
-            <h1
-              className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200"
-              id={getSlug(title)}
-            >
-              {title}
-            </h1>
-          ) : (
-            <h2
-              className="text-3xl lg:text-4xl xl:text-[2.5rem] xl:leading-[1.2] font-bold text-zinc-800 dark:text-zinc-200"
-              id={getSlug(title)}
-            >
-              {title}
-            </h2>
-          )}
+          <Heading
+            as={titleAsH1 ? "h1" : "h2"}
+            id={getSlug(title)}
+            size="hero"
+            variant="default"
+          >
+            {title}
+          </Heading>
           <div className="prose dark:prose-invert max-w-none">
             {description && description}
           </div>

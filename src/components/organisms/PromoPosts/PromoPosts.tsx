@@ -1,4 +1,4 @@
-import { Header } from "@/components/atoms/Header/Header";
+import { Header } from "@/components/molecules/Header/Header";
 import { Link } from "@/components/atoms/Link/Link";
 import { Section } from "@/components/molecules/Section/Section";
 import { Post } from "@/types";
