@@ -50,7 +50,7 @@ export const ContentWithImage = ({
           )}
           {href && (
             <footer className="flex flex-row items-start mt-6">
-              <Link href={href} buttonStyle="green">
+              <Link href={href} variant="green">
                 Zapytaj o ofertę
               </Link>
             </footer>

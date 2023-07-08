@@ -20,7 +20,7 @@ export const ThemeSwitch = () => {
         "rounded-lg lg:rounded-none",
       )}
     >
-      {isDarkMode ? <FaSun className="" /> : <FaMoon className="" />}
+      {isDarkMode ? <FaSun /> : <FaMoon />}
       <span className="lg:hidden" aria-hidden="true">
         Zmien motyw na {isDarkMode ? "jasny" : "ciemny"}
       </span>

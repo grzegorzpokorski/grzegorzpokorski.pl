@@ -1,8 +1,7 @@
+import { Link } from "@/components/atoms/Link/Link";
+
 export const SkipLink = () => (
-  <a
-    href="#tresc"
-    className="fixed py-4 px-8 m-4 bg-gray-500 text-white block left-[-9999px] top-[-9999px] focus:left-0 focus:top-0 focus:z-[1000]"
-  >
+  <Link href="#tresc" variant="skip-to-the-content">
     Przejdź do treści
-  </a>
+  </Link>
 );

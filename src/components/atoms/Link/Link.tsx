@@ -2,7 +2,7 @@ import { AnchorHTMLAttributes, ReactNode } from "react";
 import LinkNext from "next/link";
 import { twMerge } from "tailwind-merge";
 
-type ButtonVariants =
+type LinkVariant =
   | "green"
   | "green-outline"
   | "white"
@@ -13,44 +13,91 @@ type ButtonVariants =
   | "dark-outline"
   | "footer-link"
   | "social-menu-link"
-  | "social-menu-link-mobile-nav";
+  | "social-menu-link-mobile-nav"
+  | "skip-to-the-content"
+  | "with-icon"
+  | "post-item-title";
 
-const baseButtonStyles =
-  "inline-flex border-2 rounded px-4 md:px-6 py-2 md:py-3 text-base text-center disabled:cursor-not-allowed rounded items-center justify-center gap-1.5";
+const baseStyles = twMerge(
+  "inline-flex border-2 rounded",
+  "px-4 md:px-6 py-2 md:py-3",
+  "text-base text-center",
+  "disabled:cursor-not-allowed",
+  "items-center justify-center",
+  "gap-1.5",
+);
 const transitionStyles = "transition-colors motion-reduce:transition-none";
 
-const buttonVariants = {
+const linkVariants = {
   white: twMerge(
-    baseButtonStyles,
-    "bg-white hover:bg-slate-100 text-gray-800 border-white",
+    baseStyles,
+    "bg-white hover:bg-slate-100",
+    "text-gray-800",
+    "border-white",
   ),
   "white-outline": twMerge(
-    baseButtonStyles,
-    "bg-transparent hover:bg-white text-white hover:text-gray-800 border-white",
+    baseStyles,
+    "bg-transparent hover:bg-white",
+    "text-white hover:text-gray-800",
+    "border-white",
   ),
   dark: twMerge(
-    baseButtonStyles,
-    "bg-zinc-800 hover:bg-zinc-900 text-white border-zinc-800",
+    baseStyles,
+    "bg-zinc-800 hover:bg-zinc-900",
+    "text-white",
+    "border-zinc-800",
   ),
   "dark-outline": twMerge(
-    baseButtonStyles,
-    "bg-transparent hover:bg-zinc-800 text-zinc-800 hover:text-white border-zinc-800",
+    baseStyles,
+    "bg-transparent hover:bg-zinc-800",
+    "text-zinc-800 hover:text-white",
+    "border-zinc-800",
   ),
   green: twMerge(
-    baseButtonStyles,
-    "bg-green-500 hover:bg-green-600 text-white dark:text-zinc-800 border-green-500",
+    baseStyles,
+    "bg-green-500 hover:bg-green-600",
+    "text-white dark:text-zinc-800",
+    "border-green-500",
   ),
   "green-outline": twMerge(
-    baseButtonStyles,
-    "bg-transparent hover:bg-green-500 text-green-500 hover:text-white dark:hover:text-zinc-800 border-green-500",
+    baseStyles,
+    "bg-transparent hover:bg-green-500",
+    "text-green-500 hover:text-white dark:hover:text-zinc-800",
+    "border-green-500",
   ),
-  tag: "inline-flex rounded px-2.5 py-1.5 text-xs bg-zinc-200 dark:bg-zinc-700 hover:bg-green-500 dark:hover:bg-green-500 text-zinc-500 dark:text-zinc-400 hover:text-white dark:hover:text-zinc-800",
-  "share-social":
-    "inline-flex border-2 rounded px-3 md:px-4 py-2 md:py-3 bg-green-500 hover:bg-green-600 text-white border-green-500 ",
+  tag: twMerge(
+    "inline-flex rounded",
+    "px-2.5 py-1.5",
+    "bg-zinc-200 dark:bg-zinc-700 hover:bg-green-500 dark:hover:bg-green-500",
+    "text-xs text-zinc-500 dark:text-zinc-400 hover:text-white dark:hover:text-zinc-800",
+  ),
+  "share-social": twMerge(
+    "inline-flex rounded",
+    "px-3 md:px-4 py-2 md:py-3",
+    "bg-green-500 hover:bg-green-600",
+    "text-white",
+    "border-2 border-green-500",
+  ),
   "footer-link": "hover:underline dark:text-zinc-200",
   "social-menu-link": "text-green-500 hover:text-green-700",
-  "social-menu-link-mobile-nav":
-    "text-white dark:text-zinc-800 hover:text-green-500 dark:hover:text-white lg:text-zinc-600 md:hover:text-green-500 lg:dark:text-white lg:dark:hover:text-green-500",
+  "social-menu-link-mobile-nav": twMerge(
+    "text-white dark:text-zinc-800",
+    "hover:text-green-500 dark:hover:text-white",
+    "md:hover:text-green-500",
+    "lg:text-zinc-600 lg:dark:text-white lg:dark:hover:text-green-500",
+  ),
+  "skip-to-the-content": twMerge(
+    "fixed block",
+    "py-4 px-8 m-4",
+    "bg-gray-500 text-white",
+    "left-[-9999px] top-[-9999px]",
+    "focus:left-0 focus:top-0 focus:z-[1000]",
+  ),
+  "with-icon": "flex flex-row items-center hover:underline",
+  "post-item-title": twMerge(
+    "text-zinc-800 dark:text-zinc-200",
+    "hover:text-green-500 dark:hover:text-green-500",
+  ),
 } as const;
 
 export type LinkProps = {
@@ -58,39 +105,39 @@ export type LinkProps = {
   children: ReactNode;
   tabIndex?: number;
   onClick?: () => void;
-  buttonStyle?: ButtonVariants;
-  "aria-hidden"?: string;
+  variant?: LinkVariant;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const Link = (props: LinkProps) => {
-  const isInternal = props.href
-    ? props.href.startsWith("#") || props.href.startsWith("/")
+  const isInternal = ["#", "/"].some((item) => props.href.startsWith(item))
+    ? true
     : false;
 
-  return isInternal ? (
-    <LinkNext
-      href={props.href}
-      onClick={props.onClick}
-      className={twMerge(
-        transitionStyles,
-        props.buttonStyle && buttonVariants[props.buttonStyle],
-      )}
-      tabIndex={props.tabIndex}
-      aria-hidden={props["aria-hidden"]}
-    >
-      {props.children}
-    </LinkNext>
-  ) : (
+  if (isInternal) {
+    return (
+      <LinkNext
+        href={props.href}
+        onClick={props.onClick}
+        className={twMerge(
+          transitionStyles,
+          props.variant && linkVariants[props.variant],
+        )}
+        tabIndex={props.tabIndex}
+        aria-hidden={props["aria-hidden"]}
+      >
+        {props.children}
+      </LinkNext>
+    );
+  }
+
+  return (
     <a
       target="_blank"
       rel="noopener noreferrer"
       href={props.href}
       tabIndex={props.tabIndex}
       onClick={props.onClick}
-      className={twMerge(
-        transitionStyles,
-        props.buttonStyle && buttonVariants[props.buttonStyle],
-      )}
+      className={twMerge(props.variant && linkVariants[props.variant])}
     >
       {props.children}
     </a>

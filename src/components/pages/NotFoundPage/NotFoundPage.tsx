@@ -16,7 +16,7 @@ export const NotFoundPage = () => {
         }
         links={
           <>
-            <Link href="/" buttonStyle="green">
+            <Link href="/" variant="green">
               Zabierz mnie na stronę główną
             </Link>
           </>

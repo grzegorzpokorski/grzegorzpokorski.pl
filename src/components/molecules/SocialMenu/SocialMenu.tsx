@@ -12,7 +12,7 @@ export const SocialMenu = ({
       <li key={label}>
         <Link
           href={href}
-          buttonStyle={
+          variant={
             inMobileMenu ? "social-menu-link-mobile-nav" : "social-menu-link"
           }
         >

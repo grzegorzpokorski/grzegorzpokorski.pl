@@ -14,12 +14,12 @@ export const DefaultBanner = () => {
       content="Chętnie pomogę zrealizować Twój projekt."
       buttons={
         <>
-          <Link href="/kontakt" buttonStyle={isDark ? "dark" : "white"}>
+          <Link href="/kontakt" variant={isDark ? "dark" : "white"}>
             Skontaktuj się ze mną
           </Link>
           <Link
             href="/oferta"
-            buttonStyle={isDark ? "dark-outline" : "white-outline"}
+            variant={isDark ? "dark-outline" : "white-outline"}
           >
             Zobacz ofertę
           </Link>

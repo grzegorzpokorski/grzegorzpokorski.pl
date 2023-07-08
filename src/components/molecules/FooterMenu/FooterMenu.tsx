@@ -6,7 +6,7 @@ export const FooterMenu = () => (
     {menuItems &&
       menuItems.map((item, i) => (
         <li key={`footer-nav-item-${i}`}>
-          <Link href={item.href} buttonStyle="footer-link">
+          <Link href={item.href} variant="footer-link">
             {item.label}
           </Link>
         </li>

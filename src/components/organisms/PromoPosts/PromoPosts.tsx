@@ -36,7 +36,7 @@ export const PromoPosts = ({
       <PostsList posts={posts} />
       {link && (
         <footer className="mt-12 text-center">
-          <Link href="/blog" buttonStyle="green">
+          <Link href="/blog" variant="green">
             Zobacz wszystkie wpisy
           </Link>
         </footer>

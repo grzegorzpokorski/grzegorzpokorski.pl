@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { FaCalendarDay, FaTag } from "react-icons/fa";
-import Link from "next/link";
+import { Link } from "@/components/atoms/Link/Link";
 import { PostFrontmatter } from "@/types";
 import { getSlug } from "@/utils/getSlug";
 import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
 import { getFormatedPublicationDate } from "@/utils/getFormatedPublicationDate";
+import { FaCalendarDay, FaTag } from "react-icons/fa";
 
 type PostItemPops = PostFrontmatter & {
   titleAs?: "h1" | "h2" | "h3";
@@ -39,7 +39,7 @@ export const PostItem = ({
           <div className="flex flex-row gap-4 text-sm">
             <Link
               href={`/blog/kategoria/${getSlug(category)}`}
-              className="hover:underline flex flex-row items-center"
+              variant="with-icon"
             >
               <FaTag className="mr-2 text-green-500" />
               {category}
@@ -52,10 +52,7 @@ export const PostItem = ({
               {getFormatedPublicationDate(date)}
             </time>
           </div>
-          <Link
-            href={`/blog/${slug}`}
-            className="text-zinc-800 dark:text-zinc-200 hover:text-green-500 dark:hover:text-green-500 transition motion-reduce:transition-none"
-          >
+          <Link href={`/blog/${slug}`} variant="post-item-title">
             <TitleTag className="font-bold text-lg">{title}</TitleTag>
           </Link>
         </header>

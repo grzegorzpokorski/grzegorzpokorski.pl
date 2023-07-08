@@ -10,7 +10,7 @@ export const TagsList = ({ tags }: TagListPros) => {
     <ul className={`flex flex-row flex-wrap gap-2 text-sm`}>
       {tags.map((tag) => (
         <li key={tag}>
-          <Link href={`/blog/tag/${getSlug(tag)}`} buttonStyle="tag">
+          <Link href={`/blog/tag/${getSlug(tag)}`} variant="tag">
             {tag}
           </Link>
         </li>

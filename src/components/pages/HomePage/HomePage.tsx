@@ -27,10 +27,10 @@ export const HomePage = ({ posts }: { posts: Post[] }) => {
         }
         links={
           <>
-            <Link href="/oferta" buttonStyle="green">
+            <Link href="/oferta" variant="green">
               Zobacz ofertę
             </Link>
-            <Link href="/kontakt" buttonStyle="green-outline">
+            <Link href="/kontakt" variant="green-outline">
               Skontaktuj się ze mną
             </Link>
           </>
