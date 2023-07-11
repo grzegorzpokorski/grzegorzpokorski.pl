@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@next/env": "^13.4.8",
+    "@sindresorhus/slugify": "^2.2.1",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
@@ -29,7 +30,6 @@
     "rehype-img-size": "^1.0.1",
     "rehype-prism-plus": "^1.6.1",
     "sharp": "^0.32.1",
-    "slugify": "^1.6.6",
     "tailwind-merge": "^1.13.2",
     "typescript": "5.1.6",
     "zod": "^3.21.4"

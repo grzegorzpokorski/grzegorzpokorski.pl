@@ -1,4 +1,4 @@
-import slugify from "slugify";
+import { getSlug } from "@/utils/getSlug";
 import type { PostFrontmatter } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,10 +20,7 @@ export const PostHeader = ({
         <div className="w-full lg:w-8/12 mx-auto flex flex-col gap-4">
           <span className="flex flex-row items-center gap-3">
             <Link
-              href={`/blog/kategoria/${slugify(category, {
-                replacement: "-",
-                lower: true,
-              })}`}
+              href={`/blog/kategoria/${getSlug(category)}`}
               className="text-green-500 hover:underline"
             >
               {category}

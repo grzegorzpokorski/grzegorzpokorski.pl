@@ -1,4 +1,7 @@
-import slugify from "slugify";
+import slugify from "@sindresorhus/slugify";
 
 export const getSlug = (text: string): string =>
-  slugify(text, { replacement: "-", lower: true, strict: true });
+  slugify(text, {
+    separator: "-",
+    decamelize: false,
+  });
