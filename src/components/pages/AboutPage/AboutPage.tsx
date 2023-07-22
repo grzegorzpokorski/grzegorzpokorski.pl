@@ -1,17 +1,17 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Hero } from "@/components/molecules/Hero/Hero";
 import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
 import { DefaultBanner } from "@/components/templates/DefaultBanner/DefaultBanner";
-import { useThemeContext } from "@/providers/ThemeProvider";
 import HeroImage from "../../../../public/images/about.webp";
 import HeroImageDark from "../../../../public/images/about-dark.webp";
 import type { Post } from "@/types";
 
 export const AboutPage = ({ posts }: { posts: Post[] }) => {
-  const { theme } = useThemeContext();
+  const { resolvedTheme } = useTheme();
   return (
     <Main withMarginOnTop>
       <Hero
@@ -54,7 +54,7 @@ export const AboutPage = ({ posts }: { posts: Post[] }) => {
         }
         image={{
           alt: "zadowoleni klienci przeglądają otrzymany produkt",
-          src: theme === "dark" ? HeroImageDark : HeroImage,
+          src: resolvedTheme === "dark" ? HeroImageDark : HeroImage,
         }}
       />
       <PromoPosts

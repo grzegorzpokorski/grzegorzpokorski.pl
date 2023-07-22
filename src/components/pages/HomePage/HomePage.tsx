@@ -5,13 +5,10 @@ import { Main } from "@/components/atoms/Main/Main";
 import { Hero } from "@/components/molecules/Hero/Hero";
 import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
 import { DefaultBanner } from "@/components/templates/DefaultBanner/DefaultBanner";
-import { useThemeContext } from "@/providers/ThemeProvider";
 import HeroImage from "../../../../public/images/hero.webp";
-import HeroImageDark from "../../../../public/images/hero-dark.webp";
 import type { Post } from "@/types";
 
 export const HomePage = ({ posts }: { posts: Post[] }) => {
-  const { theme } = useThemeContext();
   return (
     <Main withMarginOnTop>
       <Hero
@@ -37,7 +34,7 @@ export const HomePage = ({ posts }: { posts: Post[] }) => {
         }
         image={{
           alt: "zadowoleni klienci przeglądają otrzymany produkt",
-          src: theme === "dark" ? HeroImageDark : HeroImage,
+          src: HeroImage,
         }}
       />
       <PromoPosts

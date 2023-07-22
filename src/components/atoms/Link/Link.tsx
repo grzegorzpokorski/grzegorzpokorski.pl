@@ -16,7 +16,8 @@ type LinkVariant =
   | "social-menu-link-mobile-nav"
   | "skip-to-the-content"
   | "with-icon"
-  | "post-item-title";
+  | "post-item-title"
+  | "banner";
 
 const baseStyles = twMerge(
   "inline-flex border-2 rounded",
@@ -34,6 +35,9 @@ const linkVariants = {
     "bg-white hover:bg-slate-100",
     "text-gray-800",
     "border-white",
+    "dark:bg-zinc-800 dark:hover:bg-zinc-900",
+    "dark:text-white",
+    "dark:border-zinc-800",
   ),
   "white-outline": twMerge(
     baseStyles,
@@ -46,6 +50,9 @@ const linkVariants = {
     "bg-zinc-800 hover:bg-zinc-900",
     "text-white",
     "border-zinc-800",
+    "dark:bg-white dark:hover:bg-slate-100",
+    "dark:text-gray-800",
+    "dark:border-white",
   ),
   "dark-outline": twMerge(
     baseStyles,
@@ -97,6 +104,15 @@ const linkVariants = {
   "post-item-title": twMerge(
     "text-zinc-800 dark:text-zinc-200",
     "hover:text-green-500 dark:hover:text-green-500",
+  ),
+  banner: twMerge(
+    baseStyles,
+    "bg-transparent hover:bg-white",
+    "text-white hover:text-gray-800",
+    "border-white",
+    "dark:bg-transparent dark:hover:bg-zinc-800",
+    "dark:text-zinc-800 dark:hover:text-white",
+    "dark:border-zinc-800",
   ),
 } as const;
 

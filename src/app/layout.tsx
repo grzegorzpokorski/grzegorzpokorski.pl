@@ -25,7 +25,11 @@ export default function RootLayout({
   readonly children: ReactNode;
 }) {
   return (
-    <html lang="pl" className={`${rubik.variable} scrollbar-gutter-stable`}>
+    <html
+      lang="pl"
+      className={`${rubik.variable} scrollbar-gutter-stable`}
+      suppressHydrationWarning
+    >
       <body className="bg-white dark:bg-zinc-800">
         <AppProviders>
           <Layout>{children}</Layout>

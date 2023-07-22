@@ -1,17 +1,17 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { Header } from "@/components/molecules/Header/Header";
 import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
 import { Banner } from "@/components/molecules/Banner/Banner";
 import { Section } from "@/components/molecules/Section/Section";
 import { SectionsWithOffer } from "@/components/templates/Services/Services";
-import { useThemeContext } from "@/providers/ThemeProvider";
 import { getSlug } from "@/utils/getSlug";
 
 export const OfferPage = () => {
-  const { theme } = useThemeContext();
-  const isDark = theme === "dark";
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
   return (
     <Main>
       <Section

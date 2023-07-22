@@ -1,26 +1,17 @@
-"use client";
-
 import { Link } from "@/components/atoms/Link/Link";
 import { Banner } from "@/components/molecules/Banner/Banner";
-import { useThemeContext } from "@/providers/ThemeProvider";
 
 export const ContactBanner = () => {
-  const { theme } = useThemeContext();
-  const isDark = theme === "dark";
-
   return (
     <Banner
       title="Zbuduj swoją ultra szybką stronę internetową ze mną!"
       content="Chętnie pomogę zrealizować Twój projekt."
       buttons={
         <>
-          <Link href="/oferta" variant={isDark ? "dark" : "white"}>
+          <Link href="/oferta" variant="white">
             Zobacz czym się zajmuję
           </Link>
-          <Link
-            href="/blog"
-            variant={isDark ? "dark-outline" : "white-outline"}
-          >
+          <Link href="/blog" variant="banner">
             Owiedź mojego bloga
           </Link>
         </>

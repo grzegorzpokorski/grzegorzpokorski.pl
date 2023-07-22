@@ -2,7 +2,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { menuItems } from "@/content/menu";
 import { twMerge } from "tailwind-merge";
-import { ThemeSwitch } from "@/components/atoms/ThemeSwitch/ThemeShitch";
+import { ThemeSwitch } from "@/components/atoms/ThemeSwitch/ThemeSwitch";
 import { SocialMenu } from "@/components/molecules/SocialMenu/SocialMenu";
 
 type MainMenuProps = {
