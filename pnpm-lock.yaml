@@ -26,9 +26,6 @@ dependencies:
   eslint:
     specifier: 8.45.0
     version: 8.45.0
-  grzegorzpokorski.pl:
-    specifier: 'link:'
-    version: 'link:'
   next:
     specifier: 13.4.12
     version: 13.4.12(@babel/core@7.22.5)(react-dom@18.2.0)(react@18.2.0)

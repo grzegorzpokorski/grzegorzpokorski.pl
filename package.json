@@ -20,7 +20,6 @@
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.0.1",
     "eslint": "8.45.0",
-    "grzegorzpokorski.pl": "link:",
     "next": "13.4.12",
     "next-mdx-remote": "^4.3.0",
     "next-themes": "^0.2.1",
