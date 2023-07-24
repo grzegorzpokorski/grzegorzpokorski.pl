@@ -6,7 +6,7 @@ Personal webpage presenting my offer, connected with blog.
 
 1. React.js
 2. Next.js
-3. Typescript
+3. TypeScript
 4. Tailwind CSS
 5. SCSS
 6. MDX
