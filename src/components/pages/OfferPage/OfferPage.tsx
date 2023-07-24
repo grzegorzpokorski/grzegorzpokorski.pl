@@ -1,6 +1,3 @@
-"use client";
-
-import { useTheme } from "next-themes";
 import { Header } from "@/components/molecules/Header/Header";
 import { Link } from "@/components/atoms/Link/Link";
 import { Main } from "@/components/atoms/Main/Main";
@@ -10,8 +7,6 @@ import { SectionsWithOffer } from "@/components/templates/Services/Services";
 import { getSlug } from "@/utils/getSlug";
 
 export const OfferPage = () => {
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
   return (
     <Main>
       <Section
@@ -43,13 +38,10 @@ export const OfferPage = () => {
         content="Chętnie pomogę zrealizować Twój projekt."
         buttons={
           <>
-            <Link href="/kontakt" variant={isDark ? "dark" : "white"}>
+            <Link href="/kontakt" variant="white">
               Skontaktuj się ze mną
             </Link>
-            <Link
-              href="/blog"
-              variant={isDark ? "dark-outline" : "white-outline"}
-            >
+            <Link href="/blog" variant="banner">
               Odwiedź mój blog
             </Link>
           </>
