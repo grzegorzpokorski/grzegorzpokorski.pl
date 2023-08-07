@@ -29,7 +29,7 @@
     "react-focus-lock": "^2.9.5",
     "react-icons": "^4.10.1",
     "rehype-img-size": "^1.0.1",
-    "rehype-prism-plus": "^1.6.1",
+    "rehype-prism-plus": "^1.6.3",
     "sharp": "^0.32.4",
     "tailwind-merge": "^1.14.0",
     "typescript": "5.1.6",
