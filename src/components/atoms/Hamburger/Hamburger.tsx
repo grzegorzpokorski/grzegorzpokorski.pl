@@ -22,7 +22,7 @@ export const Hamburger = forwardRef<HTMLButtonElement, HamburgerProps>(
           isMobileMenuOpen ? "Zamknij" : "Otwórz"
         } menu nawigacyjne`}
         aria-expanded={isMobileMenuOpen}
-        aria-controls="header-navigation"
+        aria-controls="menu"
         ref={ref}
       >
         <div
