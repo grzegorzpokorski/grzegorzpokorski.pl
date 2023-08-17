@@ -13,14 +13,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@next/env": "^13.4.13",
+    "@next/env": "^13.4.17",
     "@sindresorhus/slugify": "^2.2.1",
     "@types/node": "20.4.8",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.0.1",
     "eslint": "8.46.0",
-    "next": "13.4.13",
+    "next": "13.4.17",
     "next-mdx-remote": "^4.3.0",
     "next-themes": "^0.2.1",
     "plaiceholder": "^2.5.0",
