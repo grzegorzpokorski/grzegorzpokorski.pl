@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getSlug } from "@/utils/getSlug";
 
 type MdxHeadingProps = {
@@ -15,15 +16,14 @@ export const MdxHeading = ({
     const slug = `${getSlug(children)}`;
     return (
       <Tag {...props} id={slug} className="flex gap-3 relative ml-5 lg:ml-0">
-        {/* @todo replace A tag with next/lint or my custom Link component what uses next/link when https://github.com/vercel/next.js/issues/44295 issue will be resolved */}
-        <a
+        <Link
           href={`#${slug}`}
           className="absolute left-0 top-0 -translate-x-full pr-2 transition-all motion-reduce:transition-none text-neutral-300 dark:text-neutral-600 hover:text-green-500 dark:hover:text-green-500"
           aria-hidden="true"
           tabIndex={-1}
         >
           #
-        </a>
+        </Link>
         {children}
       </Tag>
     );
