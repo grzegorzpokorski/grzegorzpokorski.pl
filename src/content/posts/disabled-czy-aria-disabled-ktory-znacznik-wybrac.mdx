@@ -1,0 +1,54 @@
+---
+title: Disabled, czy aria-disabled? Który znacznik wybrać?
+excerpt: Czasami używanie atrybutów HTML może być trudniejsze niż się wydaje. Przyjrzyjmy się atrybutowi disabled i aria-disabled w kontekście dostępności i użyteczności.
+category: Programowanie
+tags:
+  - dostępność
+  - a11y
+  - semantyczny kod
+  - UX
+  - disabled
+  - aria-disabled
+date: 2023.09.26
+published: true
+featuredImage: /images/posts/disabled-czy-aria-disabled-ktory-znacznik-wybrac/featured-image.jpg
+featuredImageAlt: znak z tabliczkami 'one way' wskazującymi dwie odmienne drogi
+---
+
+Każdy, kto choć raz zastanawiał się, jak poprawić dostępność, czy użyteczność np. formularza kontaktowego spotkał się z atrybutem [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) i/lub [`aria-disabled`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-disabled). Służą one do oznaczania elementów na stronach internetowych jako nieaktywne. Przyjrzyjmy się im przez chwilę.
+
+## Najważniejsza różnica
+
+Ktoś wnikliwy mógłby zadać pytanie, w jakim celu równolegle istnieją te dwa atrybuty, skoro z pozoru, a przynajmniej z nazwy, zdają się mieć podobne zastosowanie? Główną różnicą między tymi atrybutami w kontekście użyteczności oraz dostępności jest to, że atrybut `disabled` sprawia, że oznaczony nim element przestaje przyjmować focus oraz przestaje reagować np. na kliknięcia.
+
+## Atrybut disabled — czy zawsze jest dobrym wyborem?
+
+Brak focusa na elementach takich, jak guziki, czy pola tekstowe rodzi pewne problemy z dostępnością oraz użytecznością strony. Osoby z dobrym wzrokiem szybko zrozumieją, że elementy oznaczone atrybutem `disabled` są nieaktywne, ponieważ elementy oznaczone tym atrybutem często domyślnie zmieniają swój wygląd, komunikując wizualnie, że są nieaktywne, np. aktywując inny styl kursora po najechaniu myszką, czy zmieniając lekko kolorystykę np. na bardziej bladą. Jednak osoby niewidome lub słabo widzące, korzystające z czytników ekranowych lub klawiatury do nawigowania po stronie, mogą napotkać trudności, ponieważ brak focusa sprawia, że elementy te są dla nich niedostępne.
+
+Wyobraź sobie, że wypełniasz formularz kontaktowy i nie możesz znaleźć przycisku do jego zatwierdzenia. To może być dezorientujące. Właśnie tak czują się osoby korzystające z klawiatury i czytników ekranowych, poruszajac się po stronie, gdy takich elementów nie można zfocusować. W takich sytuacjach zdecydowanie warto użyć atrybutu `aria-disabled` zamiast `disabled`. Dzięki temu zachowujemy semantyczne znaczenie elementu, jak przy użyciu atrybutu `disabled`, jednocześnie pozwalając mu przyjmować focus - być widocznym dla np. czytników ekranowcyh.
+
+## Dlaczego atrybut `disabled` jest często nadużywany?
+
+Dlaczego więc atrybut disabled jest tak często nadużywany? Może wynika to z braku wiedzy lub, co gorsza, z lenistwa. Zastosowanie atrybutu `aria-disabled` wymaga od programisty trochę więcej pracy, ponieważ praktycznie zawsze konieczne jest dostosowanie styli takiego elementu, aby podkreślić wizualnie, że nie jest on aktywny oraz wymagane jest dostosowanie zachowania takich elementów w JavaScript np. po kliknięciu guzika znajdującego się w formularzu, gdyż atrybut `aria-disabled` w przeciwieństwie do `disabled` nie wyłącza możliwości zatwierdzania formularzy, czy edycji pól tekstowych oraz nie ingeruje w domyślne style tych elementów, a jedynie dodaje informacje, o nieaktywności danego elementu.
+
+Warto jednak włożyć trochę czasu i uwagi, aby poprawić dostępność oraz wrażenia z użytkowania naszej strony. Taka praca może również skłonić do pewnych rozmyśleń dotyczących poprawy ogólnego UX strony np. dotyczących strategii walidacji formularzy i momentu informowania użytkownika o błedach w danych formularza. W tym miejscu polecam dość obszerny [artykuł](https://www.smashingmagazine.com/2023/02/guide-accessible-form-validation) na temat dostęnych i użytecznych formularzy.
+
+## Kiedy warto używać atrybut disabled?
+
+Okej, to w takim razie kiedy warto używać atrybutu `disabled`? Krótko mówiąc, wszędzie tam, gdzie chcemy wyłączyć dany element i gdzie jego brak obecności oraz interaktywności, nie wpływa negatywnie na użyteczność samej aplikacji. Przykładem może być link paginacji, który linkuje do strony z nowszymi wpisami. W przypadku kiedy nie ma już kolejnej strony ze wpisami, wyłączenie takiego linku poprzez dodanie atrybutu `disabled` nie wpłynie negatywnie na użyteczność strony / aplikacji, a może np. pomóc zapobiec przesunięciu układu strony, co mogłoby mieć miejsce, gdyby ten link został całkowicie usunięty ze strony.
+
+## Kiedy warto używać atrybut aria-disabled?
+
+Atrybut `aria-disabled` idealnie sprawdzi się we wszelkiego rodzaju sytuacjach, kiedy chcemy oznaczyć dany element jako nieaktywny i jednocześnie chcemy pozostawić sobie pełną kontrolę nad jego zachowaniem oraz wyglądem. Koniecznie powinien być stosowany w przypadkach, kiedy obecność danego elementu wpływa na użyteczność aplikacji i niesie ważną informację, nawet kiedy nie chcemy, aby był aktywny np. przycisk zatwierdzania formularza. Zaletą tego atrybutu jest również to, że można go zastosować do dowolnego tagu HTML.
+
+## Podsumowanie
+
+Powyższy artykuł oczywiście nie wyczerpuje tematu. Celem tego krótkiego tekstu była chęć zwrócenia uwagi na to, jak ważna jest dostępność stron internetowych **oraz** ich użyteczność. Do realizacji tego celu mamy masę ciekawych i pomocnych rozwiązań jak, chociażby wspomniane atrybuty `aria-disabled` i `disabled`. Czasami jednak w dobrzej wierze możemy znacznie popsuć dobre wrażenia z użytkowania naszej strony internetowej i nawet nie zdawać sobie z tego sprawy. Dlatego ważne jest, aby na każdym etapie tworzenia naszej aplikacji / strony internetowej myśleć o tym przez kogo i w jaki sposób będzie ona używana.
+
+Jeśli zaciekawił Cię ten temat, więcej informacji znajdziesz pod poniższymi linkami:
+
+- [A Guide To Accessible Form Validation](https://www.smashingmagazine.com/2023/02/guide-accessible-form-validation),
+- [Disabled buttons suck](https://axesslab.com/disabled-buttons-suck/),
+- [Making Disabled Buttons More Inclusive](https://css-tricks.com/making-disabled-buttons-more-inclusive/),
+- [`disabled` MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled),
+- [`aria-disabled` MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-disabled).
