@@ -27,7 +27,7 @@ Brak focusa na elementach takich, jak guziki, czy pola tekstowe rodzi pewne prob
 
 Wyobraź sobie, że wypełniasz formularz kontaktowy i nie możesz znaleźć przycisku do jego zatwierdzenia. To może być dezorientujące. Właśnie tak czują się osoby korzystające z klawiatury i czytników ekranowych, poruszajac się po stronie, gdy takich elementów nie można zfocusować. W takich sytuacjach zdecydowanie warto użyć atrybutu `aria-disabled` zamiast `disabled`. Dzięki temu zachowujemy semantyczne znaczenie elementu, jak przy użyciu atrybutu `disabled`, jednocześnie pozwalając mu przyjmować focus - być widocznym dla np. czytników ekranowcyh.
 
-## Dlaczego atrybut `disabled` jest często nadużywany?
+## Dlaczego atrybut disabled jest często nadużywany?
 
 Dlaczego więc atrybut disabled jest tak często nadużywany? Może wynika to z braku wiedzy lub, co gorsza, z lenistwa. Zastosowanie atrybutu `aria-disabled` wymaga od programisty trochę więcej pracy, ponieważ praktycznie zawsze konieczne jest dostosowanie styli takiego elementu, aby podkreślić wizualnie, że nie jest on aktywny oraz wymagane jest dostosowanie zachowania takich elementów w JavaScript np. po kliknięciu guzika znajdującego się w formularzu, gdyż atrybut `aria-disabled` w przeciwieństwie do `disabled` nie wyłącza możliwości zatwierdzania formularzy, czy edycji pól tekstowych oraz nie ingeruje w domyślne style tych elementów, a jedynie dodaje informacje, o nieaktywności danego elementu.
 
