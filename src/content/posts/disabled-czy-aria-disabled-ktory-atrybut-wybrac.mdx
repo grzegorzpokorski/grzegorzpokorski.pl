@@ -19,7 +19,7 @@ Każdy, kto choć raz zastanawiał się, jak poprawić dostępność, czy użyte
 
 ## Najważniejsza różnica
 
-Ktoś wnikliwy mógłby zadać pytanie, w jakim celu równolegle istnieją te dwa atrybuty, skoro z pozoru, a przynajmniej z nazwy, zdają się mieć podobne zastosowanie? Główną różnicą między tymi atrybutami w kontekście użyteczności oraz dostępności jest to, że atrybut `disabled` sprawia, że oznaczony nim element przestaje przyjmować focus oraz przestaje reagować np. na kliknięcia.
+Ktoś wnikliwy mógłby zadać pytanie, w jakim celu równolegle istnieją te dwa atrybuty, skoro z pozoru, a przynajmniej z nazwy, zdają się mieć podobne zastosowanie? Główną różnicą między tymi atrybutami w kontekście użyteczności oraz dostępności jest to, że atrybut `disabled` sprawia, że oznaczony nim element przestaje przyjmować focus oraz traci interaktywność, np. przestaje reagować na kliknięcia.
 
 ## Atrybut disabled — czy zawsze jest dobrym wyborem?
 
@@ -29,15 +29,15 @@ Wyobraź sobie, że wypełniasz formularz kontaktowy i nie możesz znaleźć prz
 
 ## Dlaczego atrybut disabled jest często nadużywany?
 
-Dlaczego więc atrybut disabled jest tak często nadużywany? Może wynika to z braku wiedzy lub, co gorsza, z lenistwa. Zastosowanie atrybutu `aria-disabled` wymaga od programisty trochę więcej pracy, ponieważ praktycznie zawsze konieczne jest dostosowanie styli takiego elementu, aby podkreślić wizualnie, że nie jest on aktywny oraz wymagane jest dostosowanie zachowania takich elementów w JavaScript np. po kliknięciu guzika znajdującego się w formularzu, gdyż atrybut `aria-disabled` w przeciwieństwie do `disabled` nie wyłącza możliwości zatwierdzania formularzy, czy edycji pól tekstowych oraz nie ingeruje w domyślne style tych elementów, a jedynie dodaje informacje, o nieaktywności danego elementu.
+Dlaczego więc atrybut disabled jest często nadużywany? Może wynika to z braku wiedzy lub, co gorsza, z lenistwa. Zastosowanie atrybutu `aria-disabled` wymaga od programisty trochę więcej pracy, ponieważ praktycznie zawsze konieczne jest dostosowanie styli takiego elementu, aby podkreślić wizualnie, że nie jest on aktywny oraz wymagane jest dostosowanie zachowania takich elementów w JavaScript np. po kliknięciu guzika znajdującego się w formularzu, gdyż atrybut `aria-disabled` w przeciwieństwie do `disabled` nie wyłącza interaktywnosci elementu, np. możliwości zatwierdzania formularzy, czy edycji pól tekstowych oraz nie ingeruje w domyślne style tych elementów, a jedynie dodaje informacje, o nieaktywności danego elementu.
 
 Warto jednak włożyć trochę czasu i uwagi, aby poprawić dostępność oraz wrażenia z użytkowania naszej strony. Taka praca może również skłonić do pewnych rozmyśleń dotyczących poprawy ogólnego UX strony np. dotyczących strategii walidacji formularzy i momentu informowania użytkownika o błedach w danych formularza. W tym miejscu polecam dość obszerny [artykuł](https://www.smashingmagazine.com/2023/02/guide-accessible-form-validation) na temat dostęnych i użytecznych formularzy.
 
 ## Kiedy warto używać atrybut disabled?
 
-Okej, to w takim razie kiedy warto używać atrybutu `disabled`? Krótko mówiąc, wszędzie tam, gdzie chcemy wyłączyć dany element i gdzie jego brak obecności oraz interaktywności, nie wpływa negatywnie na użyteczność samej aplikacji. Przykładem może być link paginacji, który linkuje do strony z nowszymi wpisami. W przypadku kiedy nie ma już kolejnej strony ze wpisami, wyłączenie takiego linku poprzez dodanie atrybutu `disabled` nie wpłynie negatywnie na użyteczność strony / aplikacji, a może np. pomóc zapobiec przesunięciu układu strony, co mogłoby mieć miejsce, gdyby ten link został całkowicie usunięty ze strony.
+Okej, to w takim razie kiedy warto używać atrybut `disabled`? Krótko mówiąc, wszędzie tam, gdzie chcemy wyłączyć dany element i gdzie jego brak obecności oraz interaktywności, nie wpływa negatywnie na użyteczność samej aplikacji. Przykładem może być link paginacji, który linkuje do strony z nowszymi wpisami. W przypadku kiedy nie ma już kolejnej strony ze wpisami, wyłączenie takiego linku poprzez dodanie atrybutu `disabled` nie wpłynie negatywnie na użyteczność strony / aplikacji, a może np. pomóc zapobiec przesunięciu układu strony, co mogłoby mieć miejsce, gdyby ten link został całkowicie usunięty ze strony.
 
-## Kiedy warto używać atrybut aria-disabled?
+## Kiedy warto użyć atrybut aria-disabled?
 
 Atrybut `aria-disabled` idealnie sprawdzi się we wszelkiego rodzaju sytuacjach, kiedy chcemy oznaczyć dany element jako nieaktywny i jednocześnie chcemy pozostawić sobie pełną kontrolę nad jego zachowaniem oraz wyglądem. Koniecznie powinien być stosowany w przypadkach, kiedy obecność danego elementu wpływa na użyteczność aplikacji i niesie ważną informację, nawet kiedy nie chcemy, aby był aktywny np. przycisk zatwierdzania formularza. Zaletą tego atrybutu jest również to, że można go zastosować do dowolnego tagu HTML.
 
