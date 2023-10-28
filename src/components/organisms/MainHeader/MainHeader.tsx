@@ -7,7 +7,7 @@ import { MainMenu } from "../MainMenu/MainMenu";
 import { useMainHeader } from "./useMainHeader";
 import { twMerge } from "tailwind-merge";
 import FocusLock from "react-focus-lock";
-import { useIsAboveBreakpoint } from "@/hooks/useIsAboveBreakpoint";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 type HeaderProps = {
   children?: ReactNode;
@@ -22,7 +22,7 @@ export const MainHeader = ({ children }: HeaderProps) => {
     menuContainerRef,
     mobileMenuTogglerRef,
   } = useMainHeader();
-  const isAboveBreakpoint = useIsAboveBreakpoint({ breakpoint: 960 });
+  const isDesktopView = useMediaQuery("(min-width: 960px)");
 
   return (
     <header>
@@ -43,7 +43,7 @@ export const MainHeader = ({ children }: HeaderProps) => {
           <Logo isHome={isHome} isTitle={isHome} />
           <FocusLock
             as="div"
-            disabled={!isMobileMenuOpen || isAboveBreakpoint}
+            disabled={!isMobileMenuOpen || isDesktopView}
             ref={menuContainerRef}
             returnFocus
           >

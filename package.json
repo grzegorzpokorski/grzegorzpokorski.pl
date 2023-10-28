@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --dir .",
-    "lint:fix": "next lint --dir . --fix --quiet",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix --quiet",
+    "format": "pnpm prettier . --write",
     "test:watch": "vitest",
     "test:once": "vitest run",
     "prepare": "husky install"
