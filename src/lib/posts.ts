@@ -1,5 +1,5 @@
 import path from "path";
-import { promises } from "fs";
+import * as fs from "node:fs/promises";
 import { serializeSource } from "./markdown";
 import { z } from "zod";
 import type { Post } from "@/types";
@@ -10,7 +10,7 @@ import { getISODateFromPublicatedDate } from "@/utils/getISODateFromPublicationD
 const postsDir = path.join(process.cwd(), "src/content/posts");
 
 export const getAllSlugs = async () => {
-  const allFileNames = await promises.readdir(postsDir);
+  const allFileNames = await fs.readdir(postsDir);
   const onlyMdx = allFileNames.filter(
     (file) => path.extname(file.toLowerCase()) === ".mdx",
   );
@@ -24,9 +24,16 @@ export const getSlugsOfPublishedPosts = async () => {
   return publishedPosts.map((post) => post.frontmatter.slug);
 };
 
+const getFrontmatterFeaturedImage = async (src: string) => {
+  const buffer = await fs.readFile(path.join("./public", src));
+  const plaiceholder = await getPlaiceholder(buffer, { size: 10 });
+
+  return plaiceholder;
+};
+
 export const getPostBySlug = async (slug: string): Promise<Post> => {
   const postPath = path.join(postsDir, `${slug}.mdx`);
-  const postSource = await promises.readFile(postPath, "utf-8");
+  const postSource = await fs.readFile(postPath, "utf-8");
   const mdxSource = await serializeSource(postSource);
 
   const frontMatterShema = z.object({
@@ -43,7 +50,9 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
   });
 
   const frontmatter = frontMatterShema.parse(mdxSource.frontmatter);
-  const { img, base64 } = await getPlaiceholder(frontmatter.featuredImage);
+  const plaiceholder = await getFrontmatterFeaturedImage(
+    frontmatter.featuredImage,
+  );
 
   return {
     frontmatter: {
@@ -54,9 +63,12 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
       date: frontmatter.date,
       published: frontmatter.published,
       featuredImage: {
-        ...img,
-        alt: frontmatter.featuredImageAlt ? frontmatter.featuredImageAlt : "",
-        base64,
+        src: frontmatter.featuredImage,
+        alt: frontmatter.featuredImageAlt,
+        width: plaiceholder.metadata.width,
+        height: plaiceholder.metadata.height,
+        type: plaiceholder.metadata.format,
+        base64: plaiceholder.base64,
       },
       slug,
     },

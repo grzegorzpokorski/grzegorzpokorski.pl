@@ -12,8 +12,8 @@ export type PostFrontmatter = {
     height: number;
     width: number;
     alt: string;
+    base64: string;
     type?: string;
-    base64?: string;
   };
   slug: string;
 };
