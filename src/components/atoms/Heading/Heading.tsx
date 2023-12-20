@@ -9,7 +9,7 @@ type HeadingProps = {
   id?: string;
 };
 
-const baseStyles = twMerge("font-bold");
+const baseStyles = twMerge("font-bold text-balance");
 
 const variants = {
   default: "text-zinc-800 dark:text-zinc-200",
