@@ -22,7 +22,12 @@ Nikt nie lubi długo czekać, aż strona się załaduje. Chcąc uniknąć niezad
 
 Zgodnie z zaleceniami Google, aby zapewnić dobre wrażenia z użytkowania strony internetowej, należy skrócić czas jej ładowania do maksymalnie 2.5 sekund. Każda kolejna sekunda przekłada się zwiększony współczynnik odrzucenia (tzw. bounce rate) - to nic innego jak użytkownik, który zrezygnował z jakiegoś powodu z dalszego przeglądania naszej strony, bez jakiej podjęcia jakiejkolwiek akcji. Jak się okazuje najczęstszym powodem jest zbyt długi czas ładowania się strony.
 
-![wykres obrazujący zalażność między szybkością ładowania się strony, a współczynnikiem odrzucenia](/images/posts/jak-przyspieszyc-strone-internetowa/web-page-time-load-vs-bounce-rate.png)
+<Image
+  alt="wykres obrazujący zalażność między szybkością ładowania się strony, a współczynnikiem odrzucenia"
+  src="/images/posts/jak-przyspieszyc-strone-internetowa/web-page-time-load-vs-bounce-rate.png"
+  width={1539}
+  height={1014}
+/>
 
 Powyżej znajduje się grafika ze strony [pingdom.com](https://www.pingdom.com/blog/page-load-time-really-affect-bounce-rate/).Obrazuje ona, jakie przełożenie ma czas ładowania strony na wspomniany współczynnik odrzucenia. Jak można zaobserwować, współczynnik odrzucenia drastycznie wzrasta w przypadku kiedy strona ładuje się powyżej 3 sekund.
 
@@ -38,7 +43,12 @@ W przypadku kiedy chcemy, aby nasza witryna internetowa równie szybko ładował
 
 W świecie internetu fizyczne odległości również mają znaczenie. Dostarczenie obrazu wysłanego z serwera znajdującego się w USA do użytkownika znajdującego się w Holandii może zająć więcej czasu niż gdyby został wysłany z serwera znajdującego się np. w Niemczech. Aby zrozumieć, dlaczego tak się dzieje, należy zdać sobie sprawę, że w dużym uproszczeniu sieć Internet, to siec połączonych ze sobą komputerów, które komunikują się nawzajem ze sobą i przesyłają dane. Im bliżej siebie znajdują się komunikujące się ze sobą komputery, tym mniejsze występują przy tym opóźnienia w przesyle danych.
 
-![wizualizacja sieci cdn](/images/posts/jak-przyspieszyc-strone-internetowa/cdn-visualization.webp)
+<Image
+  alt="wizualizacja sieci cdn"
+  src="/images/posts/jak-przyspieszyc-strone-internetowa/cdn-visualization.webp"
+  width={1412}
+  height={941}
+/>
 
 Sieć CDN powiela dane naszej strony, które przesłaliśmy na główny serwer dostawcy hostingu. Następnie przesłane dane są przesyłane do serwerów znajdujących się najczęściej przy głównych węzłach sieci Internet na całym świecie. Takie działanie pozwala dostarczać pliki naszej strony do użytkownika z serwera znajdującego się najbliżej jego lokalizacji.
 

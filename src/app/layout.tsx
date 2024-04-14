@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import "@/styles/prism-theme.css";
 
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";

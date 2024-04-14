@@ -1,4 +1,4 @@
-import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import type { ReactNode } from "react";
 
 export type PostFrontmatter = {
   title: string;
@@ -20,5 +20,5 @@ export type PostFrontmatter = {
 
 export type Post = {
   frontmatter: PostFrontmatter;
-  source: MDXRemoteSerializeResult;
+  compiledSource: ReactNode;
 };

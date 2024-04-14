@@ -1,3 +1,5 @@
+import "@/styles/prism-theme.css";
+
 import { PostContent } from "@/components/molecules/PostContent/PostContent";
 import { PostHeader } from "@/components/organisms/PostHeader/PostHeader";
 import { PromoPosts } from "@/components/organisms/PromoPosts/PromoPosts";
@@ -14,7 +16,7 @@ export const SinglePostPage = ({
     <article>
       <PostHeader {...post.frontmatter} />
       <PostContent
-        source={post.source}
+        compiledSource={post.compiledSource}
         slug={post.frontmatter.slug}
         title={post.frontmatter.title}
       />

@@ -1,13 +1,15 @@
 import path from "path";
 import * as fs from "node:fs/promises";
-import { serializeSource } from "./markdown";
+import { compileMDX } from "next-mdx-remote/rsc";
 import { z } from "zod";
 import type { Post } from "@/types";
 import { getPlaiceholder } from "plaiceholder";
 import { getSlug } from "@/utils/getSlug";
 import { getISODateFromPublicatedDate } from "@/utils/getISODateFromPublicationDate";
+import rehypePrism from "rehype-prism-plus";
+import { mdxCustomComponents } from "@/lib/mdxCustomComponents";
 
-const postsDir = path.join(process.cwd(), "src/content/posts");
+const postsDir = path.join(process.cwd(), "posts");
 
 export const getAllSlugs = async () => {
   const allFileNames = await fs.readdir(postsDir);
@@ -34,7 +36,16 @@ const getFrontmatterFeaturedImage = async (src: string) => {
 export const getPostBySlug = async (slug: string): Promise<Post> => {
   const postPath = path.join(postsDir, `${slug}.mdx`);
   const postSource = await fs.readFile(postPath, "utf-8");
-  const mdxSource = await serializeSource(postSource);
+  const compiled = await compileMDX({
+    source: postSource,
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        rehypePlugins: [rehypePrism],
+      },
+    },
+    components: mdxCustomComponents,
+  });
 
   const frontMatterShema = z.object({
     title: z.string(),
@@ -49,7 +60,7 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
     featuredImageAlt: z.string(),
   });
 
-  const frontmatter = frontMatterShema.parse(mdxSource.frontmatter);
+  const frontmatter = frontMatterShema.parse(compiled.frontmatter);
   const plaiceholder = await getFrontmatterFeaturedImage(
     frontmatter.featuredImage,
   );
@@ -72,7 +83,7 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
       },
       slug,
     },
-    source: mdxSource,
+    compiledSource: compiled.content,
   };
 };
 
