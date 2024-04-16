@@ -4,6 +4,7 @@ import { getPostBySlug, getPostsParams, getRelatedPosts } from "@/lib/posts";
 import { getISOStringFromPublicationDate } from "@/utils/getISOStringFromPublicationDate";
 import { getMetadata } from "@/utils/getMetadata";
 import type { Metadata } from "next";
+import type { Article, WithContext } from "schema-dts";
 
 export async function generateMetadata({
   params: { slug },
@@ -48,6 +49,7 @@ export default async function BlogPost({
     "@type": "Article",
     headline: post.frontmatter.title,
     image: [post.frontmatter.featuredImage.src],
+    url: `${siteUrl}/blog/${slug}`,
     datePublished: getISOStringFromPublicationDate(post.frontmatter.date),
     dateModified: getISOStringFromPublicationDate(post.frontmatter.date),
     author: [
@@ -57,7 +59,7 @@ export default async function BlogPost({
         url: "https://www.linkedin.com/in/grzegorz-pokorski/",
       },
     ],
-  };
+  } satisfies WithContext<Article>;
 
   return (
     <>

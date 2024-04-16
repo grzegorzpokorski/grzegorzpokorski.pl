@@ -31,6 +31,7 @@
     "react-icons": "5.0.1",
     "rehype-img-size": "1.0.1",
     "rehype-prism-plus": "2.0.0",
+    "schema-dts": "1.1.2",
     "sharp": "0.33.3",
     "tailwind-merge": "2.2.2",
     "typescript": "5.4.5",
