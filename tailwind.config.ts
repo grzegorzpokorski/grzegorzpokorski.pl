@@ -1,8 +1,9 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
+import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
+import Typography from "@tailwindcss/typography";
+import colors from "tailwindcss/colors";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: ["./src/**/*.{ts,tsx}"],
   darkMode: "class",
   theme: {
@@ -21,7 +22,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-rubik)", ...defaultTheme.fontFamily.sans],
       },
-      typography: (theme) => ({
+      typography: () => ({
         DEFAULT: {
           css: {
             a: {
@@ -47,5 +48,7 @@ module.exports = {
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
-};
+  plugins: [Typography],
+} satisfies Config;
+
+export default config;
