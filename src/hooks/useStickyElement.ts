@@ -19,9 +19,11 @@ export const useStickyElement = (
   }, [customOffset]);
 
   const handleScroll = useCallback(() => {
-    window.scrollY > positionOnWhichStickinessIsApplied
-      ? setStickiness(true)
-      : setStickiness(false);
+    if (window.scrollY > positionOnWhichStickinessIsApplied) {
+      setStickiness(true);
+    } else {
+      setStickiness(false);
+    }
   }, [positionOnWhichStickinessIsApplied]);
 
   useEffect(() => {

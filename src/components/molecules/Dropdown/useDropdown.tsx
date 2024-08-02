@@ -16,7 +16,9 @@ export const useDropdown = () => {
   useOnKeydown(
     "Escape",
     useCallback(() => {
-      isDropdownOpen && setIsDropdownOpen(false);
+      if (isDropdownOpen) {
+        setIsDropdownOpen(false);
+      }
     }, [isDropdownOpen]),
   );
 
