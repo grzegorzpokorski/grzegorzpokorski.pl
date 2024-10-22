@@ -5,10 +5,11 @@ import { getMetadata } from "@/utils/getMetadata";
 import { Heading } from "@/components/atoms/Heading/Heading";
 
 export async function generateMetadata({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   const { tag } = await getPostsByTag(slug);
   return getMetadata({
     article: false,
@@ -24,10 +25,11 @@ export function generateStaticParams() {
 }
 
 export default async function TagArchive({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const { posts, tag } = await getPostsByTag(slug);
 
   return (

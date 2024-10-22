@@ -11,10 +11,11 @@ import type { Metadata } from "next";
 import { getMetadata } from "@/utils/getMetadata";
 
 export async function generateMetadata({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   const { category } = await getPostsByCategory(slug);
   return getMetadata({
     article: false,
@@ -30,10 +31,11 @@ export function generateStaticParams() {
 }
 
 export default async function TagArchive({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const { posts, category } = await getPostsByCategory(slug);
   const categories = await getCategories();
 

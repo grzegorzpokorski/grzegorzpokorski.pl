@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getSlug } from "@/utils/getSlug";
+import type { JSX } from "react";
 
 type MdxHeadingProps = {
   as: "h1" | "h2" | "h3" | "h4" | "h5";

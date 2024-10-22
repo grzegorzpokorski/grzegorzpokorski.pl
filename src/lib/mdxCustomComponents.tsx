@@ -3,6 +3,7 @@ import type { ImageProps } from "next/image";
 import Link from "next/link";
 import { MdxHeading } from "@/components/molecules/MdxHeading/MdxHeading";
 import Image from "next/image";
+import type { JSX } from "react";
 
 export const mdxCustomComponents = {
   a: Link,

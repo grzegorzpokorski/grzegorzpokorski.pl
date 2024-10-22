@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 type ContainerProps = JSX.IntrinsicElements["div"] & {
   as?: "div" | "article";
 };

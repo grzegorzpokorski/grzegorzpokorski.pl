@@ -7,10 +7,11 @@ import type { Metadata } from "next";
 import type { Article, WithContext } from "schema-dts";
 
 export async function generateMetadata({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   return getMetadata({
@@ -34,10 +35,11 @@ export function generateStaticParams() {
 }
 
 export default async function BlogPost({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
   const relatedPosts = await getRelatedPosts(
     slug,
