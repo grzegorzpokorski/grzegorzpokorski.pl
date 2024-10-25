@@ -1,7 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+/* eslint-disable @typescript-eslint/require-await */
+
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
-  async redirects() {
+  redirects: async () => {
     return [
       {
         source: "/oferta/tworzenie-stron-internetowych",
