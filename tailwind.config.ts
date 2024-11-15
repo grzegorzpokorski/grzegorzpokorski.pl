@@ -5,7 +5,7 @@ import colors from "tailwindcss/colors";
 
 const config = {
   content: ["./src/**/*.{ts,tsx}"],
-  darkMode: "class",
+  darkMode: "selector",
   theme: {
     extend: {
       screens: {
