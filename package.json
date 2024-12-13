@@ -15,71 +15,55 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@next/env": "15.0.3",
+    "@next/env": "15.1.0",
     "@sindresorhus/slugify": "2.2.1",
-    "@types/node": "22.9.0",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-    "@vercel/analytics": "1.4.0",
-    "eslint": "9.14.0",
-    "next": "15.0.3",
+    "@types/node": "22.10.2",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
+    "@vercel/analytics": "1.4.1",
+    "eslint": "9.16.0",
+    "next": "15.1.0",
     "next-mdx-remote": "5.0.0",
-    "next-themes": "0.4.3",
+    "next-themes": "0.4.4",
     "plaiceholder": "3.0.0",
-    "react": "19.0.0-rc-45804af1-20241021",
-    "react-dom": "19.0.0-rc-45804af1-20241021",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-focus-lock": "2.13.2",
     "react-icons": "5.3.0",
     "rehype-img-size": "1.0.1",
     "rehype-prism-plus": "2.0.0",
     "schema-dts": "1.1.2",
     "sharp": "0.33.5",
-    "tailwind-merge": "2.5.4",
+    "tailwind-merge": "2.5.5",
     "typescript": "5.6.3",
     "zod": "3.23.8"
   },
   "devDependencies": {
     "@tailwindcss/typography": "0.5.15",
     "@testing-library/jest-dom": "6.6.3",
-    "@testing-library/react": "16.0.1",
+    "@testing-library/react": "16.1.0",
     "@testing-library/user-event": "14.5.2",
     "@types/mdx": "2.0.13",
-    "@typescript-eslint/eslint-plugin": "8.14.0",
-    "@typescript-eslint/parser": "8.14.0",
-    "@vitejs/plugin-react": "4.3.3",
+    "@typescript-eslint/eslint-plugin": "8.18.0",
+    "@typescript-eslint/parser": "8.18.0",
+    "@vitejs/plugin-react": "4.3.4",
     "autoprefixer": "10.4.20",
-    "eslint-config-next": "15.0.3",
+    "eslint-config-next": "15.1.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-react-hooks": "5.0.0",
-    "husky": "9.1.6",
+    "eslint-plugin-react-hooks": "5.1.0",
+    "husky": "9.1.7",
     "jsdom": "25.0.1",
-    "lint-staged": "15.2.10",
+    "lint-staged": "15.2.11",
     "postcss": "8.4.49",
-    "prettier": "3.3.3",
-    "tailwindcss": "3.4.15",
-    "vite": "5.4.11",
-    "vitest": "2.1.5"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.1",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-    },
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "react": "19.0.0-rc.1",
-        "react-dom": "19.0.0-rc.1"
-      },
-      "allowAny": [
-        "@types/react",
-        "@types/react-dom"
-      ]
-    }
+    "prettier": "3.4.2",
+    "tailwindcss": "3.4.16",
+    "vite": "6.0.3",
+    "vitest": "2.1.8"
   },
   "engines": {
     "node": "^18.0.0 || ^20.11.1 || ^22.0.0",
-    "pnpm": "^9.0.0"
+    "pnpm": "^9.4.0"
   },
   "packageManager": "pnpm@9.13.0+sha512.beb9e2a803db336c10c9af682b58ad7181ca0fbd0d4119f2b33d5f2582e96d6c0d93c85b23869295b765170fbdaa92890c0da6ada457415039769edf3c959efe"
 }
